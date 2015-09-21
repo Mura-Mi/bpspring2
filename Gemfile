@@ -28,6 +28,6 @@ end
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
-  gem 'rails_admin', '~> 0.7.0'
+  gem 'activeadmin', github: 'activeadmin'
 end
 
