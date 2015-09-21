@@ -5,3 +5,18 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+[ "Tokyo Dome",
+  "Koushien Stadium",
+  "Matsuda Zoom-Zoom Stadium",
+  "Nagoya Dome",
+  "Yokohama Stadium",
+  "Jingu Stadium",
+ "Fukuoka Yahoo! Japan Dome",
+ "Kyocera Dome Osaka",
+ "Sapporo Dome",
+ "QVC Marine Field",
+ "Seibu Prince Dome",
+ "Rakuten Kobo Stadium Miyagi" ].each do |placeName| 
+   Place.create(name: placeName);
+ end
