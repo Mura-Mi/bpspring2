@@ -25,6 +25,7 @@ gem 'jquery-ui-rails'
 gem 'bcrypt', '~> 3.1.7'
 
 group :development, :test do
+  gem 'rake'
   gem 'byebug'
   gem 'rspec-rails'
   gem 'factory_girl_rails'

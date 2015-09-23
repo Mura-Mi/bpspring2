@@ -216,6 +216,7 @@ DEPENDENCIES
   jquery-rails
   jquery-ui-rails
   rails (= 4.2.4)
+  rake
   rb-fsevent
   rspec-rails
   sass-rails (~> 5.0)
