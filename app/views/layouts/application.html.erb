@@ -7,11 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <h1>BP Spring</h1>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-
-  <%= yield %>
-
+  <div class="side">
+    <%= render 'devise/shared/login_items' %>
+    <%= render 'devise/shared/registration_items' %>
+  </div>
+  <div class="main">
+    <h1>BP Spring</h1>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+  
+    <%= yield %>
+  </div>
 </body>
 </html>
