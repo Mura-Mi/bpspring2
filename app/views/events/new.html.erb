@@ -1,24 +1,5 @@
 <div class="title">Register new Event</div>
 
 <div>
-  <%= form_for @event do |e| %>
-    <div class="field">
-      <%= e.label :name %>
-      <%= e.text_field :name %>
-    </div>
-    
-    <div class="field">
-      <%= e.label :event_date %>
-      <%= e.text_field :event_date, class: 'datepicker' %>
-    </div>
-  
-    <div class="field">
-      <%= e.label :comment %>
-      <%= e.text_area :comment %>
-    </div>
-  
-    <div class="action">
-      <%= e.submit %>
-    </div>
-  <% end %>
+  <%= render 'form' %>
 </div>

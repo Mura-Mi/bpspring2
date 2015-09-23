@@ -37,11 +37,33 @@ class EventsController < ApplicationController
   end
 
   def edit
-
+    begin
+      @event = Event.find(params[:id])
+    rescue
+      not_found
+    else
+      respond_to do |format|
+        format.html
+      end
+    end
   end
 
   def update
-
+    begin
+      @event = Event.find(params[:id])
+    rescue
+      not_found
+    else
+      if @event.update_attributes(filtered_params)
+        respond_to do |format|
+          format.html { redirect_to @event }
+        end
+      else
+        respond_to do |format|
+          format.html { redirect_to edit_event_path }
+        end
+      end
+    end
   end
 
   private 
