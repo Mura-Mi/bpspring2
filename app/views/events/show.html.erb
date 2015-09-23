@@ -3,15 +3,19 @@
     <tr>
       <td> Title </td>
       <td> <%= @event.name %> </td>
-    <tr>
+    </tr>
     <tr>
       <td> Date </td>
       <td> <%= @event.event_date %> </td>
-    <tr>
+    </tr>
     <tr>
       <td> Comment </td>
       <td> <%= @event.comment %> </td>
+    </tr>
     <tr>
+    	<td> Place </td>
+      <td> <%= @event.place.name if @event.place %> </td>
+    </tr>
   </table>
 </div>
 <div class="footer">

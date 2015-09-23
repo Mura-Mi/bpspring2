@@ -5,11 +5,13 @@
     <th>Title</th>
     <th>Date</th>
     <th>Comment</th>
+    <th>Place</th>
   <% @events.each do |event| %>
 	<tr>
     <td><%= link_to event.name, event_path(event) %></td>
 		<td><%= event.event_date %></td>
 		<td><%= event.comment %></td>
+    <td><%= event.place.name if event.place %></td>
 	</tr>
 <% end %>
 </table>

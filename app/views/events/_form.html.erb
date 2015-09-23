@@ -14,6 +14,11 @@
     <%= e.text_area :comment %>
   </div>
 
+  <div class="field">
+    <%= e.label :place_id %>
+    <%= e.collection_select :place_id, Place.all, :id, :name, prompt: true %>
+  </div>
+
   <div class="action">
     <%= e.submit %>
   </div>
