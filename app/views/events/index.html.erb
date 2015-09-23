@@ -7,7 +7,7 @@
     <th>Comment</th>
   <% @events.each do |event| %>
 	<tr>
-    <td><%= event.name %></td>
+    <td><%= link_to event.name, event_path(event) %></td>
 		<td><%= event.event_date %></td>
 		<td><%= event.comment %></td>
 	</tr>
