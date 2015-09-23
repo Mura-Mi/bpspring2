@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery-ui/datepicker
 //= jquery.ui.datepicker
+//= bootstrap.min
 //= require_tree .
 
 $(function() {
