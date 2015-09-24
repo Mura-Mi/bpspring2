@@ -2,9 +2,6 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.2.4'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
-
 # Authentication
 gem 'devise'
 
@@ -24,7 +21,10 @@ gem 'jquery-ui-rails'
 
 gem 'bcrypt', '~> 3.1.7'
 
+gem 'coveralls', require: false
+
 group :development, :test do
+  gem 'sqlite3'
   gem 'rake'
   gem 'byebug'
   gem 'rspec-rails'
@@ -40,4 +40,6 @@ group :development do
   gem 'spring'
 end
 
-gem 'coveralls', require: false
+group :production do
+  gem 'pg', require: false
+end
