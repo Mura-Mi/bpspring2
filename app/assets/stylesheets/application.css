@@ -12,6 +12,7 @@
  *
  *= require jquery-ui/datepicker
  *= require bootstrap.min
+ *= require landing-page
  *= require_tree .
  *= require_self
  */
