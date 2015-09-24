@@ -28,6 +28,7 @@ group :development, :test do
   gem 'rake'
   gem 'byebug'
   gem 'rspec-rails'
+  gem 'rspec-mocks'
   gem 'factory_girl_rails'
   gem 'spring-commands-rspec'
   gem 'guard-rspec'

@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe EventsController, type: :controller do
   before do
+    login_user
     Event.destroy_all
     @event = create(:event);
   end
