@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :authenticate_user!, only: [ :new, :create, :edit, :update ]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update]
 
   def index
     @events = Event.all
@@ -7,7 +7,7 @@ class EventsController < ApplicationController
 
   def show
     begin
-      @event = Event.find(params[:id]);
+      @event = Event.find(params[:id])
     rescue ActiveRecord::RecordNotFound
       not_found
     else
@@ -15,7 +15,6 @@ class EventsController < ApplicationController
         format.html
       end
     end
-
   end
 
   def new
@@ -26,12 +25,12 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = Event.new(filtered_params);
+    @event = Event.new(filtered_params)
     if @event.save
       respond_to do |format|
         format.html { redirect_to @event }
       end
-    else 
+    else
       respond_to do |format|
         format.html { render action: 'new' }
       end
@@ -68,14 +67,15 @@ class EventsController < ApplicationController
     end
   end
 
-  private 
-    def filtered_params 
-      params.require(:event).permit(
-        :name,
-        :event_date,
-        :comment,
-        :place_id
-      )
-    end
+  private
 
+    def filtered_params
+      params.require(:event)
+        .permit(
+          :name,
+          :event_date,
+          :comment,
+          :place_id
+        )
+    end
 end
