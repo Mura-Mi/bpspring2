@@ -16,3 +16,7 @@
  *= require_tree .
  *= require_self
  */
+
+.bgh-contents-area {
+    padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
+}

@@ -30,7 +30,7 @@
       <div id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li><%= link_to 'Events', events_path %></li>
-          <li><%= link_to 'Places', "#" %></li>
+          <li><%= link_to 'Places', places_path %></li>
         </ul>
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -44,7 +44,7 @@
     <!-- /.container -->
   </nav>
 
-  <div class="main col-md-12">
+  <div class="main col-md-12 bgh-contents-area">
    <% if notice %>
     <div class="alert alert-success alert-dismissible" role-"alert"><%= notice %></div>
    <% end %>
