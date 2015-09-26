@@ -3,6 +3,7 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
+    @cal = EventCalendar.new(@events)
   end
 
   def show

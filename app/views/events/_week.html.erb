@@ -1,0 +1,9 @@
+<tr class='bgh-events-week'>
+  <td class='mon'><%= render partial: 'day', object: week.day_for(DayOfWeek::MONDAY) %></td>
+  <td class='tue'><%= render partial: 'day', object: week.day_for(DayOfWeek::TUESDAY) %></td>
+  <td class='wed'><%= render partial: 'day', object: week.day_for(DayOfWeek::WEDNESDAY) %></td>
+  <td class='tue'><%= render partial: 'day', object: week.day_for(DayOfWeek::THURSDAY) %></td>
+  <td class='fri'><%= render partial: 'day', object: week.day_for(DayOfWeek::FRIDAY) %></td>
+  <td class='sat'><%= render partial: 'day', object: week.day_for(DayOfWeek::SATURDAY) %></td>
+  <td class='sun'><%= render partial: 'day', object: week.day_for(DayOfWeek::SUNDAY) %></td>
+</tr>

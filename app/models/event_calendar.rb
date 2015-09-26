@@ -31,9 +31,12 @@ class EventCalendar
 end
 
 class EventWeek
+  include ActiveModel::Conversion
+
   attr_reader :eventsMap
 
   def initialize(events = nil)
+    @dates = {}
     @eventsMap = {}
 
     if events != nil
@@ -45,6 +48,9 @@ class EventWeek
 
   def add_event(event)
     dayOfWeek = DayOfWeek.from_date(event.event_date)
+
+    @dates.store(dayOfWeek, event.event_date)
+
     if @eventsMap.key?(dayOfWeek)
       @eventsMap[dayOfWeek] << event
     else
@@ -52,8 +58,21 @@ class EventWeek
     end
   end
 
+  def day_for(dayOfWeek)
+    EventDay.new(@dates[dayOfWeek], @eventsMap[dayOfWeek])
+  end
+
   def last_day_of_week
     @eventsMap.keys.max
+  end
+end
+
+class EventDay
+  attr_reader :events, :date
+
+  def initialize(date, events)
+    @events = events
+    @date = date
   end
 
 end
@@ -85,5 +104,9 @@ module DayOfWeek
     end
   end
 
-  module_function :from_date
+  def values
+    [MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY]
+  end
+
+  module_function :from_date, :values
 end

@@ -2,7 +2,26 @@
   <h1>Events</h1>
 </div>
 
-<table class='datalist'>
+<div class="Month"></div>
+
+<div class="schedule">
+  <table class='datalist'>
+    <thead>
+      <td>Mon</td>
+      <td>Tue</td>
+      <td>Wed</td>
+      <td>Thu</td>
+      <td>Fri</td>
+      <td>Sat</td>
+      <td>Sun</td>
+    </thead>
+    <% @cal.weeks.each do |week| %>
+      <%= render partial: 'week', object: week %>
+    <% end %>
+</div>
+
+
+  <!--
   <tr>
     <th>Title</th>
     <th>Date</th>
@@ -15,7 +34,7 @@
 		<td><%= event.comment %></td>
     <td><%= event.place.name if event.place %></td>
 	</tr>
-<% end %>
+<% end %>-->
 </table>
 
 <div class="footer">
