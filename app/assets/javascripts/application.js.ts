@@ -16,6 +16,8 @@
 //= bootstrap.min
 //= require_tree .
 
-$(function() {
-    $(".datepicker").datepicker({dateFormat: 'yy/m/d'});
+/// <reference path='typings/tsd.d.ts' />
+
+$(() => {
+  $(".datepicker").datepicker({dateFormat: 'yy/m/d'});
 });
