@@ -26,10 +26,13 @@ gem 'coveralls', require: false
 group :development, :test do
   gem 'sqlite3'
   gem 'rake'
+
   gem 'rspec-rails'
   gem 'rspec-mocks'
   gem 'factory_girl_rails'
+  gem 'rspec-collection_matchers', '~> 1.0.0'
   gem 'spring-commands-rspec'
+
   gem 'guard-rspec'
   gem 'travis'
 
