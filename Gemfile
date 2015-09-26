@@ -26,13 +26,19 @@ gem 'coveralls', require: false
 group :development, :test do
   gem 'sqlite3'
   gem 'rake'
-  gem 'byebug'
   gem 'rspec-rails'
   gem 'rspec-mocks'
   gem 'factory_girl_rails'
   gem 'spring-commands-rspec'
   gem 'guard-rspec'
   gem 'travis'
+
+  gem 'pry-rails'
+  gem 'pry-byebug'
+  gem 'hirb'
+  gem 'hirb-unicode'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :development do
