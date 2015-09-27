@@ -1,25 +1,25 @@
-<%= form_for @event do |e| %>
-  <div class="field">
-    <%= e.label :name %>
-    <%= e.text_field :name %>
-  </div>
-  
-  <div class="field">
-    <%= e.label :event_date %>
-    <%= e.text_field :event_date, class: 'datepicker' %>
-  </div>
+<%= form_for @event, html: {class: 'form-horizontal center'} do |e| %>
+    <div class='form-group'>
+      <%= e.label :name, class: 'control-label' %>
+      <%= e.text_field :name, class: 'form-control', placeholder: 'Event Name' %>
+    </div>
 
-  <div class="field">
-    <%= e.label :comment %>
-    <%= e.text_area :comment %>
-  </div>
+    <div class='form-group'>
+      <%= e.label :event_date, class: 'control-label' %>
+      <%= e.text_field :event_date, class: 'datepicker form-control', placeholder: 'Event Date' %>
+    </div>
 
-  <div class="field">
-    <%= e.label :place_id %>
-    <%= e.collection_select :place_id, Place.all, :id, :name, prompt: true %>
-  </div>
+    <div class='form-group'>
+      <%= e.label :comment, class: 'control-label' %>
+      <%= e.text_area :comment, class: 'form-control', placeholder: 'Comment' %>
+    </div>
 
-  <div class="action">
-    <%= e.submit %>
-  </div>
+    <div class='form-group'>
+      <%= e.label :place_id, class: 'control-label' %>
+      <%= e.collection_select :place_id, Place.all, :id, :name, prompt: true, class: 'form-control' %>
+    </div>
+
+    <div class='action'>
+      <%= e.submit "Submit", class: 'btn btn-default btn-primary' %>
+    </div>
 <% end %>
