@@ -3,10 +3,6 @@ require "rails_helper"
 RSpec.describe EventReportsController, type: :routing do
   describe "routing" do
 
-    it "routes to #index" do
-      expect(:get => "/event_reports").to route_to("event_reports#index")
-    end
-
     it "routes to #new" do
       expect(:get => "/event_reports/new").to route_to("event_reports#new")
     end

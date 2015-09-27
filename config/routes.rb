@@ -4,5 +4,5 @@ Rails.application.routes.draw do
 
   resources :events
   resources :places
-  resources :event_reports, exclude: [:index]
+  resources :event_reports, except: [:index]
 end
