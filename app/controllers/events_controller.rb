@@ -1,9 +1,17 @@
+require 'calendar/year_month'
+
 class EventsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update]
 
   def index
     @events = Event.all
-    @cal = EventCalendar.new(@events)
+    if params[:month] && /\d{6}/ =~ params[:month]
+      @yearMonth = YearMonth.new(params[:month][0, 4].to_i, params[:month][4, 2].to_i)
+    else
+      @yearMonth = YearMonth.today
+    end
+
+    @cal = EventCalendar.new(@yearMonth, @events)
   end
 
   def show

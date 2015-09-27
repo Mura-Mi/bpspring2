@@ -20,6 +20,7 @@ module DayOfWeek
     when 4
       THURSDAY
     when 5
+      FRIDAY
     else
       SATURDAY
     end

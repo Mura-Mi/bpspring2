@@ -8,36 +8,43 @@ require 'calendar/day_of_week'
 class EventCalendar
   attr_reader :weeks
 
-  def initialize(events)
-    byDay = events.group_by do |e|
+  def initialize(yearMonth, events)
+    byDay = events.select{ |e|
+      yearMonth.days.include? e.event_date
+    }.group_by do |e|
       e.event_date
     end
 
     @weeks = [];
-    byDay.sort.each do |kv|
-      dayOfWeek = DayOfWeek.from_date kv[0]
-
-      if @weeks.empty?
-        @weeks << EventWeek.new(kv[1])
-      elsif @weeks.last.last_day_of_week > dayOfWeek
-        @weeks << EventWeek.new(kv[1])
+    yearMonth.days.each do |day|
+      if day.monday? || weeks.empty?
+        weeks << EventWeek.new(day)
       else
-        kv[1].each do |event|
-          @weeks.last.add_event event
+        weeks.last.add_day day
+      end
+    end
+
+    @weeks.each do |week|
+      week.dates.values.each do |day|
+        if byDay.key? day
+          byDay[day].each {|e| week.add_event e}
         end
       end
-
     end
+
   end
 end
 
 class EventWeek
-  include ActiveModel::Conversion
 
-  attr_reader :eventsMap
+  attr_reader :eventsMap, :dates
 
-  def initialize(events = nil)
+  def initialize(date, events = nil)
+    dayOfWeek = DayOfWeek.from_date(date)
+    # @dates = {dayOfWeek: date}
     @dates = {}
+    @dates.store(dayOfWeek, date)
+
     @eventsMap = {}
 
     if events != nil
@@ -45,6 +52,11 @@ class EventWeek
         add_event event
       end
     end
+  end
+
+  def add_day(date)
+    dayOfWeek = DayOfWeek.from_date(date)
+    @dates.store(dayOfWeek, date)
   end
 
   def add_event(event)
@@ -64,7 +76,11 @@ class EventWeek
   end
 
   def last_day_of_week
-    @eventsMap.keys.max
+    if @eventsMap.empty?
+      DayOfWeek::MONDAY
+    else
+      @eventsMap.keys.max
+    end
   end
 end
 

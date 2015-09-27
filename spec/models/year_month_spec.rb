@@ -13,11 +13,15 @@ RSpec.describe YearMonth, type: :model do
 
   it "returns all days in month" do
     ym = YearMonth.new(2014, 8)
-    days = ym.allDays
+    days = ym.days
 
     expect(days).to have(31).items
     for d in 1..31
       expect(days).to include Date.new(2014, 8, d)
     end
+  end
+
+  it "will be formatted" do
+    expect(YearMonth.new(2014, 8).format).to eq('August, 2014')
   end
 end
