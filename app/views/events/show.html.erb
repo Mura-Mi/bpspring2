@@ -35,6 +35,9 @@
 
 <nav>
   <ul class='pager'>
+    <li><%= button_to 'Post a Report', new_event_report_path, class: 'btn btn-primary', method: :get %></li>
+  </ul>
+  <ul class='pager'>
     <li><%= link_to "All Events", events_path %></li>
     <li><%= link_to "Edit Event", edit_event_path %></li>
   </ul>
