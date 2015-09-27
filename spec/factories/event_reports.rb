@@ -1,8 +1,8 @@
 FactoryGirl.define do
   factory :event_report do
-    user nil
-event nil
-comment "MyText"
+    association :user, factory: :user
+    association :event, factory: :event
+    comment "MyText"
   end
 
 end

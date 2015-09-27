@@ -12,7 +12,7 @@ class EventReportsController < ApplicationController
 
   # GET /event_reports/new
   def new
-    @event_report = EventReport.new
+    @event_report = EventReport.new(user_id: params[:user_id], event_id: params[:event_id])
   end
 
   # GET /event_reports/1/edit

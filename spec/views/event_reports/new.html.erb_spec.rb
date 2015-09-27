@@ -3,10 +3,15 @@ require 'rails_helper'
 RSpec.describe "event_reports/new", type: :view do
   before(:each) do
     assign(:event_report, EventReport.new(
-      :user => nil,
-      :event => nil,
+      :user => create(:user),
+      :event => create(:event),
       :comment => "MyText"
     ))
+  end
+
+  after do
+    Event.destroy_all
+    User.destroy_all
   end
 
   it "renders new event_report form" do
