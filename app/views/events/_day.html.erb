@@ -6,10 +6,9 @@
     <%= content_tag :span, day.date.mday, class: cls %>
   <% end %>
   <hr size=1>
-</div>
-
-<% if day.events %>
-  <% day.events.take(3).each do |event| %>
-    <div><%= link_to event.name, event_path(event) %></div>
+  <% if day.events %>
+    <% day.events.take(3).each do |event| %>
+      <div><%= link_to event.abbreviation || event.name, event_path(event) %></div>
+    <% end %>
   <% end %>
-<% end %>
+</div>

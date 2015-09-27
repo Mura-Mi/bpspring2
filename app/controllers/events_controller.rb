@@ -82,6 +82,7 @@ class EventsController < ApplicationController
       params.require(:event)
         .permit(
           :name,
+          :abbreviation,
           :event_date,
           :comment,
           :place_id
