@@ -36,3 +36,10 @@ table.datalist, table.datalist td, table.datalist th {
 table.datalist th {
   text-align: center;
 }
+
+table.bgh-event-detail {
+  td.bgh-event-table-header  {
+    text-align: right;
+    font-weight: bold;
+  }
+}
