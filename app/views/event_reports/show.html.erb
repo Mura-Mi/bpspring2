@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @event_report.user %>
+</p>
+
+<p>
+  <strong>Event:</strong>
+  <%= @event_report.event %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @event_report.comment %>
+</p>
+
+<%= link_to 'Edit', edit_event_report_path(@event_report) %> |
+<%= link_to 'Back', event_reports_path %>
