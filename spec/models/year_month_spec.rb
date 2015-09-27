@@ -24,4 +24,16 @@ RSpec.describe YearMonth, type: :model do
   it "will be formatted" do
     expect(YearMonth.new(2014, 8).format).to eq('August, 2014')
   end
+
+  it "will be formatted in yyyyMM" do
+    expect(YearMonth.new(2014, 8).serialize).to eq('201408')
+  end
+
+  it "resolves next month" do
+    expect(YearMonth.new(2014, 12).next.serialize).to eq('201501')
+  end
+
+  it "resolves previous month" do
+    expect(YearMonth.new(2014, 1).previous.serialize).to eq('201312')
+  end
 end

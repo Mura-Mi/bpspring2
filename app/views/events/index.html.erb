@@ -1,44 +1,34 @@
-<div class="page-header">
-  <h1>Events</h1>
-</div>
-
-<div class="Month">
-  <%= @yearMonth.format %>
+<div class="month center-block">
+  <div><%= content_tag :h1, @yearMonth.format %></div>
 </div>
 
 <div class="schedule">
-  <table class='datalist'>
+  <table class='datalist hidden-xs table table-striped table-bordered'>
     <thead>
-      <td>Mon</td>
-      <td>Tue</td>
-      <td>Wed</td>
-      <td>Thu</td>
-      <td>Fri</td>
-      <td>Sat</td>
-      <td>Sun</td>
+      <th>Mon</th>
+      <th>Tue</th>
+      <th>Wed</th>
+      <th>Thu</th>
+      <th>Fri</th>
+      <th><span class='sat'>Sat</span></th>
+      <th><span class='sun'>Sun</span></th>
     </thead>
     <% @cal.weeks.each do |week| %>
       <%= render partial: 'week', object: week %>
     <% end %>
-</div>
+  </table>
+  <div class='actions form-inline'>
+    <div class='form-group'>
+      <%= button_to "< Prev", events_path,
+        {params: {month: @yearMonth.previous.serialize }, method: :get, class: 'btn btn-default btn-sm'} %>
+    </div>
+    <div class='form-group'>
+      <%= button_to "Create New Event", new_event_path, method: :get, class: 'btn btn-default' %>
+    </div>
+    <div class='form-group'>
+      <%= button_to 'Next >', events_path,
+        {params: {month: @yearMonth.next.serialize }, method: :get, class: 'btn btn-default btn-sm'} %>
+    </div>
+  </div>
 
-
-  <!--
-  <tr>
-    <th>Title</th>
-    <th>Date</th>
-    <th>Comment</th>
-    <th>Place</th>
-  <% @events.each do |event| %>
-	<tr>
-    <td><%= link_to event.name, event_path(event) %></td>
-		<td><%= event.event_date %></td>
-		<td><%= event.comment %></td>
-    <td><%= event.place.name if event.place %></td>
-	</tr>
-<% end %>-->
-</table>
-
-<div class="footer">
-  <%= link_to "Create New Event", new_event_path %>
 </div>

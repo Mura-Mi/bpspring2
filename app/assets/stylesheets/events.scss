@@ -2,11 +2,37 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+div.month {
+  text-align: center;
+}
+
+div.actions {
+  text-align: center;
+  div.form-group {
+    padding: 0 15px;
+  }
+}
+
+table.datalist {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 table.datalist, table.datalist td, table.datalist th {
-  border: 1px solid;
-  border-collapse: collapse;
-  padding-left: 7px;
-  padding-right: 7px;
-  padding-bottom: 3px;
-  padding-top: 3px;
+  table-layout: fixed;
+  span.sun {
+    color: red;
+  }
+  span.sat {
+    color: blue;
+  }
+  div.bgh-event-day {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+table.datalist th {
+  text-align: center;
 }

@@ -1,5 +1,11 @@
-<div>
-  <%= day.date.mday if day.date %>
+<div class='bgh-event-day'>
+  <% if day.date %>
+    <% cls = 'day' %>
+    <% cls << ' sat' if day.date.saturday? %>
+    <% cls << ' sun' if day.date.sunday? %>
+    <%= content_tag :span, day.date.mday, class: cls %>
+  <% end %>
+
 </div>
 <% if day.events %>
   <% day.events.take(3).each do |event| %>
