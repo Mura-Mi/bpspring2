@@ -20,15 +20,16 @@
   </div>
 </div>
 
+<div class='bgh-event-reports text-center'>
+  <div class="grid bgh-event-reports-grid">
+    <!-- TODO report reports -->
+  </div>
+  <% if current_user %>
+    <%= button_to 'Post a Report', new_event_report_path,
+      { params: { user_id: current_user.id, event_id: @event.id }, class: 'btn btn-primary', method: :get } %>
+  <% end %>
+</div>
 <nav>
-  <ul class='pager'>
-    <li>
-      <% if current_user %>
-        <%= button_to 'Post a Report', new_event_report_path,
-          { params: { user_id: current_user.id, event_id: @event.id }, class: 'btn btn-primary', method: :get } %>
-      <% end %>
-    </li>
-  </ul>
   <ul class='pager'>
     <li><%= link_to "All Events", events_path %></li>
     <li><%= link_to "Edit Event", edit_event_path %></li>
