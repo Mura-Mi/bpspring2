@@ -1,19 +1,16 @@
-<p id="notice"><%= notice %></p>
+<div class="page-header">
+  <span class="center-block text-center">
+    <h1><%= @event_report.event.name %><h1>
+  </span>
+</div>
 
-<p>
-  <strong>User:</strong>
-  <%= @event_report.user %>
-</p>
+  <div class="container">
+    <div class="row">
+      <div>
+        <strong>Comment:</strong>
+        <%= @event_report.comment %>
+      </div>
+    </div>
+  </div>
 
-<p>
-  <strong>Event:</strong>
-  <%= @event_report.event %>
-</p>
-
-<p>
-  <strong>Comment:</strong>
-  <%= @event_report.comment %>
-</p>
-
-<%= link_to 'Edit', edit_event_report_path(@event_report) %> |
-<%= link_to 'Back', event_reports_path %>
+<%= link_to 'Edit', edit_event_report_path(@event_report) %>

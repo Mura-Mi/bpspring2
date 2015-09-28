@@ -15,6 +15,7 @@ RSpec.describe "event_reports/new", type: :view do
   end
 
   it "renders new event_report form" do
+    pending "render with params..."
     render
 
     assert_select "form[action=?][method=?]", event_reports_path, "post" do

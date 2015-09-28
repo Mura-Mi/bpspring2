@@ -12,11 +12,13 @@ class EventReportsController < ApplicationController
 
   # GET /event_reports/new
   def new
+    @event = Event.find(params[:event_id])
     @event_report = EventReport.new(user_id: params[:user_id], event_id: params[:event_id])
   end
 
   # GET /event_reports/1/edit
   def edit
+    @event = @event_report.event
   end
 
   # POST /event_reports
@@ -26,7 +28,8 @@ class EventReportsController < ApplicationController
     if @event_report.save
       redirect_to @event_report, notice: 'Event report was successfully created.'
     else
-      render :new
+      binding.pry
+      render :new, params: { user_id: event_report_params[:user_id], event_id: event_report_params[:event_id] }
     end
   end
 
