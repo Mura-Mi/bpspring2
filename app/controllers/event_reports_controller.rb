@@ -28,7 +28,6 @@ class EventReportsController < ApplicationController
     if @event_report.save
       redirect_to @event_report, notice: 'Event report was successfully created.'
     else
-      binding.pry
       render :new, params: { user_id: event_report_params[:user_id], event_id: event_report_params[:event_id] }
     end
   end
