@@ -1,0 +1,14 @@
+<table class='table table-striped bgh-event-detail'>
+  <tr>
+    <td class='bgh-event-table-header'> Date </td>
+    <td> <%= @event.event_date %> </td>
+  </tr>
+  <tr>
+    <td class='bgh-event-table-header'> Comment </td>
+    <td> <%= @event.comment %> </td>
+  </tr>
+  <tr>
+  	<td class='bgh-event-table-header'> Place </td>
+    <td> <%= link_to(@event.place.name, @event.place ) if @event.place %> </td>
+  </tr>
+</table>

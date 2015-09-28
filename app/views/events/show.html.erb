@@ -14,25 +14,21 @@
         <img src='#' alt='No Image', class='img-thumbnail img-responsive'>
       </a>
     </div>
-      <div class='col-md-6 col-md-offset-1'>
-        <table class='table table-striped bgh-event-detail'>
-          <tr>
-            <td class='bgh-event-table-header'> Date </td>
-            <td> <%= @event.event_date %> </td>
-          </tr>
-          <tr>
-            <td class='bgh-event-table-header'> Comment </td>
-            <td> <%= @event.comment %> </td>
-          </tr>
-          <tr>
-          	<td class='bgh-event-table-header'> Place </td>
-            <td> <%= link_to(@event.place.name, @event.place ) if @event.place %> </td>
-          </tr>
-        </table>
-      </div>
+    <div class='col-md-6 col-md-offset-1'>
+      <%= render partial: 'event_table', object: @event %>
+    </div>
   </div>
 </div>
 
+<div class='bgh-event-reports text-center'>
+  <div class="grid bgh-event-reports-grid">
+    <!-- TODO report reports -->
+  </div>
+  <% if current_user %>
+    <%= button_to 'Post a Report', new_event_report_path,
+      { params: { user_id: current_user.id, event_id: @event.id }, class: 'btn btn-primary', method: :get } %>
+  <% end %>
+</div>
 <nav>
   <ul class='pager'>
     <li><%= link_to "All Events", events_path %></li>

@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Event Reports</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Event</th>
+      <th>Comment</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @event_reports.each do |event_report| %>
+      <tr>
+        <td><%= event_report.user %></td>
+        <td><%= event_report.event %></td>
+        <td><%= event_report.comment %></td>
+        <td><%= link_to 'Show', event_report %></td>
+        <td><%= link_to 'Edit', edit_event_report_path(event_report) %></td>
+        <td><%= link_to 'Destroy', event_report, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Event report', new_event_report_path %>

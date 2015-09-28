@@ -14,6 +14,7 @@
 //= require jquery-ui/datepicker
 //= jquery.ui.datepicker
 //= bootstrap.min
+//= masonry.pkgd.min
 //= require_tree .
 
 /// <reference path='typings/tsd.d.ts' />

@@ -1,0 +1,16 @@
+<div class="page-header">
+  <span class="center-block text-center">
+    <h1><%= @event_report.event.name %><h1>
+  </span>
+</div>
+
+  <div class="container">
+    <div class="row">
+      <div>
+        <strong>Comment:</strong>
+        <%= @event_report.comment %>
+      </div>
+    </div>
+  </div>
+
+<%= link_to 'Edit', edit_event_report_path(@event_report) %>
