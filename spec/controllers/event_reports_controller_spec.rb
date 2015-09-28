@@ -32,7 +32,7 @@ RSpec.describe EventReportsController, type: :controller do
 
   describe "GET #new" do
     it "assigns a new event_report as @event_report" do
-      get :new, {}, valid_session
+      get :new, { user_id: @user.id, event_id: @event.id }, valid_session
       expect(assigns(:event_report)).to be_a_new(EventReport)
     end
   end
