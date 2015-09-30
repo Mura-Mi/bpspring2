@@ -10,7 +10,7 @@ gem 'sass-rails', '~> 5.0'
 
 # JavaScript
 gem 'uglifier', '>= 1.3.0'
-gem 'typescript-rails', '0.6.1'
+gem 'typescript-rails', '0.6.2'
 gem 'jquery-rails', '4.0.5'
 gem 'jquery-ui-rails', '5.0.5'
 
@@ -29,11 +29,11 @@ group :development, :test do
 
   gem 'rspec-rails', '3.3.3'
   gem 'factory_girl_rails', '4.5.0'
-  gem 'rspec-collection_matchers', '1.0.0'
+  gem 'rspec-collection_matchers', '1.1.2'
   gem 'spring-commands-rspec', '1.0.4'
 
   gem 'guard-rspec', '4.6.4'
-  gem 'travis', '1.6.11'
+  gem 'travis', '~> 1.6.0'
 
   gem 'pry-rails', '0.3.4'
   gem 'pry-byebug', '3.2.0'
