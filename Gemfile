@@ -21,6 +21,8 @@ gem 'jquery-ui-rails', '5.0.5'
 
 gem 'bcrypt', '3.1.10'
 
+gem 'carrierwave', '0.10.0'
+
 gem 'coveralls', '0.8.2', require: false
 
 group :development, :test do
