@@ -48,7 +48,8 @@ before_filter :configure_account_update_params, only: [:update]
     devise_parameter_sanitizer.for(:account_update) << :attribute \
       << :name \
       << :user_image \
-      << :user_image_cache
+      << :user_image_cache \
+      << :color_theme_id
   end
 
   # The path used after sign up.

@@ -22,6 +22,8 @@ gem 'jquery-ui-rails', '5.0.5'
 
 gem 'bcrypt', '3.1.10'
 
+gem 'seed-fu', '~> 2.3'
+
 gem 'carrierwave', '0.10.0'
 gem 'mini_magick', '4.3.3'
 

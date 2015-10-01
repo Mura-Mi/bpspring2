@@ -27,6 +27,13 @@
           <%= f.email_field :email, autofocus: true, class: 'form-control' %>
         </div>
 
+        <div class='form-group'>
+          <%= f.label :color_theme_id, class: 'control-label' %>
+          <%= f.collection_select :color_theme_id, ColorTheme.all, :id, :theme_name,
+            {prompt: 'Select Your Favorite Color', :include_blank => true},
+            {class: 'form-control btn btn-default dropdown-toggle'} %>
+        </div>
+
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
           <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
         <% end %>
