@@ -5,26 +5,45 @@
 
     <div class="row">
       <div class="col-lg-12">
+
         <div class="intro-message">
           <h1>Ball Game Hub</h1>
           <h3>あの日スタジアムで観た感動を残そう</h3>
-          <hr class="intro-divider">
-          <ul class="list-inline intro-social-buttons">
-            <li>
-              <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg">
-                <i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg">
-                <i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
-            </li>
-          </ul>
+
+          <% if !current_user %>
+            <hr class="intro-divider">
+
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+              <div class="form-group">
+                <%= f.text_field :name, autofocus: true, class: 'form-control bgh-top-singup-field center-block',
+                  placeholder: 'Your Name' %>
+              </div>
+              <div class="form-group">
+                <%= f.email_field :email, autofocus: true, class: 'form-control bgh-top-singup-field center-block',
+                  placeholder: 'yourname@example.com' %>
+              </div>
+              <div class="form-group">
+                <% if @minimum_password_length %>
+                <em>(<%= @minimum_password_length %> characters minimum)</em>
+                <% end %>
+                <%= f.password_field :password, autocomplete: "off",
+                  class: 'form-control bgh-top-singup-field center-block', placeholder: 'Password' %>
+              </div>
+
+              <div class="form-group">
+                <%= f.password_field :password_confirmation, autocomplete: "off",
+                  class: 'form-control bgh-top-singup-field center-block', placeholder: 'Password Confirmation' %>
+              </div>
+
+              <div class="actions">
+                <%= f.submit "Sign up", class: 'btn btn-primary' %>
+              </div>
+            <% end %>
+          <% end %>
+
+          <div class="form-group"></div>
         </div>
+
       </div>
     </div>
 
@@ -109,21 +128,8 @@
   <div class="container">
 
     <div class="row">
-      <div class="col-lg-6">
-        <h2>"We got a game to play!" <br><span class="small">(Derek Jeter)</span></h2>
-      </div>
-      <div class="col-lg-6">
-        <ul class="list-inline banner-social-buttons">
-          <li>
-            <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
-          </li>
-          <li>
-            <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-          </li>
-          <li>
-            <a href="#" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
-          </li>
-        </ul>
+      <div class="col-lg-6 col-lg-offset-3">
+        <h2>"We got a game to play!" <span class="small">(Derek Jeter)</span></h2>
       </div>
     </div>
 

@@ -1,3 +1,24 @@
 // Place all the styles related to the TopPage controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.bgh-top-singup-field {
+  width: 45%;
+}
+
+.bgh-top-signup-button {
+  display: inline-block;
+  padding: 20px 20px;
+  border: solid 2px #fff;
+  border-radius: 3px;
+  background: rgba(0,0,0,0.2);
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.bgh-top-signup-button:hover {
+  color: #333;
+  background: #fff;
+}
