@@ -8,4 +8,8 @@ class ApplicationController < ActionController::Base
   def not_found
     render 'errors/not_found', status: :not_found
   end
+
+  def after_sign_in_path_for(resource)
+    home_index_path
+  end
 end

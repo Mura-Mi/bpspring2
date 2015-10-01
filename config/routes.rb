@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
+  get 'home/index'
+
   root 'top_page#index'
+
+  resources :home, only: [:index]
 
   devise_for :users, controllers: {
     sessions: 'users/sessions',
