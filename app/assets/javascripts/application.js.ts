@@ -12,8 +12,8 @@
 //
 //= require jquery
 //= require jquery-ui/datepicker
+//= require bootstrap-sprockets
 //= jquery.ui.datepicker
-//= bootstrap.min
 //= masonry.pkgd.min
 //= require_tree .
 

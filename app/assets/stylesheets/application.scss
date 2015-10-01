@@ -11,11 +11,14 @@
  * file per style scope.
  *
  *= require jquery-ui/datepicker
- *= require bootstrap.min
  *= require landing-page
  *= require_tree .
  *= require_self
  */
+
+@import "bootstrap-custom-color";
+@import "bootstrap-sprockets";
+@import "bootstrap-custom";
 
 .bgh-contents-area {
     padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
@@ -30,4 +33,9 @@ td.bgh-table-label  {
   width: 1px;
   text-align: right;
   font-weight: bold;
+}
+
+body, h1, h2, h3, h4, h5, h6 {
+    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
 }
