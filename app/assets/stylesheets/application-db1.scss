@@ -4,26 +4,8 @@
  *= require_tree ./models
  */
 
-@import "bootstrap-custom-color";
 @import "bootstrap-sprockets";
+@import "yokohama_blue";
+@import "variable-base";
 @import "bootstrap-custom";
-
-.bgh-contents-area {
-    padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
-}
-
-table.detail-table {
-  table-layout: auto;
-}
-
-td.bgh-table-label  {
-  white-space: nowrap;
-  width: 1px;
-  text-align: right;
-  font-weight: bold;
-}
-
-body, h1, h2, h3, h4, h5, h6 {
-    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 700;
-}
+@import "application-base";
