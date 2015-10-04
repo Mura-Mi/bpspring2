@@ -4,8 +4,12 @@
  *= require_tree ./models
  */
 
+$bgh-main-tone-color: blue;
+$bgh-accent-color: yellow;
+$bgh-background: #ffffff;
+$bgh-accent-white: #F0F9FE;
+
 @import "bootstrap-sprockets";
-@import "yokohama_blue";
 @import "variable-base";
 @import "bootstrap-custom";
 @import "application-base";
