@@ -11,4 +11,64 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe EventsHelper, type: :helper do
+  context "user not logged in" do
+    before do
+      @event = create(:event)
+    end
+
+    after do
+      @event.destroy
+    end
+
+    describe "not_post_yet" do
+      it "returns false" do
+        expect(EventsHelper.not_post_yet(@event, nil)).to eq(false)
+      end
+    end
+
+    describe "posted_report_id" do
+      it "returns false" do
+        expect(EventsHelper.posted_report_id(@event, nil)).to eq(nil)
+      end
+    end
+  end
+
+  context "user logged in" do
+    before do
+      EventReport.destroy_all
+      for i in 1..5 do
+        create(:event_report)
+      end
+      @user = create(:user)
+      @event = Event.create(name: 'written event');
+    end
+
+    after do
+      User.destroy_all
+      Event.destroy_all
+    end
+
+    describe "not_post_yet" do
+      it "returns true when user has not post a report for a event" do
+        expect(EventsHelper.not_post_yet(@event, @user)).to eq(true)
+      end
+
+      it "returns false when user has post a report for a event" do
+        EventReport.create(event: @event, user: @user)
+        expect(EventsHelper.not_post_yet(@event, @user)).to eq(false)
+      end
+    end
+
+    describe "posted_report_id" do
+      it "returns false when user has not post a report for a event" do
+        expect(EventsHelper.posted_report_id(@event, @user)).to eq(nil)
+      end
+
+      it "returns true when user has post a report for a event" do
+        report = EventReport.create(event: @event, user: @user)
+        expect(EventsHelper.posted_report_id(@event, @user)).to eq(report.id)
+      end
+    end
+
+  end
 end

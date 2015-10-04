@@ -1,5 +1,6 @@
 class Event < ActiveRecord::Base
   belongs_to :place
+  has_many :event_report
 
   validate :abbrevation_shorter_than_name
 
