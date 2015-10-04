@@ -55,7 +55,10 @@ group :development do
   gem 'rack-livereload', '0.3.16'
 
   gem 'travis', '~> 1.6.0', require: false
+end
 
+group :test do
+  gem 'codeclimate-test-reporter', require: false
 end
 
 group :production do
