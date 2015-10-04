@@ -17,6 +17,7 @@ class PlacesController < ApplicationController
 
   # GET /places/1/edit
   def edit
+    @place = Place.find(params[:id])
   end
 
   # POST /places
