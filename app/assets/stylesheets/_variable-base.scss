@@ -17,7 +17,7 @@ $brand-danger:          #d9534f !default;
 //## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-$body-bg:               $bgh-white;
+$body-bg:               $bgh-background;
 //** Global text color on `<body>`.
 $text-color:            $gray-dark !default;
 
@@ -390,7 +390,7 @@ $navbar-inverse-bg:                         $bgh-main-tone-color;
 $navbar-inverse-border:                     darken($navbar-inverse-bg, 10%) !default;
 
 // Inverted navbar links
-$navbar-inverse-link-color:                 $bgh-white;
+$navbar-inverse-link-color:                 $bgh-background;
 $navbar-inverse-link-hover-color:           $bgh-accent-color;
 $navbar-inverse-link-hover-bg:              transparent !default;
 $navbar-inverse-link-active-color:          $navbar-inverse-link-hover-color !default;
