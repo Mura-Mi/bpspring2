@@ -25,9 +25,9 @@ gem 'bcrypt', '3.1.10'
 gem 'seed-fu', '~> 2.3'
 
 gem 'carrierwave', '0.10.0'
-gem 'mini_magick', '4.3.3'
+gem 'mini_magick', '4.3.5'
 
-gem 'coveralls', '0.8.2', require: false
+gem 'coveralls', '0.8.3', require: false
 
 group :development, :test do
   gem 'sqlite3', '1.3.10'
