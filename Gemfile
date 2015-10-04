@@ -38,9 +38,6 @@ group :development, :test do
   gem 'rspec-collection_matchers', '1.1.2'
   gem 'spring-commands-rspec', '1.0.4'
 
-  gem 'guard-rspec', '4.6.4'
-  gem 'travis', '~> 1.6.0'
-
   gem 'pry-rails', '0.3.4'
   gem 'pry-byebug', '3.2.0'
   gem 'hirb-unicode', '0.0.5'
@@ -51,6 +48,14 @@ end
 group :development do
   gem 'web-console', '2.2.1'
   gem 'spring', '1.4.0'
+
+  gem 'guard', '2.13.0', require: false
+  gem 'guard-rspec', '4.6.4', require: false
+  gem 'guard-livereload', '2.4.0', require: false
+  gem 'rack-livereload', '0.3.16'
+
+  gem 'travis', '~> 1.6.0', require: false
+
 end
 
 group :production do
