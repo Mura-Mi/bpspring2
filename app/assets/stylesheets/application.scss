@@ -7,4 +7,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap/variables";
 @import "bootstrap-custom";
-@import "application-base"
+
+$bgh-main-tone-color: #ddd;
+$bgh-accent-color: $gray-base;
+$bgh-background: #ffffff;
+$bgh-accent-light: $gray-lighter;
+
+@import "application-base";
