@@ -39,4 +39,25 @@ table.datalist th {
 
 div.bgh-event-report-preview {
   margin: 2px;
+  float: left;
+
+  div.title {
+    text-align: left;
+  }
+
+  div.comment {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+@media only screen and (max-width:649px) {
+  div.bgh-event-report-preview {
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    padding: 2px auto;
+    width: 90%;
+  }
 }

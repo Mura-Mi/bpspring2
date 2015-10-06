@@ -1,4 +1,8 @@
-<div class='grid-item event bgh-event-report-preview bgh-accent-bg'>
-  <%= event_report.comment %>
+<% classAttr = 'grid-item bgh-event-report-preview bgh-accent-bg' %>
+<% classAttr << ' grid-item--2x' if event_report.comment.length > 40 %>
+
+<%= div_for(event_report, class: classAttr) do%>
+  <div class='title'><h3>Title!</h3></div>
+  <div class='comment'><%= event_report.comment %></div>
   By: <%= link_to event_report.user.name, event_report.user %>
-</div>
+<% end %>
