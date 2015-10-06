@@ -5,7 +5,7 @@
     <div class="row">
       <div class='col-md-5 col-md-offset-1 bgh-user-image-upload'>
         <div class="thumbnail">
-          <%= image_tag @user.user_image.url, class: 'user-image' %>
+          <%= image_tag nil_to_no_image(@user.user_image.url), class: 'user-image' %>
         </div>
       </div>
       <div class='col-md-5 bgh-user-image-upload'>

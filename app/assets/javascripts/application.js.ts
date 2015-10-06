@@ -21,4 +21,10 @@
 
 $(() => {
   $(".datepicker").datepicker({dateFormat: 'yy/m/d'});
+  $('.js-replace-no-image').error(() => {
+    $(this).attr({
+      src: 'images/no_image.png',
+      alt: 'no image'
+    });
+  });
 });
