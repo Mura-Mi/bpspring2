@@ -13,8 +13,9 @@
 //= require jquery
 //= require jquery-ui/datepicker
 //= require bootstrap-sprockets
-//= jquery.ui.datepicker
-//= masonry.pkgd.min
+//= require masonry.pkgd.min
+//= require exif
+//= require ios-megafile-megapixel
 //= require_tree .
 
 /// <reference path='typings/tsd.d.ts' />
