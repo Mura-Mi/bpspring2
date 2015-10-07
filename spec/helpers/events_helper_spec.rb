@@ -11,36 +11,37 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe EventsHelper, type: :helper do
+
   context "user not logged in" do
-    before do
-      @event = create(:event)
-    end
+    let(:event) { create(:event) }
 
     after do
-      @event.destroy
+      Event.destroy_all
     end
 
     describe "not_post_yet" do
       it "returns false" do
-        expect(EventsHelper.not_post_yet(@event, nil)).to eq(false)
+        expect(EventsHelper.not_post_yet(event, nil)).to eq(false)
       end
     end
 
     describe "posted_report_id" do
       it "returns false" do
-        expect(EventsHelper.posted_report_id(@event, nil)).to eq(nil)
+        expect(EventsHelper.posted_report_id(event, nil)).to eq(nil)
       end
     end
   end
 
   context "user logged in" do
+
+    let(:user) { create(:user) }
+    let(:event) { create(:event) }
+
     before do
       EventReport.destroy_all
       for i in 1..5 do
         create(:event_report)
       end
-      @user = create(:user)
-      @event = Event.create(name: 'written event');
     end
 
     after do
@@ -50,23 +51,39 @@ RSpec.describe EventsHelper, type: :helper do
 
     describe "not_post_yet" do
       it "returns true when user has not post a report for a event" do
-        expect(EventsHelper.not_post_yet(@event, @user)).to eq(true)
+        expect(EventsHelper.not_post_yet(event, user)).to eq(true)
       end
 
       it "returns false when user has post a report for a event" do
-        EventReport.create(event: @event, user: @user)
-        expect(EventsHelper.not_post_yet(@event, @user)).to eq(false)
+        EventReport.create(event: event, user: user)
+        expect(EventsHelper.not_post_yet(event, user)).to eq(false)
       end
     end
 
     describe "posted_report_id" do
       it "returns false when user has not post a report for a event" do
-        expect(EventsHelper.posted_report_id(@event, @user)).to eq(nil)
+        expect(EventsHelper.posted_report_id(event, user)).to eq(nil)
       end
 
       it "returns true when user has post a report for a event" do
-        report = EventReport.create(event: @event, user: @user)
-        expect(EventsHelper.posted_report_id(@event, @user)).to eq(report.id)
+        report = EventReport.create(event: event, user: user)
+        expect(EventsHelper.posted_report_id(event, user)).to eq(report.id)
+      end
+    end
+
+    context "multiple event" do
+      let(:another) { create(:event) }
+
+      describe "not_post_yet" do
+        it "returns true for new event" do
+          expect(EventsHelper.not_post_yet(another, user)).to eq(true)
+        end
+      end
+
+      describe "posted_report_id" do
+        it "returns nil for new event" do
+          expect(EventsHelper.posted_report_id(another, user)).to be_nil
+        end
       end
     end
 

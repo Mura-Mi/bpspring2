@@ -1,6 +1,6 @@
 module EventsHelper
   def not_post_yet(event, current_user)
-    !!current_user && !EventReport.exists?({user: current_user})
+    !!current_user && !EventReport.exists?({user: current_user, event: event})
   end
 
   def posted_report_id(event, current_user)
