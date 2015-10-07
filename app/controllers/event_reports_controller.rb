@@ -34,6 +34,7 @@ class EventReportsController < ApplicationController
 
   # PATCH/PUT /event_reports/1
   def update
+    @event = @event_report.event
     if @event_report.update(event_report_params)
       redirect_to @event_report, notice: 'Event report was successfully updated.'
     else
