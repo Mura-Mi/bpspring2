@@ -3,6 +3,8 @@ class EventReport < ActiveRecord::Base
   belongs_to :event
   has_many :event_photos
 
+  validates :summary, presence: true
+  validates :summary, length: {maximum: 30}
   validates :user, presence: true
   validates :event, presence: true
 

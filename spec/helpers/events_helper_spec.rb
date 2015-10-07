@@ -55,7 +55,7 @@ RSpec.describe EventsHelper, type: :helper do
       end
 
       it "returns false when user has post a report for a event" do
-        EventReport.create(event: event, user: user)
+        EventReport.create(event: event, user: user, summary: 'hoge')
         expect(EventsHelper.not_post_yet(event, user)).to eq(false)
       end
     end
@@ -66,7 +66,7 @@ RSpec.describe EventsHelper, type: :helper do
       end
 
       it "returns true when user has post a report for a event" do
-        report = EventReport.create(event: event, user: user)
+        report = EventReport.create(event: event, user: user, summary: 'hoge')
         expect(EventsHelper.posted_report_id(event, user)).to eq(report.id)
       end
     end

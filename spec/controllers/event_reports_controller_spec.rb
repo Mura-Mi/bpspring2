@@ -13,7 +13,7 @@ RSpec.describe EventReportsController, type: :controller do
   end
 
   let(:valid_attributes) {
-    { user_id: @user.id, event_id: @event.id, comment: "My Comment"}
+    { user_id: @user.id, event_id: @event.id, comment: "My Comment", summary: 'sum'}
   }
 
   let(:invalid_attributes) {

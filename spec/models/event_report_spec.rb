@@ -1,21 +1,18 @@
 require 'rails_helper'
 
 RSpec.describe EventReport, type: :model do
-  before do
-    User.destroy_all
-    Event.destroy_all
-  end
+  let(:user) {create(:user)}
+  let(:event) {create(:event)}
 
   after do
     User.destroy_all
     Event.destroy_all
   end
 
-  context "Without mandatory field" do
+  context "Field Validation" do
 
     it "is invalid without event" do
-      user = FactoryGirl.create(:user)
-      report = EventReport.new(user: user)
+      report = EventReport.new(user: user, summary: 'sum')
 
       report.valid?
       expect(report.errors).to have(1).item
@@ -23,8 +20,7 @@ RSpec.describe EventReport, type: :model do
     end
 
     it "is invalid without event (construct with id)" do
-      user = FactoryGirl.create(:user)
-      report = EventReport.new(user_id: user.id)
+      report = EventReport.new(user_id: user.id, summary: 'sum')
 
       report.valid?
       expect(report.errors).to have(1).item
@@ -32,8 +28,7 @@ RSpec.describe EventReport, type: :model do
     end
 
     it "is invalid without user" do
-      event = FactoryGirl.create(:event)
-      report = EventReport.new(event: event)
+      report = EventReport.new(event: event, summary: 'sum')
 
       report.valid?
       expect(report.errors).to have(1).item
@@ -41,19 +36,40 @@ RSpec.describe EventReport, type: :model do
     end
 
     it "is invalid without user (construct with id)" do
-      event = FactoryGirl.create(:event)
-      report = EventReport.new(event_id: event.id)
+      report = EventReport.new(event_id: event.id, summary: 'sum')
 
       report.valid?
       expect(report.errors).to have(1).item
       expect(report.errors[:user]).to be_present
     end
+
+    it "is invalid without summary" do
+      report = EventReport.new(event_id: event.id, user_id: user.id)
+
+      report.valid?
+      expect(report.errors).to have(1).item
+      expect(report.errors[:summary]).to be_present
+    end
+
+    it "is valid with 30 char summary" do
+      report = EventReport.new(event: event, user: user, summary: 'a' * 30)
+      report.valid?
+
+      expect(report.errors).to be_empty
+    end
+
+    it "is invalid with 31 char summary" do
+      report = EventReport.new(event: event, user: user, summary: 'a' * 31)
+      report.valid?
+
+      expect(report.errors).to have(1).item
+      expect(report.errors[:summary]).to be_present
+    end
   end
 
   context "with invalid entity id" do
     it "is invalid with invalid user id" do
-      event = FactoryGirl.create(:event)
-      report = EventReport.new(event_id: event.id, user_id: 100)
+      report = EventReport.new(event_id: event.id, user_id: 100, summary: 'sum')
       report.valid?
 
       expect(report.errors).not_to be_empty;
@@ -61,8 +77,7 @@ RSpec.describe EventReport, type: :model do
     end
 
     it "is invalid with invalid event id" do
-      user = FactoryGirl.create(:user)
-      report = EventReport.new(event_id: 334, user_id: user.id)
+      report = EventReport.new(event_id: 334, user_id: user.id, summary: 'sum')
       report.valid?
 
       expect(report.errors).not_to be_empty;

@@ -59,6 +59,7 @@ class EventReportsController < ApplicationController
       params.require(:event_report).permit(:user_id,
         :event_id,
         :comment,
+        :summary,
         event_photos_attributes: [:id, :title, :comment, :photo]
       )
     end

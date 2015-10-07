@@ -3,6 +3,7 @@ FactoryGirl.define do
     association :user, factory: :user
     association :event, factory: :event
     comment "MyText"
+    summary "Summary"
   end
 
 end

@@ -5,11 +5,7 @@ RSpec.describe "event_reports/edit", type: :view do
     User.destroy_all
     Event.destroy_all
     @event = create(:event)
-    @event_report = assign(:event_report, EventReport.create!(
-      :user => create(:user),
-      :event => @event,
-      :comment => "MyText"
-    ))
+    @event_report = assign(:event_report, create(:event_report))
   end
 
   after do
