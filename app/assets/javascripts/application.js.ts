@@ -16,6 +16,7 @@
 //= require masonry.pkgd.min
 //= require exif
 //= require ios-megafile-megapixel
+//= require nested_form_fields
 //= require_tree .
 
 /// <reference path='typings/tsd.d.ts' />

@@ -55,6 +55,10 @@ class EventReportsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def event_report_params
-      params.require(:event_report).permit(:user_id, :event_id, :comment)
+      params.require(:event_report).permit(:user_id,
+        :event_id,
+        :comment,
+        event_photos_attributes: [:id, :title, :comment, :photo]
+      )
     end
 end

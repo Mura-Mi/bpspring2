@@ -4,4 +4,6 @@ class EventPhoto < ActiveRecord::Base
   validates :photo, presence: true
 
   belongs_to :event_report
+
+  mount_uploader :photo, EventPhotoUploader
 end

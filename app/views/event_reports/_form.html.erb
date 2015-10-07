@@ -14,9 +14,13 @@
 
   <div class="container">
     <div class="row">
+
+      <!-- table -->
       <div class='col-md-5'>
         <%= render partial: 'events/event_table', object: @event %>
       </div>
+
+      <!-- main comment -->
       <div class="col-md-7">
         <div class='form-group'>
           <%= f.label :comment, class: 'control-label' %><br>
@@ -26,6 +30,24 @@
           <%= f.text_field :user_id %>
           <%= f.text_field :event_id %>
         </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <%= f.label :event_photos %>
+        <%= f.nested_fields_for :event_photos do |photo| %>
+          <%= photo.text_field :title, placeholder: "Tile (Optional)" %>
+          <%= image_tag '', class: 'event-photo' %>
+          <%= photo.file_field :photo, class: 'photo-cache' %>
+          <%= photo.hidden_field :photo_cache %>
+          <%= photo.remove_nested_fields_link %>
+        <% end %>
+        <%= f.add_nested_fields_link :event_photos %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
         <div class='pull-right'>
           <%= f.submit "Post a Report", class: 'btn btn-primary' %>
           <%= button_to 'Back', event_reports_path, class: 'btn btn-default' %>

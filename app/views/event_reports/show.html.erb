@@ -10,6 +10,15 @@
         <strong>Comment:</strong>
         <%= @event_report.comment %>
       </div>
+
+      <div class='grid'>
+        <% for photo in @event_report.event_photos %>
+          <div class='grid-item'>
+            <%= image_tag photo.photo.url, class: 'thumbnail img-responsive' %>
+          </div>
+        <% end %>
+      </div>
+
     </div>
   </div>
 
