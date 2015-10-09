@@ -3,6 +3,8 @@
 </div>
 
 <div class="schedule">
+
+  <!-- View for Tablet and Desktops -->
   <table class='datalist hidden-xs table table-striped table-bordered'>
     <thead>
       <th>Mon</th>
@@ -17,7 +19,22 @@
       <%= render partial: 'week', object: week %>
     <% end %>
   </table>
-  <div class='actions form-inline'>
+
+  <div class='datalist visible-xs-block'>
+    <% @cal.weeks.each do |week| %>
+      <% for dayOfWeek in DayOfWeek.values %>
+        <% day = week.day_for(dayOfWeek) %>
+        <% if day.date %>
+          <div class="light-bordered bgh-events-outer center-block">
+            <%= render(partial: 'day', object: day) %>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <!-- Navigation Footers -->
+  <div class='actions form-inline'> <!-- TODO fix alignments for mobile view -->
     <div class='form-group'>
       <%= button_to "< Prev", events_path,
         {params: {month: @yearMonth.previous.serialize }, method: :get, class: 'btn btn-default btn-sm'} %>

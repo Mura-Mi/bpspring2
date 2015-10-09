@@ -19,14 +19,33 @@ table.datalist {
   margin-right: auto;
 }
 
+span.sun {
+  color: red;
+}
+span.sat {
+  color: blue;
+}
+
+@media only screen and (max-width:649px) {
+  hr.separator {
+    margin: 2px 0;
+  }
+
+  div.bgh-events-outer {
+    width: 80%;
+  }
+
+  div.bgh-event-day {
+    padding: 7px;
+
+    div.bgh-events {
+      padding-top: 3px;
+    }
+  }
+}
+
 table.datalist, table.datalist td, table.datalist th {
   table-layout: fixed;
-  span.sun {
-    color: red;
-  }
-  span.sat {
-    color: blue;
-  }
   div.bgh-event-day {
     width: 100%;
     text-align: center;
