@@ -400,7 +400,7 @@ $navbar-inverse-link-disabled-bg:           transparent !default;
 
 // Inverted navbar brand label
 $navbar-inverse-brand-color:                $navbar-inverse-link-color !default;
-$navbar-inverse-brand-hover-color:          #bgh-accent-color;
+$navbar-inverse-brand-hover-color:          $bgh-accent-color;
 $navbar-inverse-brand-hover-bg:             transparent !default;
 
 // Inverted navbar toggle
