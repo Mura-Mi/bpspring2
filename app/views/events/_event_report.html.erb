@@ -1,8 +1,18 @@
-<% classAttr = 'grid-item bgh-event-report-preview bgh-accent-bg' %>
+<% classAttr = 'grid-item bgh-event-report-preview' %>
 <% classAttr << ' grid-item--2x' if event_report.comment.length > 40 %>
 
 <%= div_for(event_report, class: classAttr) do%>
-  <div class='title'><h3><%= link_to event_report.summary || "By #{event_report.user.name}", event_report %></h3></div>
-  <div class='comment'><%= event_report.comment %></div>
-  By: <%= link_to event_report.user.name, event_report.user %>
+
+  <% if event_report.event_photos.present? %>
+    <%= image_tag event_report.event_photos[0].photo.url, class: 'event_photo' %>
+  <% else %>
+    <%= image_tag asset_path('no_image.png'), class: 'event_photo' %>
+  <% end %>
+
+  <div class='leaf bgh-accent-bg-trans'>
+    <div class='title'><h3><%= link_to event_report.summary || "By #{event_report.user.name}", event_report %></h3></div>
+    <div class='comment'><%= event_report.comment %></div>
+    By: <%= link_to event_report.user.name, event_report.user %>
+  </div>
+
 <% end %>

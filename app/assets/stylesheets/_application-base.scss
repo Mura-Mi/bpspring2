@@ -24,3 +24,8 @@ div.bgh-accent-bg {
   background-color: $bgh-accent-light;
   border: 1px $gray-lighter solid;
 }
+
+div.bgh-accent-bg-trans {
+  @extend div.bgh-accent-bg;
+  background-color: transparentize($bgh-accent-light, 0.2);
+}
