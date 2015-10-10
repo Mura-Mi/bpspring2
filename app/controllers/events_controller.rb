@@ -69,9 +69,7 @@ class EventsController < ApplicationController
           format.html { redirect_to @event }
         end
       else
-        respond_to do |format|
-          format.html { redirect_to edit_event_path }
-        end
+        render :edit
       end
     end
   end

@@ -2,6 +2,8 @@ class Event < ActiveRecord::Base
   belongs_to :place
   has_many :event_report
 
+  validates :name, presence: true
+  validates :event_date, presence: true
   validate :abbrevation_shorter_than_name
 
   private
