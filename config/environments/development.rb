@@ -44,6 +44,6 @@ Rails.application.configure do
 
   config.middleware.insert_after(ActionDispatch::Static, Rack::LiveReload)
 
-  config.use_aws = true
+  config.use_aws = false
   config.aws_backet_name = 'bpspring-dev'
 end
