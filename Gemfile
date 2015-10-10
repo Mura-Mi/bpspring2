@@ -46,6 +46,7 @@ group :development, :test do
   gem 'hirb-unicode', '0.0.5'
   gem 'better_errors', '2.1.1'
   gem 'binding_of_caller', '0.7.2'
+  gem 'dotenv-rails'
 end
 
 group :development do
@@ -59,7 +60,6 @@ group :development do
 
   gem 'travis', '~> 1.6.0', require: false
 
-  gem 'dotenv-rails'
 end
 
 group :test do

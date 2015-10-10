@@ -39,6 +39,7 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
-  
-  config.use_aws = true
+
+  config.use_aws = false
+  config.aws_backet_name = 'bpspring-test'
 end
