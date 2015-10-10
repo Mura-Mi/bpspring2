@@ -23,5 +23,8 @@ class AbstractBghUploader < CarrierWave::Uploader::Base
     end
   end
 
+  version :mini do
+    process resize_to_fill: [400, -1]
+  end
 
 end

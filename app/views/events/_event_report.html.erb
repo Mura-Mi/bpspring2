@@ -4,7 +4,7 @@
 <%= div_for(event_report, class: classAttr) do%>
 
   <% if event_report.event_photos.present? %>
-    <%= image_tag event_report.event_photos[0].photo.url, class: 'event_photo' %>
+    <%= image_tag event_report.event_photos[0].photo.mini.url, class: 'event_photo' %>
   <% else %>
     <%= image_tag asset_path('no_image.png'), class: 'event_photo' %>
   <% end %>
