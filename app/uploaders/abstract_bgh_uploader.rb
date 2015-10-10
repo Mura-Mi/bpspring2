@@ -4,7 +4,15 @@ class AbstractBghUploader < CarrierWave::Uploader::Base
 
   include CarrierWave::MiniMagick
 
-  storage :file
+  def self.set_storage
+    if Rails.application.config.use_aws
+      :fog
+    else
+      :file
+    end
+  end
+
+  storage set_storage
 
   process :fix_rotate
 

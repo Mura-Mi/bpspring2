@@ -26,8 +26,9 @@ gem 'bcrypt', '3.1.10'
 
 gem 'seed-fu', '~> 2.3'
 
-gem 'carrierwave', '0.10.0'
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'mini_magick', '4.3.5'
+gem 'fog-aws'
 
 gem 'coveralls', '0.8.3', require: false
 
@@ -57,6 +58,8 @@ group :development do
   gem 'rack-livereload', '0.3.16'
 
   gem 'travis', '~> 1.6.0', require: false
+
+  gem 'dotenv-rails'
 end
 
 group :test do
