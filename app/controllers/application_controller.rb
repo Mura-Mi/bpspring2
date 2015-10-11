@@ -5,6 +5,13 @@ class ApplicationController < ActionController::Base
 
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
 
+  alias_method :devise_current_user, :current_user
+
+  def current_user
+    return unless devise_current_user
+    User.includes(:color_theme).find_by_id(devise_current_user.id)
+  end
+
   def not_found
     render 'errors/not_found', status: :not_found
   end
