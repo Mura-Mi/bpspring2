@@ -33,6 +33,10 @@ class YearMonth
     YearMonth.new(@nextFirst.year, @nextFirst.month)
   end
 
+  def input_format
+    "%d-%02d" % [@year, @month]
+  end
+
 
   class << YearMonth
     def today

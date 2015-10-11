@@ -5,8 +5,8 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
-    if params[:month] && /\d{6}/ =~ params[:month]
-      @yearMonth = YearMonth.new(params[:month][0, 4].to_i, params[:month][4, 2].to_i)
+    if params[:month] && /\d{4}-?\d{2}/ =~ params[:month]
+      @yearMonth = YearMonth.new(params[:month][0, 4].to_i, params[:month][-2, 2].to_i)
     else
       @yearMonth = YearMonth.today
     end

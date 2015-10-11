@@ -16,6 +16,30 @@ RSpec.describe EventsController, type: :controller do
       get :index
       expect(response).to have_http_status(:success)
     end
+
+    it "shows current months" do
+      get :index
+      expect(assigns(:yearMonth).year).to eq(Date.today.year)
+      expect(assigns(:yearMonth).month).to eq(Date.today.month)
+    end
+
+    it "shows current months when invalid month is given" do
+      get :index, month: 'Oct, 2015'
+      expect(assigns(:yearMonth).year).to eq(Date.today.year)
+      expect(assigns(:yearMonth).month).to eq(Date.today.month)
+    end
+
+    it "shows October,2012 when month param is 201210" do
+      get :index, month: '201210'
+      expect(assigns(:yearMonth).year).to eq(2012)
+      expect(assigns(:yearMonth).month).to eq(10)
+    end
+
+    it "shows October,2012 when month param is 2012-10" do
+      get :index, month: '2012-10'
+      expect(assigns(:yearMonth).year).to eq(2012)
+      expect(assigns(:yearMonth).month).to eq(10)
+    end
   end
 
   describe "GET #new" do
@@ -39,7 +63,7 @@ RSpec.describe EventsController, type: :controller do
 
   describe "GET #show" do
     it "returns http success when event exists" do
-      get :show, id: @event.id 
+      get :show, id: @event.id
       expect(response).to have_http_status(:success)
     end
 
