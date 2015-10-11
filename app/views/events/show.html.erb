@@ -34,10 +34,10 @@
     <div class='col-lg-12'>
       <% if EventsHelper.not_post_yet(@event, current_user) %>
         <%= button_to 'Post a Report', new_event_report_path,
-          { params: { user_id: current_user.id, event_id: @event.id }, class: 'btn btn-primary', method: :get } %>
+          { params: { user_id: current_user.id, event_id: @event.id }, class: 'btn btn-info', method: :get } %>
       <% elsif report_id = EventsHelper.posted_report_id(@event, current_user) %>
         <%= button_to 'Edit your Report', edit_event_report_path(report_id),
-          { params: { id: report_id }, class: 'btn btn-primary', method: :get } %>
+          { params: { id: report_id }, class: 'btn btn-info', method: :get } %>
       <% end %>
     <div>
   </div>
