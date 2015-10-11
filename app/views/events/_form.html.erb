@@ -25,7 +25,9 @@
 
     <div class='form-group'>
       <%= e.label :place_id, class: 'control-label' %>
-      <%= e.collection_select :place_id, Place.all, :id, :name, prompt: true, class: 'form-control' %>
+      <%= e.collection_select :place_id, Place.all, :id, :name,
+        {prompt: 'Select Event Place', :include_blank => false},
+        {class: 'form-control btn btn-default dropdown-toggle'} %>
     </div>
 
     <div class='action'>
