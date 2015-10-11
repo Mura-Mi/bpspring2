@@ -27,6 +27,10 @@ span.sat {
   color: blue;
 }
 
+hr.separator {
+  margin: 10px 0;
+}
+
 @media only screen and (max-width:649px) {
   hr.separator {
     margin: 2px 0;
