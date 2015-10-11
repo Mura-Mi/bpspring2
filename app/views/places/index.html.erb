@@ -11,7 +11,7 @@
   <% @places.each do |place| %>
     <%= content_tag :div, class: "grid-item place-grid", name: place.name do -%>
       <%= image_tag asset_path('no_image.png') %>
-      <div>
+      <div class='place-caption'>
         <%= link_to place.name, place %>
       </div>
     <% end %>

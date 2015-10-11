@@ -1,0 +1,16 @@
+.grid-item {
+  min-width: 25%;
+}
+
+div.place-grid {
+  position: relative;
+  float: left;
+
+  div.place-caption {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    float: none;
+    width: 100%;
+  }
+}
