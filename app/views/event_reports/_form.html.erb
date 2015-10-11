@@ -1,17 +1,5 @@
 <%= form_for(@event_report) do |f| %>
 
-  <% if @event_report.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@event_report.errors.count, "error") %> prohibited this event_report from being saved:</h2>
-
-      <ul>
-      <% @event_report.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
   <div class="container">
     <div class="row">
 
@@ -24,10 +12,12 @@
       <div class="col-md-7">
         <div class="form-group">
           <%= f.label :summary, class: 'control-label' %>
+          <%= errors @event_report, :summary %>
           <%= f.text_field :summary, class: 'form-control', placeholder: 'Summary for this event' %>
         </div>
         <div class='form-group'>
           <%= f.label :comment, class: 'control-label' %>
+          <%= errors @event_report, :comment %>
           <%= f.text_area :comment, class: 'form-control', placeholder: 'Comment', rows: 10 %>
         </div>
         <div style="display:none">
