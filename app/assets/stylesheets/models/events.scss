@@ -31,13 +31,18 @@ hr.separator {
   margin: 10px 0;
 }
 
+div.month-nav > form.button_to {
+  display: inline;
+  align-items: center;
+}
+
+div.bgh-events-outer, div.bgh-events-button-footer {
+  width: 80%;
+}
+
 @media only screen and (max-width:649px) {
   hr.separator {
     margin: 2px 0;
-  }
-
-  div.bgh-events-outer {
-    width: 80%;
   }
 
   div.bgh-event-day {
@@ -47,6 +52,10 @@ hr.separator {
       padding-top: 3px;
     }
   }
+}
+
+table.datalist {
+  width: 80%;
 }
 
 table.datalist, table.datalist td, table.datalist th {

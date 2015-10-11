@@ -34,36 +34,26 @@
   </div>
 
   <!-- Navigation Footers -->
-  <div class='bgh-events-button-footer'>
+  <div class='bgh-events-button-footer center-block'>
     <div class='actions'>
-      <%= button_to "Create New Event", new_event_path, method: :get, class: 'btn btn-default center-block' %>
-    </div>
-    <div class='actions form-inline'> <!-- TODO fix alignments for mobile view -->
-      <div class='form-group'>
+      <div class='pull-left'>
         <%= button_to "< Prev", events_path,
-          {params: {month: @yearMonth.previous.serialize }, method: :get, class: 'btn btn-default btn-sm'} %>
+          {params: {month: @yearMonth.previous.serialize }, method: :get, class: 'btn btn-default'} %>
       </div>
-      <div class="form-group">
-
-
-        <!--
-          <%= content_tag :input, '', id: 'mohth', type: 'month', class: 'form-inline form-control', value: @yearMonth.input_format %>
-          <button type='submit' class='btn btn-default btn-sm'>show</button>
-         -->
-        <%= form_tag('/events', method: 'get') do %>
-          <%= month_field nil, 'month', value: @yearMonth.input_format, class: 'form-inline form-control' %>
-          <%= submit_tag 'Show', class: 'btn btn-default btn-sm' %>
-        <% end %>
-
-
-
-
-
-
-      </div>
-      <div class='form-group'>
+      <div class='pull-right'>
         <%= button_to 'Next >', events_path,
-          {params: {month: @yearMonth.next.serialize }, method: :get, class: 'btn btn-default btn-sm'} %>
+          {params: {month: @yearMonth.next.serialize }, method: :get, class: 'btn btn-default'} %>
+      </div>
+      <%= button_to "Create New Event", new_event_path, method: :get, class: 'btn btn-info center-block' %>
+    </div>
+    <div class='actions'>
+      <div class="form-group month-form form-inline">
+        <%= form_tag('/events', method: 'get', class: 'form-inline') do %>
+          <div class='from-group'>
+            <%= month_field nil, 'month', value: @yearMonth.input_format, class: 'form-inline form-control' %>
+            <%= submit_tag 'Show', class: 'btn btn-default btn-sm' %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
