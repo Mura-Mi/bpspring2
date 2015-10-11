@@ -46,3 +46,5 @@ div.bgh-accent-bg-trans {
 table.table.table-striped th {
   background-color: $bgh-accent-light;
 }
+
+form.button_to, .button_to div { display: inline; }
