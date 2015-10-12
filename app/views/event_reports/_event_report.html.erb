@@ -4,13 +4,18 @@
 <%= div_for(event_report, class: classAttr) do%>
 
   <% if event_report.event_photos.present? %>
-    <%= image_tag event_report.event_photos[0].photo.mini.url, class: 'event_photo' %>
+    <%= image_tag event_report.event_photos[0].photo.mini.url, class: 'event_photo img-rounded' %>
   <% else %>
     <%= image_tag asset_path('no_image.png'), class: 'event_photo' %>
   <% end %>
 
   <div class='leaf bgh-accent-bg-trans'>
     <div class='title'><h3><%= link_to event_report.summary || "By #{event_report.user.name}", event_report %></h3></div>
+    <% if show_event_info %>
+      <div class='event-info'>
+        <%= event_report.event.oneline_info %>
+      </div>
+    <% end %>
     <div class='comment'><%= event_report.comment %></div>
     By: <%= link_to event_report.user.name, event_report.user %>
   </div>

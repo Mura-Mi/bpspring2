@@ -1,5 +1,7 @@
 <div class="bgh-data-title">
   <h1><%= @place.name %></h1>
+
+  <%= reports_grid EventReport.held_in(@place.id), true %>
 </div>
 
 <%= link_to 'Edit', edit_place_path(@place) %> |
