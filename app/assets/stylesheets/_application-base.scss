@@ -20,6 +20,10 @@ body, h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
 }
 
+div.main > div.alert {
+  margin: 10px 0px;
+}
+
 div.bgh-accent-bg {
   background-color: $bgh-accent-light;
   border: 1px $gray-lighter solid;
@@ -48,3 +52,29 @@ table.table.table-striped th {
 }
 
 form.button_to, .button_to div { display: inline; }
+
+#error_explanation {
+  width: 80%;
+  border: solid $brand-danger;
+  border-radius: 5px;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+
+  h2 {
+    text-align: left;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #c00;
+    color: #fff;
+    background-color: $brand-danger;
+  }
+
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
+}
