@@ -8,6 +8,11 @@ class Event < ActiveRecord::Base
 
   scope :held_in, -> (place_id) {where('place_id = ?', place_id)}
 
+  public
+  def oneline_info
+    "%s (%s)" % [name, event_date.strftime('%d %B, %Y')]
+  end
+
   private
   def abbrevation_shorter_than_name
     msg = 'Abbreviation must be shorter than name'
