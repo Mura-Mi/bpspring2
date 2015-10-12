@@ -88,4 +88,11 @@ RSpec.describe EventsHelper, type: :helper do
     end
 
   end
+
+  describe "oneline_summary" do
+    it "shows event name and date" do
+      event = Event.new(name: 'My Forgettable Event', event_date: Date.new(2013, 4, 30))
+      expect(oneline_summary(event)).to eq("My Forgettable Event (30 April, 2013)")
+    end
+  end
 end

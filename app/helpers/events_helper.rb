@@ -14,5 +14,9 @@ module EventsHelper
     found && found.id
   end
 
-  module_function :not_post_yet, :posted_report_id
+  def oneline_summary(event)
+    "%s (%s)" % [event.name, event.event_date.strftime('%d %B, %Y')]
+  end
+
+  module_function :not_post_yet, :posted_report_id, :oneline_summary
 end

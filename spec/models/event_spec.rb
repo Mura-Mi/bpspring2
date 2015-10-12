@@ -55,11 +55,4 @@ RSpec.describe Event, type: :model do
     end
   end
 
-  describe "oneline_info" do
-    it "shows event name and date" do
-      event = Event.new(name: 'My Forgettable Event', event_date: Date.new(2013, 4, 30))
-      expect(event.oneline_info).to eq("My Forgettable Event (30 April, 2013)")
-    end
-  end
-
 end

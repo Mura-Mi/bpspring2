@@ -13,7 +13,7 @@
     <div class='title'><h3><%= link_to event_report.summary || "By #{event_report.user.name}", event_report %></h3></div>
     <% if show_event_info %>
       <div class='event-info'>
-        <%= event_report.event.oneline_info %>
+        <%= oneline_summary event_report.event %>
       </div>
     <% end %>
     <div class='comment'><%= event_report.comment %></div>
