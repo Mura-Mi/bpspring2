@@ -36,4 +36,23 @@ RSpec.describe Event, type: :model do
     end
   end
 
+  describe "scope" do
+    describe "held_in" do
+      it "contains event held in given place" do
+        event = create(:event)
+        scoped = Event.held_in(event.place.id)
+
+        expect(scoped).to have(1).item
+        expect(scoped).to include(event)
+      end
+
+      it "does not contains event not held in given place" do
+        event = create(:event)
+        scoped = Event.held_in(create(:place).id)
+
+        expect(scoped).to be_empty
+      end
+    end
+  end
+
 end
