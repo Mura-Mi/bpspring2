@@ -11,9 +11,16 @@ div.bgh-event-report-preview {
   margin: 2px;
   float: left;
 
+  h3 {
+    font-size: 150%;
+    margin: 5px 0;
+    white-space: nowrap;
+  }
+
   img.event_photo {
     float: none;
-    max-width: 100%;
+    width: 100%;
+    object-fit: fill;
   }
 
   div.leaf {
