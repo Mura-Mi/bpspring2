@@ -2,10 +2,67 @@
   <h1 class="text-center"><%= @place.name %></h1>
 </div>
 
-  <div class='bgh-place-event-reports'>
-    <h2>Event Reports in this Place</h2>
-    <%= reports_grid EventReport.held_in(@place.id), true %>
-  </div>
+<!-- Events -->
+<div class="bgh-place-events">
+  <table class='bgh-place-event-schedule table table-striped'>
+
+    <% recents = Event.held_in(@place.id).recent(display_event_count) %>
+    <% upcoming = Event.held_in(@place.id).upcoming(display_event_count) %>
+    <% first = true %>
+
+    <% if recents.present? || upcoming.present? %>
+      <thead>
+        <th></th>
+        <th>Date</th>
+        <th>Event Name</th>
+      </thead>
+    <% end %>
+    <% recents.each do |e| %>
+      <%= content_tag_for(:tr, e) do %>
+
+        <% if first %>
+          <%= content_tag :td, rowspan: recents.size, class: 'merged-cell' do %>
+            Recent<br>Events
+          <% end %>
+          <% first = false%>
+        <% end %>
+
+        <%= content_tag :td, date_format(e.event_date) %>
+        <%= content_tag :td do %>
+          <%= link_to e.name, event_path(e.id) %>
+        <% end %>
+
+      <% end %>
+    <% end %>
+
+    <% first = true %>
+
+    <% upcoming.each do |e| %>
+      <%= content_tag_for(:tr, e) do %>
+
+        <% if first %>
+          <%= content_tag :td, rowspan: recents.size, class: 'merged-cell' do %>
+            Upcoming<br>Events
+          <% end %>
+          <% first = false%>
+        <% end %>
+
+        <%= content_tag :td, date_format(e.event_date) %>
+        <%= content_tag :td do %>
+          <%= link_to e.name, event_path(e.id) %>
+        <% end %>
+
+      <% end %>
+    <% end %>
+
+  </table>
+</div>
+
+<!-- Event Reports -->
+<div class='bgh-place-event-reports'>
+  <h2>Event Reports in this Place</h2>
+  <%= reports_grid EventReport.held_in(@place.id), true %>
+</div>
 
 <%= link_to 'Edit', edit_place_path(@place) %> |
 <%= link_to 'Back', places_path %>

@@ -53,6 +53,86 @@ RSpec.describe Event, type: :model do
         expect(scoped).to be_empty
       end
     end
+
+    describe "recent" do
+      after do
+        Event.destroy_all
+        Place.destroy_all
+      end
+
+      it "contains latest events" do
+        place1 = create(:place)
+        event0 = create(:event, event_date: Date.today,     place: place1)
+        event1 = create(:event, event_date: Date.today - 1, place: place1)
+        event2 = create(:event, event_date: Date.today - 2, place: place1)
+        event3 = create(:event, event_date: Date.today - 3, place: place1)
+        event4 = create(:event, event_date: Date.today - 4, place: place1)
+
+        place2 = create(:place)
+        event5 = create(:event, event_date: Date.today - 1, place: place2)
+        event6 = create(:event, event_date: Date.today - 2, place: place2)
+        event7 = create(:event, event_date: Date.today - 3, place: place2)
+        event8 = create(:event, event_date: Date.today - 4, place: place2)
+
+        events = Event.held_in(place1.id).recent(3)
+
+        expect(events).to have(3).items
+        expect(events).to include(event1, event2, event3)
+        expect(events).not_to include(event0, event4, event5, event6, event7, event8)
+      end
+
+      it "contains all events if not enough events exists" do
+        place1 = create(:place)
+        event0 = create(:event, event_date: Date.today,     place: place1)
+        event1 = create(:event, event_date: Date.today - 1, place: place1)
+        event2 = create(:event, event_date: Date.today - 2, place: place1)
+
+        place2 = create(:place)
+        event3 = create(:event, event_date: Date.today - 1, place: place2)
+        event4 = create(:event, event_date: Date.today - 2, place: place2)
+
+        events = Event.held_in(place1.id).recent(3)
+
+        expect(events).to have(2).items
+        expect(events).to include(event1, event2)
+        expect(events).not_to include(event3, event4)
+      end
+
+    end
+
+    describe "upcoming" do
+      after do
+        Event.destroy_all
+        Place.destroy_all
+      end
+
+      it "contains upcoming" do
+        event0 = create(:event, event_date: Date.today - 1)
+        event1 = create(:event, event_date: Date.today)
+        event2 = create(:event, event_date: Date.today + 1)
+        event3 = create(:event, event_date: Date.today + 2)
+        event4 = create(:event, event_date: Date.today + 3)
+
+        events = Event.upcoming(3)
+
+        expect(events).to have(3).items
+        expect(events).to include(event1, event2, event3)
+        expect(events).not_to include(event0, event4)
+      end
+
+      it "contains all if not enough events exists" do
+        event0 = create(:event, event_date: Date.today - 1)
+        event1 = create(:event, event_date: Date.today)
+        event2 = create(:event, event_date: Date.today + 1)
+
+        events = Event.upcoming(5)
+
+        expect(events).to have(2).items
+        expect(events).to include(event1, event2)
+        expect(events).not_to include(event0)
+      end
+    end
+
   end
 
 end

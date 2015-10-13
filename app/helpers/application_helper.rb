@@ -3,6 +3,10 @@ module ApplicationHelper
     img_url || asset_path('no_image.png')
   end
 
+  def date_format(date)
+    date.strftime('%-d %B, %Y')
+  end
+
   def errors(model, attribute)
     return '' unless model && model.errors
     messages = model.errors[attribute].collect do |msg|

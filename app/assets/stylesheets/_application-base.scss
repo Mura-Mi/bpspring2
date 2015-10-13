@@ -8,6 +8,13 @@ table.detail-table {
   table-layout: auto;
 }
 
+td.merged-cell {
+  border: $table-border-color 1px solid;
+  background-color: $bgh-accent-light;
+  text-align: center;
+  vertical-align: center !important;
+}
+
 td.bgh-table-label  {
   white-space: nowrap;
   width: 1px;
@@ -47,7 +54,7 @@ div.bgh-accent-bg-trans {
   margin-left: 15px;
 }
 
-table.table.table-striped th {
+table.bgh-event-calendar thead {
   background-color: $bgh-accent-light;
 }
 
