@@ -27,13 +27,13 @@ gem 'bcrypt', '3.1.10'
 gem 'seed-fu', '~> 2.3'
 
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
-gem 'mini_magick', '4.3.5'
+gem 'mini_magick', '4.3.6'
 gem 'fog-aws'
 
 gem 'coveralls', '0.8.3', require: false
 
 group :development, :test do
-  gem 'sqlite3', '1.3.10'
+  gem 'sqlite3', '1.3.11'
   gem 'rake', '10.4.2'
 
   gem 'rspec-rails', '3.3.3'
