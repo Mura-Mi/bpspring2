@@ -1,8 +1,11 @@
 <div class="bgh-data-title">
-  <h1><%= @place.name %></h1>
-
-  <%= reports_grid EventReport.held_in(@place.id), true %>
+  <h1 class="text-center"><%= @place.name %></h1>
 </div>
+
+  <div class='bgh-place-event-reports'>
+    <h2>Event Reports in this Place</h2>
+    <%= reports_grid EventReport.held_in(@place.id), true %>
+  </div>
 
 <%= link_to 'Edit', edit_place_path(@place) %> |
 <%= link_to 'Back', places_path %>

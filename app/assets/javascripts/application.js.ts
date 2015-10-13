@@ -14,6 +14,8 @@
 //= require jquery-ui/datepicker
 //= require bootstrap-sprockets
 //= require masonry.pkgd.min
+//= require imagesloaded.pkgd.min
+//= require bgh-masonry
 //= require exif
 //= require ios-megafile-megapixel
 //= require nested_form_fields
