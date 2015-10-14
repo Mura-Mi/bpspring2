@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'home/index'
-
   root 'top_page#index'
 
   resources :home, only: [:index]
@@ -14,4 +12,7 @@ Rails.application.routes.draw do
   resources :events
   resources :places
   resources :event_reports, except: [:index]
+  
+  get 'home/index' => "home#index"
+
 end

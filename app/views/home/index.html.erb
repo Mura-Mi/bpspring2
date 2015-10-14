@@ -1,0 +1,8 @@
+<div class='row contents'>
+  <div class="col-md-2">
+    <div><%= image_tag current_user.user_image.mini.url, class:'user-image center-block' %></div>
+    <div><%= link_to current_user.name, user_path(current_user), class: 'text-center' %></div>
+  </div>
+  <div class="col-md-8">center</div>
+  <div class="col-md-2">right</div>
+</div>
