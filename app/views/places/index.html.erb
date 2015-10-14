@@ -2,7 +2,6 @@
 
 <div class='form-inline form-group'>
   <input type='text' class='form-control' id='bgh-place-filter' placeholder='Type the place name and press Enter' size='50'></input>
-  <%= button_to 'New Place', new_place_path, class: 'btn btn-info', style: 'display: inline; float: right;' %>
 </div>
 
 <hr>
@@ -16,4 +15,8 @@
       </div>
     <% end %>
   <% end %>
+</div>
+
+<div class='buttons'>
+  <%= button_to 'New Place', new_place_path, class: 'btn btn-info'  %>
 </div>
