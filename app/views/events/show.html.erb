@@ -21,7 +21,7 @@
   </div>
 
   <!-- Buttons -->
-  <div class='bgh-event-reports text-center row'>
+  <div class='bgh-event-buttons text-center row'>
     <div class='col-lg-12'>
       <% if EventsHelper.not_post_yet(@event, current_user) %>
         <%= button_to 'Post a Report', new_event_report_path,
