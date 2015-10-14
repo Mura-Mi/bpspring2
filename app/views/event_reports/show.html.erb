@@ -1,25 +1,41 @@
-<div class="page-header">
-  <span class="center-block text-center">
-    <h1><%= @event_report.summary %><small>(<%= @event_report.event.name %>)</small><h1>
+<!-- header -->
+<% user = @event_report.user %>
+<% photos = @event_report.event_photos %>
+
+<article class='center-block'>
+  <span class="center-block text-center page-header">
+    <h1>
+      <%= @event_report.summary %>
+      <br>
+      <small>(<%= @event_report.event.name %>)</small>
+      <br>
+    </h1>
+    <%= date_format @event_report.event.event_date %> by <%= link_to user.name, user_path(user) %>
   </span>
-</div>
 
-  <div class="container">
-    <div class="row">
-      <div>
-        <strong>Comment:</strong>
-        <%= @event_report.comment %>
-      </div>
-
-      <div class='grid'>
-        <% for photo in @event_report.event_photos %>
-          <div class='grid-item'>
-            <%= image_tag photo.photo.url, class: 'thumbnail img-responsive' %>
-          </div>
-        <% end %>
-      </div>
-
-    </div>
+  <div class='comment'>
+    <!-- <div class='user-info'>
+      <%= image_tag user.user_image.mini.url, class: 'user-image img-rounded' %>
+      <div><span><%= link_to user.name, user_path(user) %></span></div>
+    </div> -->
+    <div class='center-block text-center'><span class='comment-text'><%= @event_report.comment %></span></div>
   </div>
 
-<%= link_to 'Edit', edit_event_report_path(@event_report) %>
+  <div class='grid'>
+    <% for photo in photos %>
+      <%= image_tag photo.photo.mini.url, class: 'grid-item img-thumbnail first-photo' %>
+    <% end %>
+  </div>
+</article>
+
+<div class='author-info center-block text-center'>
+  <div><span>Reported By...</span></div>
+  <%= image_tag user.user_image.mini.url, class: 'img-rounded user-image' %>
+  <div><%= link_to user.name, user_path(user) %></div>
+</div>
+
+<nav>
+  <ul class='pager'>
+    <li><%= link_to "Edit", edit_event_report_path %></li>
+  </ul>
+</nav>
