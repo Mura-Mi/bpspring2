@@ -4,7 +4,7 @@
 
 <!-- Events -->
 <div class="bgh-place-events">
-  <table class='bgh-place-event-schedule table table-striped'>
+  <table class='bgh-place-event-schedule table table-striped table-bordered'>
 
     <% recents = Event.held_in(@place.id).recent(display_event_count) %>
     <% upcoming = Event.held_in(@place.id).upcoming(display_event_count) %>
@@ -12,7 +12,7 @@
 
     <% if recents.present? || upcoming.present? %>
       <thead>
-        <th></th>
+        <th class='bgh-place-event-none'></th>
         <th>Date</th>
         <th>Event Name</th>
       </thead>

@@ -16,5 +16,8 @@ div.place-grid {
 }
 
 table.bgh-place-event-schedule {
-  
+  th.bgh-place-event-none {
+    border-top: none !important;
+    border-left: none !important;
+  }
 }
