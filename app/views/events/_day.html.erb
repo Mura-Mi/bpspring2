@@ -9,7 +9,10 @@
   <% if day.events %>
     <div class='bgh-events'>
       <% day.events.take(3).each do |event| %>
-        <div><%= link_to event.abbreviation || event.name, event_path(event) %></div>
+        <%= link_to event_path(event) do %>
+          <div class='hidden-xs'><%= event.abbreviation || event.name  %></div>
+          <div class='visible-xs-block'><%= event.name %></div>
+        <% end %>
       <% end %>
     </div>
   <% end %>
