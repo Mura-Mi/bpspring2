@@ -91,7 +91,7 @@ RSpec.describe EventReport, type: :model do
   end
 
   describe "scope" do
-    context "held_in" do
+    describe "held_in" do
       it "includes events held in given place" do
         report = create(:event_report);
         scoped = EventReport.held_in(report.event.place.id)
@@ -105,6 +105,29 @@ RSpec.describe EventReport, type: :model do
         scoped = EventReport.held_in(create(:place).id)
 
         expect(scoped).to be_empty
+      end
+    end
+
+    describe "recent" do
+      it "contains latest events posted" do
+        oldEvent = create(:event, { event_date: Date.new(2013,3,31) })
+        newEvent = create(:event, { event_date: Date.new(2013,4,1) })
+
+        rep1 = create(:event_report, { event: oldEvent })
+        rep2 = create(:event_report, { event: newEvent })
+        rep3 = create(:event_report, { event: oldEvent })
+        rep4 = create(:event_report, { event: newEvent })
+        rep5 = create(:event_report, { event: oldEvent })
+
+        reports = EventReport.recent(3)
+
+        expect(reports).to have(3).items
+        
+        expect(reports[0]).to eq(rep5)
+        expect(reports[1]).to eq(rep4)
+        expect(reports[2]).to eq(rep3)
+
+        expect(reports).not_to include(rep1, rep2)
       end
     end
   end

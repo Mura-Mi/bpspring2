@@ -4,6 +4,7 @@ class EventReport < ActiveRecord::Base
   has_many :event_photos
 
   scope :held_in, -> (place_id) { joins(:event).merge(Event.held_in(place_id)) }
+  scope :recent, -> (count) { order(:created_at).reverse_order.limit(count) }
 
   validates :summary, presence: true
   validates :summary, length: {maximum: 30}
