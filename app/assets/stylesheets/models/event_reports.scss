@@ -34,7 +34,7 @@ div.bgh-event-report-preview {
       text-align: left;
     }
 
-    div.comment {
+    div.comment, div.title, div.event-info {
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;

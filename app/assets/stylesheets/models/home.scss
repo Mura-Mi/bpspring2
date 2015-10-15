@@ -2,8 +2,26 @@
   margin-top: 5px;
 }
 
-img.user-image {
-  width: 80px;
-  margin-left: auto;
-  margin-right: auto;
+aside {
+  margin-top: 40px;
+
+  div.user-info {
+    img.user-image {
+      width: 80px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+div.main h3 {
+  text-align: center;
+}
+
+div.grid-item.home-digest {
+  width: 250px;
+}
+
+div.grid-item.grid-item--2x.home-digest {
+  width: 300px;
 }

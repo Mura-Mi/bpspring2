@@ -1,5 +1,6 @@
 <% classAttr = 'grid-item bgh-event-report-preview' %>
 <% classAttr << ' grid-item--2x' if event_report.comment.length > 40 %>
+<% classAttr << " #{additional_class}" unless additional_class.empty? %>
 
 <%= div_for(event_report, class: classAttr) do%>
 
