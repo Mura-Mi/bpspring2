@@ -6,6 +6,8 @@ aside {
   margin-top: 40px;
 
   div.user-info {
+    border: 1px solid #ddd;
+    padding: 10px 7px;
     img.user-image {
       width: 80px;
       margin-left: auto;
@@ -14,8 +16,11 @@ aside {
   }
 }
 
-div.main h3 {
+div.main > h3 {
   text-align: center;
+  padding: 3px 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
 }
 
 div.grid-item.home-digest {
