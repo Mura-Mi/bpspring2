@@ -20,7 +20,7 @@
 //= require ios-megafile-megapixel
 //= require nested_form_fields
 //= require typeahead.jquery.min
-//= require bloodhound.min
+//= require bloodhound
 //= require_tree .
 
 /// <reference path='typings/tsd.d.ts' />

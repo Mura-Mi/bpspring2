@@ -4,24 +4,20 @@
 /// <reference path='typings/tsd.d.ts' />
 
 // Hide delete buttons for already-uploaded images
-$(() => {
+$(function() {
   $('.bgh-delete-button').css('display', 'none');
 
-  var data:Bloodhound<any> = new Bloodhound<any>({
-    datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
+  var data = new Bloodhound({
+    datumTokenizer: Bloodhound.tokenizers.whitespace,
     queryTokenizer: Bloodhound.tokenizers.whitespace,
     remote: {
-      url: '/events.json?search=%QUERY'
+      url: '/events.json?search=%QUERY',
+      wildcard: '%QUERY'
     }
   });
 
-  var source: (query: string, cb: (result: any) => void) => void =
-    (q:string, cb: (result:any) => void) => {
-      cb(['takuro', 'haru', 'takanori', 'rose'])
-    };
-
   $('.ta').typeahead({}, {
     name: 'hoge',
-    source: source
+    source: data
   });
 })
