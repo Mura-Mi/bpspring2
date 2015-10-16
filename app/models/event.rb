@@ -8,11 +8,20 @@ class Event < ActiveRecord::Base
 
   scope :held_in, -> (place_id) { where('place_id = ?', place_id) }
   scope :recent, -> (count) {
-    where('event_date < ?', Date.today).order(:event_date).reverse_order.limit(count)
+    where('event_date < ?', Date.today).order(event_date: :desc).limit(count)
   }
   scope :upcoming, -> (count) {
     where('event_date >= ?', Date.today).order(:event_date).limit(count)
   }
+  scope :name_match, -> (query) {
+    q = "%#{query}%"
+    where('name like ?', q)
+  }
+
+  public
+  def offset_days
+    event_date && (Date.today - event_date).abs
+  end
 
   private
   def abbrevation_shorter_than_name

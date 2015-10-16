@@ -133,6 +133,35 @@ RSpec.describe Event, type: :model do
       end
     end
 
+    describe "name_match" do
+      it 'hits events with given name' do
+        event0 = create(:event, name: 'Baystars vs Giants')
+        event1 = create(:event, name: 'Giants vs Carp')
+        event2 = create(:event, name: 'Carp vs Baystars')
+
+        events = Event.name_match("Baystars")
+
+        expect(events).to have(2).items
+        expect(events).to include(event0, event2)
+        expect(events).not_to include(event1)
+      end
+    end
+
+  end
+
+  describe "offset_days" do
+    context "returns day count between event date and today" do
+
+      it "for feature day" do
+        event = create(:event, event_date: Date.today + 2)
+        expect(event.offset_days).to eq(2)
+      end
+
+      it "returns day count between event date and today" do
+        event = create(:event, event_date: Date.today - 3)
+        expect(event.offset_days).to eq(3)
+      end
+    end
   end
 
 end

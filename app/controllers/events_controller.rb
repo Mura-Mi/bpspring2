@@ -5,6 +5,8 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
+    @events = @events.name_match(params[:search]) if params[:search].present?
+
     if params[:month] && /\d{4}-?\d{2}/ =~ params[:month]
       @yearMonth = YearMonth.new(params[:month][0, 4].to_i, params[:month][-2, 2].to_i)
     else
@@ -12,6 +14,15 @@ class EventsController < ApplicationController
     end
 
     @cal = EventCalendar.new(@yearMonth, @events)
+
+    respond_to do |format|
+      format.html
+      format.json {
+        @events = @events.sort_by { |e| e.offset_days }
+        render json: @events, each_serializer: EventSerializer
+      }
+    end
+
   end
 
   def show

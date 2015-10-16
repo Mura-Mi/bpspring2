@@ -2,6 +2,9 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.2.4'
 
+# Serializers
+gem 'active_model_serializers', '~> 0.10.rc3'
+
 # Authentication
 gem 'devise', '3.5.2'
 
@@ -26,6 +29,7 @@ gem 'bcrypt', '3.1.10'
 
 gem 'seed-fu', '~> 2.3'
 
+# Images
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'mini_magick', '4.3.6'
 gem 'fog-aws'
@@ -40,6 +44,7 @@ group :development, :test do
   gem 'factory_girl_rails', '4.5.0'
   gem 'rspec-collection_matchers', '1.1.2'
   gem 'spring-commands-rspec', '1.0.4'
+  gem 'json_spec', '1.1.4'
 
   gem 'pry-rails', '0.3.4'
   gem 'pry-byebug', '3.2.0'

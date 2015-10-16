@@ -104,4 +104,7 @@ RSpec.configure do |config|
 
   # Devise settings
   config.include Devise::TestHelpers, type: :controller
+
+  # json spec
+  config.include JsonSpec::Helpers
 end
