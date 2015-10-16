@@ -19,6 +19,8 @@
 //= require exif
 //= require ios-megafile-megapixel
 //= require nested_form_fields
+//= require typeahead.jquery.min
+//= require bloodhound.min
 //= require_tree .
 
 /// <reference path='typings/tsd.d.ts' />

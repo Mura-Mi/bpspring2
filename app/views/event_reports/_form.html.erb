@@ -5,7 +5,11 @@
 
       <!-- table -->
       <div class='col-md-5'>
-        <%= render partial: 'events/event_table', object: @event %>
+        <% if @event %>
+          <%= render(partial: 'events/event_table', object: @event) %>
+        <% else %>
+          <input type='text' class='ta'>
+        <% end %>
       </div>
 
       <!-- summary and main comment -->
@@ -20,10 +24,8 @@
           <%= errors @event_report, :comment %>
           <%= f.text_area :comment, class: 'form-control', placeholder: 'Comment', rows: 10 %>
         </div>
-        <div style="display:none">
-          <%= f.text_field :user_id %>
-          <%= f.text_field :event_id %>
-        </div>
+        <%= f.hidden_field :user_id %>
+        <%= f.hidden_field :event_id %>
       </div>
     </div>
 

@@ -12,7 +12,12 @@ class EventReportsController < ApplicationController
 
   # GET /event_reports/new
   def new
-    @event = Event.find(params[:event_id])
+    begin
+      @event = Event.find(params[:event_id])
+    rescue ActiveRecord::RecordNotFound
+      @event = nil
+    end
+    
     @event_report = EventReport.new(user_id: params[:user_id], event_id: params[:event_id])
   end
 
