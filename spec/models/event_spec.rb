@@ -164,4 +164,11 @@ RSpec.describe Event, type: :model do
     end
   end
 
+  describe "format" do
+    it "shows details" do
+      event = create(:event, {name: 'sample name', event_date: Date.new(2013, 5, 10)})
+      expect(event.format).to eq('sample name (10 May, 2013)')
+    end
+  end
+
 end

@@ -25,9 +25,9 @@ RSpec.describe "Events", type: :request do
     end
 
   it "returns name matched events with search param" do
-      e1 = create(:event, {name: 'Baystars vs Giants', event_date: Date.today - 2})
+      e1 = create(:event, {name: 'Baystars vs Giants', event_date: Date.new(2013, 5, 10)})
       e2 = create(:event, {name: 'Swallows vs Carp'})
-      e3 = create(:event, {name: 'Dragons vs Baystars', event_date: Date.today - 1})
+      e3 = create(:event, {name: 'Dragons vs Baystars', event_date: Date.new(2013, 5, 12)})
 
       get '/events', search: 'Bay', format: 'json'
 
@@ -36,8 +36,8 @@ RSpec.describe "Events", type: :request do
 
       events = parse_json(response.body)
 
-      expect(events[0]['name']).to eq('Dragons vs Baystars')
-      expect(events[1]['name']).to eq('Baystars vs Giants')
+      expect(events[0]['name']).to eq('Dragons vs Baystars (12 May, 2013)')
+      expect(events[1]['name']).to eq('Baystars vs Giants (10 May, 2013)')
     end
 
   end

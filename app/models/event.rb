@@ -23,6 +23,10 @@ class Event < ActiveRecord::Base
     event_date && (Date.today - event_date).abs
   end
 
+  def format
+    EventsHelper.oneline_summary self
+  end
+
   private
   def abbrevation_shorter_than_name
     msg = 'Abbreviation must be shorter than name'
