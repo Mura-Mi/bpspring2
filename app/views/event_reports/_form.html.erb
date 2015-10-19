@@ -8,7 +8,10 @@
         <% if @event %>
           <%= render(partial: 'events/event_table', object: @event) %>
         <% else %>
-          <input type='text' class='ta'>
+          <div class="form-group">
+            <div><label class='control-label'>Event</label></div>
+            <div><input type='text' class='ta form-control' placeholder="Search Event you've watched"></div>
+          </div>
         <% end %>
       </div>
 
