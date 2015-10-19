@@ -17,7 +17,7 @@ class EventReportsController < ApplicationController
     rescue ActiveRecord::RecordNotFound
       @event = nil
     end
-    
+
     @event_report = EventReport.new(user_id: params[:user_id], event_id: params[:event_id])
   end
 
@@ -29,6 +29,7 @@ class EventReportsController < ApplicationController
   # POST /event_reports
   def create
     @event_report = EventReport.new(event_report_params)
+    @event_report.user = current_user if !@event_report.user
 
     if @event_report.save
       redirect_to @event_report, notice: 'Event report was successfully created.'

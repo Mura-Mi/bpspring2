@@ -85,3 +85,9 @@ form.button_to, .button_to div { display: inline; }
     list-style: square;
   }
 }
+
+// twitter-typeahead
+.tt-cursor, .tt-suggestion:hover {
+  background-color: $bgh-main-tone-color;
+  color: $gray-lighter;
+}

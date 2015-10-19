@@ -10,6 +10,7 @@
         <% else %>
           <div class="form-group">
             <div><label class='control-label'>Event</label></div>
+            <%= errors @event_report, :event %>
             <div><input type='text' class='ta form-control' placeholder="Search Event you've watched"></div>
           </div>
         <% end %>
@@ -28,7 +29,7 @@
           <%= f.text_area :comment, class: 'form-control', placeholder: 'Comment', rows: 10 %>
         </div>
         <%= f.hidden_field :user_id %>
-        <%= f.hidden_field :event_id %>
+        <%= f.hidden_field :event_id, id: 'bgh-event-report-event-id' %>
       </div>
     </div>
 

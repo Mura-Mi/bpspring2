@@ -7,17 +7,30 @@
 $(function() {
   $('.bgh-delete-button').css('display', 'none');
 
-  var data = new Bloodhound({
-    datumTokenizer: Bloodhound.tokenizers.whitespace,
+  var querying = new Bloodhound({
+    datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
     queryTokenizer: Bloodhound.tokenizers.whitespace,
+    identify: function(obj) { return obj.name },
     remote: {
       url: '/events.json?search=%QUERY',
       wildcard: '%QUERY'
     }
   });
 
-  $('.ta').typeahead({}, {
+  $('.ta').typeahead({
+    hint: true,
+    minLength: 0,
+    highlight: true
+  }, {
     name: 'hoge',
-    source: data
+    display: 'name',
+    source: querying
+  }).on('typeahead:selected', function(event, data) {
+    $('#bgh-event-report-event-id').val(data.id)
+  }).on('change', function(e) {
+    var val = $('.ta').val();
+    if(val == null || val === '') {
+      $('#bgh-event-report-event-id').val('')
+    }
   });
 })
