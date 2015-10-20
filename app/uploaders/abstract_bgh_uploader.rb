@@ -25,6 +25,14 @@ class AbstractBghUploader < CarrierWave::Uploader::Base
 
   version :mini do
     process resize_to_fill: [400, -1]
+    process convert: 'png'
+    def full_filename (for_file = model.logo.file)
+      "mini.png"
+    end
+  end
+
+  def store_dir
+    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
 end
