@@ -75,7 +75,7 @@ class EventReportsController < ApplicationController
     end
 
     def save_photos
-      params.require(:event_report).permit({ event_photos: [] })[:event_photos].each do |file|
+      (params.require(:event_report).permit({ event_photos: [] })[:event_photos] || []).each do |file|
         p = EventPhoto.new(event_report: @event_report);
         p.photo = file
         p.save
