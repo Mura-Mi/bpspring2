@@ -32,6 +32,7 @@ class EventReportsController < ApplicationController
     @event_report.user = current_user if !@event_report.user
 
     if @event_report.save
+      save_photos
       redirect_to @event_report, notice: 'Event report was successfully created.'
     else
       render :new, params: { user_id: event_report_params[:user_id], event_id: event_report_params[:event_id] }
@@ -41,7 +42,9 @@ class EventReportsController < ApplicationController
   # PATCH/PUT /event_reports/1
   def update
     @event = @event_report.event
+
     if @event_report.update(event_report_params)
+      save_photos
       redirect_to @event_report, notice: 'Event report was successfully updated.'
     else
       render :edit
@@ -65,8 +68,17 @@ class EventReportsController < ApplicationController
       params.require(:event_report).permit(:user_id,
         :event_id,
         :comment,
-        :summary,
-        event_photos_attributes: [:id, :title, :comment, :photo]
+        :summary
+        # { :event_photos: [] }
+        # event_photos_attributes: [:id, :title, :comment, :photo]
       )
+    end
+
+    def save_photos
+      params.require(:event_report).permit({ event_photos: [] })[:event_photos].each do |file|
+        p = EventPhoto.new(event_report: @event_report);
+        p.photo = file
+        p.save
+      end
     end
 end

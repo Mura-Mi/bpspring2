@@ -36,13 +36,14 @@
     <div class="row">
       <div class="col-md-12">
         <%= f.label :event_photos %>
-        <%= f.add_nested_fields_link :event_photos %>
+        <%= f.file_field :event_photos, multiple: true %>
+        <!-- <%= f.add_nested_fields_link :event_photos %>
         <%= f.nested_fields_for :event_photos do |photo| %>
           <%= photo.text_field :title, placeholder: "Title (Optional)" %>
           <%= photo.file_field :photo, class: 'photo-cache' %>
           <%= photo.hidden_field :photo_cache %>
           <%= photo.remove_nested_fields_link 'x', class: 'bgh-delete-button' %>
-        <% end %>
+        <% end %> -->
       </div>
     </div>
     <div class="row">
