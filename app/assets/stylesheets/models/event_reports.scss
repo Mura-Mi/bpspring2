@@ -72,3 +72,23 @@ article {
 div.author-info {
   margin-top: 20px;
 }
+
+div.already-uploaded-photos {
+  border-radius: 5px;
+  margin-bottom: 5px;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding: 10px;
+
+  img {
+    width: 100px;
+    margin-top: 3px;
+    &:not(:first-child) {
+      margin-left: 3px;
+    }
+  }
+
+  label.uploaded-photos-cap {
+
+  }
+}

@@ -33,19 +33,28 @@
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-md-12">
-        <%= f.label :event_photos %>
-        <%= f.file_field :event_photos, multiple: true %>
-        <!-- <%= f.add_nested_fields_link :event_photos %>
-        <%= f.nested_fields_for :event_photos do |photo| %>
-          <%= photo.text_field :title, placeholder: "Title (Optional)" %>
-          <%= photo.file_field :photo, class: 'photo-cache' %>
-          <%= photo.hidden_field :photo_cache %>
-          <%= photo.remove_nested_fields_link 'x', class: 'bgh-delete-button' %>
-        <% end %> -->
+    <% if @event_report.event_photos.present? %>
+      <div class="row already-uploaded-photos bgh-accent-bg">
+        <label class="uploaded-photos-cap">Photos already Uploaded</label>
+        <div class="col-md-12">
+          <% @event_report.event_photos.each do |report_photo| %>
+            <%= image_tag report_photo.photo.mini.url, class: 'img-rounded' %>
+          <% end %>
+        </div>
       </div>
+    <% end %>
+
+    <div class='col-md-12'>
+      <%= content_tag :label do %>
+        <% if @event_report.event_photos.empty? %>
+          Upload Photos!
+        <% else %>
+          Upload More Photos!
+        <% end %>
+      <% end %>
+      <%= f.file_field :event_photos, multiple: true, style: 'display: inline-block; margin-left: 5px;' %>
     </div>
+
     <div class="row">
       <div class="col-md-12">
         <div class='pull-right'>
