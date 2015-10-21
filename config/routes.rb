@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  root 'top_page#index'
 
-  resources :home, only: [:index]
+  root 'home#index'
+  resources :top_page, only: [:index]
 
   devise_for :users, controllers: {
     sessions: 'users/sessions',
@@ -12,7 +12,5 @@ Rails.application.routes.draw do
   resources :events
   resources :places
   resources :event_reports, except: [:index]
-  
-  get 'home/index' => "home#index"
 
 end
