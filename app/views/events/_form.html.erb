@@ -1,36 +1,38 @@
-<%= form_for @event, html: {class: 'form-horizontal center'} do |e| %>
-    <div class='form-group'>
-      <%= e.label :name, class: 'control-label' %>
-      <%= errors(@event, :name)%>
-      <%= e.text_field :name, class: 'form-control', placeholder: 'Event Name' %>
-    </div>
+<div class='container'>
+  <%= form_for @event, html: {class: 'form-horizontal center'} do |e| %>
+      <div class='form-group'>
+        <%= e.label :name, class: 'control-label' %>
+        <%= errors(@event, :name)%>
+        <%= e.text_field :name, class: 'form-control', placeholder: 'Event Name' %>
+      </div>
 
-    <div class='form-group'>
-      <%= e.label :abbreviation, class: 'control-label' %>
-      <%= errors(@event, :abbreviation)%>
-      <%= e.text_field :abbreviation, class: 'form-control', placeholder: 'Abbreviation' %>
-    </div>
+      <div class='form-group'>
+        <%= e.label :abbreviation, class: 'control-label' %>
+        <%= errors(@event, :abbreviation)%>
+        <%= e.text_field :abbreviation, class: 'form-control', placeholder: 'Abbreviation' %>
+      </div>
 
-    <div class='form-group'>
-      <%= e.label :event_date, class: 'control-label' %>
-      <%= errors(@event, :event_date)%>
-      <%= e.text_field :event_date, class: 'datepicker form-control', placeholder: 'Event Date' %>
-    </div>
+      <div class='form-group'>
+        <%= e.label :event_date, class: 'control-label' %>
+        <%= errors(@event, :event_date)%>
+        <%= e.text_field :event_date, type: 'date', class: 'datepicker form-control', placeholder: 'Event Date' %>
+      </div>
 
-    <div class='form-group'>
-      <%= e.label :comment, class: 'control-label' %>
-      <%= errors(@event, :comment)%>
-      <%= e.text_area :comment, class: 'form-control', placeholder: 'Comment' %>
-    </div>
+      <div class='form-group'>
+        <%= e.label :comment, class: 'control-label' %>
+        <%= errors(@event, :comment)%>
+        <%= e.text_area :comment, class: 'form-control', placeholder: 'Comment' %>
+      </div>
 
-    <div class='form-group'>
-      <%= e.label :place_id, class: 'control-label' %>
-      <%= e.collection_select :place_id, Place.all, :id, :name,
-        {prompt: 'Select Event Place', :include_blank => false},
-        {class: 'form-control btn btn-default dropdown-toggle'} %>
-    </div>
+      <div class='form-group'>
+        <%= e.label :place_id, class: 'control-label' %>
+        <%= e.collection_select :place_id, Place.all, :id, :name,
+          {prompt: 'Select Event Place', :include_blank => false},
+          {class: 'form-control btn btn-default dropdown-toggle'} %>
+      </div>
 
-    <div class='action'>
-      <%= e.submit "Submit", class: 'btn btn-default btn-primary' %>
-    </div>
-<% end %>
+      <div class='action'>
+        <%= e.submit "Submit", class: 'btn btn-default btn-primary' %>
+      </div>
+  <% end %>
+</div>

@@ -11,7 +11,9 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery-ui/datepicker
+//= require picker
+//= require picker.date
+//= require picker.time
 //= require bootstrap-sprockets
 //= require masonry.pkgd.min
 //= require imagesloaded.pkgd.min
@@ -26,7 +28,7 @@
 /// <reference path='typings/tsd.d.ts' />
 
 $(() => {
-  $(".datepicker").datepicker({dateFormat: 'yy/m/d'});
+  $(".datepicker").pickadate();
   $('.js-replace-no-image').error(() => {
     $(this).attr({
       src: 'images/no_image.png',
