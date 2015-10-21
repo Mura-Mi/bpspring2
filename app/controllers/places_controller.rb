@@ -4,6 +4,7 @@ class PlacesController < ApplicationController
   # GET /places
   def index
     @places = Place.all
+    @places = @places.name_match(params['search']) if params['search'].present?
 
     respond_to do |format|
       format.html

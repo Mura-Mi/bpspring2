@@ -26,9 +26,10 @@
 
       <div class='form-group'>
         <%= e.label :place_id, class: 'control-label' %>
-        <%= e.collection_select :place_id, Place.all, :id, :name,
-          {prompt: 'Select Event Place', :include_blank => false},
-          {class: 'form-control btn btn-default dropdown-toggle'} %>
+        <div>
+          <input type='text' id='ta-event-place' class='form-control' placeholder="Search Event you've watched">
+        </div>
+        <%= e.hidden_field :place_id, id: 'bgh-event-place-id' %>
       </div>
 
       <div class='action'>
