@@ -4,6 +4,13 @@ class PlacesController < ApplicationController
   # GET /places
   def index
     @places = Place.all
+
+    respond_to do |format|
+      format.html
+      format.json {
+        render json: @places, each_serializer: PlaceSerializer
+      }
+    end
   end
 
   # GET /places/1
