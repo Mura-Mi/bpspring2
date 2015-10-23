@@ -1,10 +1,3 @@
-/*
- *= require jquery-ui/datepicker
- *= require landing-page
- *= require typeahead
- *= require_tree ./models
- */
-
 $bgh-main-tone-color: #000019;
 $bgh-accent-color: #9e751f;
 $bgh-background: #f4f4f4;
@@ -13,4 +6,4 @@ $bgh-accent-light: lighten($bgh-accent-color, 53%);
 @import "bootstrap-sprockets";
 @import "variable-base";
 @import "bootstrap-custom";
-@import "application-base";
+@import "common";
