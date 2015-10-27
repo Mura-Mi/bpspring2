@@ -9,10 +9,12 @@
 <div class="grid places-grid">
   <% @places.each do |place| %>
     <%= content_tag :div, class: "grid-item place-grid thumbnail", name: place.name do %>
-      <%= image_tag place.image.mini.url || asset_path('no_image.png'), class: 'img-rounded place-thumbnail' %>
-      <div class='place-caption center-block text-center bgh-accent-bg-trans'>
-        <%= link_to place.name, place %>
-      </div>
+      <%= link_to place do %>
+        <%= image_tag place.image.mini.url || asset_path('no_image.png'), class: 'img-rounded place-thumbnail' %>
+        <div class='place-caption center-block text-center bgh-accent-bg-trans'>
+          <span><%= place.name %></span>
+        </div>
+      <% end %>
     <% end %>
   <% end %>
 </div>
