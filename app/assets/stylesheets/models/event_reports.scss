@@ -31,6 +31,7 @@ div.bgh-event-report-preview {
       bottom: 0px;
       width: 100%;
       float: none;
+      border-radius: 6px 6px 0 0;
 
       span.title {
         text-align: left;
@@ -42,6 +43,8 @@ div.bgh-event-report-preview {
   }
 
   div.leaf {
+    border-radius: 0 0 6px 6px;
+    width: 100%;
     div.comment, div.event-info {
       overflow: hidden;
       text-overflow: ellipsis;
