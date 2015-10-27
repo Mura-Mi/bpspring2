@@ -4,14 +4,19 @@
 
 <%= div_for(event_report, class: classAttr) do%>
 
-  <% if event_report.event_photos.present? %>
-    <%= image_tag event_report.event_photos[0].photo.mini.url, class: 'event_photo img-rounded' %>
-  <% else %>
-    <%= image_tag asset_path('no_image.png'), class: 'event_photo' %>
-  <% end %>
+  <div class='photo-and-title'>
+    <% if event_report.event_photos.present? %>
+      <%= image_tag event_report.event_photos[0].photo.mini.url, class: 'event_photo img-rounded' %>
+    <% else %>
+      <%= image_tag asset_path('no_image.png'), class: 'event_photo' %>
+    <% end %>
+
+    <div class="bgh-accent-bg-trans leaf-title">
+      <span class='title'><h3><%= link_to event_report.summary || "By #{event_report.user.name}", event_report %></h3></span>
+    </div>
+  </div>
 
   <div class='leaf bgh-accent-bg-trans'>
-    <div class='title'><h3><%= link_to event_report.summary || "By #{event_report.user.name}", event_report %></h3></div>
     <% if show_event_info %>
       <div class='event-info'>
         <%= oneline_summary event_report.event %>

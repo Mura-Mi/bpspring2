@@ -7,7 +7,6 @@
 }
 
 div.bgh-event-report-preview {
-  position: relative;
   margin: 2px;
   float: left;
 
@@ -23,23 +22,33 @@ div.bgh-event-report-preview {
     object-fit: fill;
   }
 
-  div.leaf {
-    position: absolute;
-    left: 0;
-    bottom: -50px;
-    width: 100%;
-    float: none;
+  div.photo-and-title {
+    position: relative;
 
-    div.title {
-      text-align: left;
+    div.leaf-title {
+      position: absolute;
+      left: 0;
+      bottom: 0px;
+      width: 100%;
+      float: none;
+
+      span.title {
+        text-align: left;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
     }
+  }
 
-    div.comment, div.title, div.event-info {
+  div.leaf {
+    div.comment, div.event-info {
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
     }
   }
+
 }
 
 @media only screen and (max-width:649px) {
