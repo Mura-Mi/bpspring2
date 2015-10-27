@@ -1,22 +1,17 @@
-<%= form_for(@place) do |f| %>
-  <% if @place.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@place.errors.count, "error") %> prohibited this place from being saved:</h2>
+<div class="container">
+  <%= form_for(@place) do |f| %>
+    <div class='form-group'>
+      <%= f.label :name, class: 'control-label' %>
+      <%= f.text_field :name, class: 'form-control', placeholder: 'Place Name' %>
+    </div>
 
-      <ul>
-      <% @place.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+
+    <div class='form-group'>
+      <%= f.file_field :image %>
+    </div>
+
+    <div class="action">
+      <%= f.submit "Submit", class: 'btn btn-default btn-primary' %>
     </div>
   <% end %>
-
-  <div class='field'>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

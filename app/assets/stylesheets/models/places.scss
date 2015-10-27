@@ -1,17 +1,21 @@
-.grid-item {
-  min-width: 200px;
+.place-grid.grid-item {
+  width: 200px;
 }
+
 
 div.place-grid {
   position: relative;
   float: left;
+  padding: 10px;
+
+  img.place-thumbnail {
+    width: 200px;
+  }
 
   div.place-caption {
-    position: absolute;
-    left: 0;
-    bottom: 0;
     float: none;
     width: 100%;
+    border-radius: 6px;
   }
 }
 
