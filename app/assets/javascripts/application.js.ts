@@ -15,6 +15,7 @@
 //= require picker.date
 //= require picker.time
 //= require bootstrap-sprockets
+//= require fileinput.min
 //= require masonry.pkgd.min
 //= require imagesloaded.pkgd.min
 //= require bgh-masonry
