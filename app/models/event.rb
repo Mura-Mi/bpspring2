@@ -1,6 +1,8 @@
 class Event < ActiveRecord::Base
   belongs_to :place
   has_many :event_report
+  has_many :attendance_plan
+  has_many :users, through: :attendance_plan
 
   validates :name, presence: true
   validates :event_date, presence: true
