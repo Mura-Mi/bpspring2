@@ -44,18 +44,20 @@
       </div>
     <% end %>
 
-    <div class='col-md-12'>
-      <%= content_tag :label do %>
-        <% if @event_report.event_photos.empty? %>
-          Upload Photos!
-        <% else %>
-          Upload More Photos!
+    <div class='row'>
+      <div class='col-md-12'>
+        <%= content_tag :label do %>
+          <% if @event_report.event_photos.empty? %>
+            Upload Photos!
+          <% else %>
+            Upload More Photos!
+          <% end %>
         <% end %>
-      <% end %>
-      <%= f.file_field :event_photos, multiple: true, style: 'display: inline-block; margin-left: 5px;' %>
+        <%= f.file_field :event_photos, multiple: true, class: 'bgh-fileinput' %>
+      </div>
     </div>
 
-    <div class="row">
+    <div class="row action">
       <div class="col-md-12">
         <div class='pull-right'>
           <%= f.submit "Post a Report", class: 'btn btn-primary' %>
