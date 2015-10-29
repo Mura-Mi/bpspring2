@@ -29,4 +29,18 @@ RSpec.describe AttendancePlan, type: :model do
       expect(plan.errors[:event_id]).to be_present
     end
   end
+
+  describe "scope" do
+    it "shows distinct one" do
+      user = create(:user)
+      event = create(:event)
+
+      plan = AttendancePlan.create(user: user, event: event)
+
+      single = AttendancePlan.of(user.id, event.id)
+
+      expect(single).not_to be_empty
+      expect(single).to eq [plan]
+    end
+  end
 end

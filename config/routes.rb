@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
 
-  get 'attendance_plan/create'
-
-  get 'attendance_plan/delete'
+  post 'attendance_plan/create'
+  post 'attendance_plan/delete'
 
   root 'home#index'
   resources :top_page, only: [:index]

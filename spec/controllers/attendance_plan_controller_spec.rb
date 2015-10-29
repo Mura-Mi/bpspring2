@@ -1,11 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe AttendancePlanController, type: :controller do
+  before do
+    login_user
+  end
 
   let(:user) { create(:user) }
   let(:event) { create(:event) }
   let(:valid_attributes) {
-    { format: 'json', attendance_plan: {user_id: user.id, event_id: event.id} }
+    { format: 'js', attendance_plan: {user_id: user.id, event_id: event.id} }
   }
 
   describe "GET #create" do
@@ -27,12 +30,12 @@ RSpec.describe AttendancePlanController, type: :controller do
     end
 
     it "returns http success" do
-      get :delete, { format: 'json', id: @at.id }
+      xhr :get, :delete, valid_attributes
       expect(response).to have_http_status(:success)
     end
 
     it "should delete record" do
-      expect { get :delete, { format: 'json', id: @at.id } }.to \
+      expect { xhr :get, :delete, valid_attributes }.to \
         change { AttendancePlan.count }.by(-1)
     end
   end

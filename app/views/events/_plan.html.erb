@@ -1,0 +1,7 @@
+<% action = AttendancePlan.of(current_user.id, @event.id).empty? ? 'create' : 'delete' %>
+<% label = action == 'create' ? "I'm planning to Go!" : "Quit Going" %>
+
+<%= button_to label,
+  { action: action, controller: 'attendance_plan', attendance_plan: {user_id: current_user.id, event_id: @event.id}, format: :js },
+  remote: true,
+  class: 'btn btn-info bgh-event-plan' %>
