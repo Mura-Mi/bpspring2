@@ -19,4 +19,14 @@ RSpec.describe AttendancePlan, type: :model do
       expect(bayGame.users).to include(baystarsFan, anotherFan)
     end
   end
+
+  describe "validation" do
+    it "is invalid with empty relation" do
+      plan = AttendancePlan.new()
+      plan.valid?
+      expect(plan.errors).to have(2).items
+      expect(plan.errors[:user_id]).to be_present
+      expect(plan.errors[:event_id]).to be_present
+    end
+  end
 end
