@@ -11,7 +11,7 @@ RSpec.describe User, type: :model do
   end
 
   context "duplicate name" do
-    it 'is invlaid' do
+    it 'is vlaid' do
       user1 = User.new(name: 'Hoge', email: 'example1@example.com', password: 'hogehoge')
       user2 = User.new(name: 'Hoge', email: 'example2@example.com', password: 'hogehoge')
       user1.valid?
@@ -19,8 +19,7 @@ RSpec.describe User, type: :model do
       user1.save
 
       user2.valid?
-      expect(user2.errors).to have(1).item
-      expect(user2.errors[:name]).to be_present
+      expect(user2.errors).to be_empty
     end
   end
 end

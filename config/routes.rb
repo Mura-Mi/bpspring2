@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :top_page, only: [:index]
 
   devise_for :users, controllers: {
+    omniauth_callbacks: 'users/omniauth_callbacks',
     sessions: 'users/sessions',
     registrations: 'users/registrations'
   }
