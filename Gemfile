@@ -7,6 +7,7 @@ gem 'active_model_serializers', '~> 0.10.rc3'
 
 # Authentication
 gem 'devise', '3.5.2'
+gem 'omniauth-twitter', '1.2.1'
 
 # CSS
 gem 'sass-rails', '~> 5.0'
