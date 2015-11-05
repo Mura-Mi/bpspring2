@@ -10,16 +10,33 @@ RSpec.describe User, type: :model do
     end
   end
 
-  context "duplicate name" do
-    it 'is vlaid' do
+  context "duplicate email" do
+    it 'is invalid' do
       user1 = User.new(name: 'Hoge', email: 'example1@example.com', password: 'hogehoge')
-      user2 = User.new(name: 'Hoge', email: 'example2@example.com', password: 'hogehoge')
+      user2 = User.new(name: 'Fuga', email: 'example1@example.com', password: 'hogehoge')
       user1.valid?
       expect(user1.errors).to be_empty
       user1.save
 
       user2.valid?
+      expect(user2.errors).to have(1).item
+      expect(user2.errors[:email]).to have(1).item
+    end
+
+    it 'allows empty email when signed up with OAuth' do
+      user1 = User.new(name: 'Hoge', password: 'hogehoge')
+      user1.sns_profile.push(SnsProfile.new)
+      user1.valid?
+      expect(user1.errors).to be_empty
+      user1.save!
+
+      user2 = User.new(name: 'Fuga', password: 'fugafuga')
+      user2.sns_profile.push(SnsProfile.new)
+      user2.valid?
       expect(user2.errors).to be_empty
     end
   end
+
+
+
 end

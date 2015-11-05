@@ -13,9 +13,11 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         uid: auth_info['uid'],
         nickname: auth_info['info']['nickname'])
 
-      user = current_user || User.create!(name: auth_info['info']['name'])
+      user = current_user || User.new(name: auth_info['info']['name'])
       profile.user = user
+      user.sns_profile.push profile
       profile.save
+      user.save
     else
       user = profile.user
     end
