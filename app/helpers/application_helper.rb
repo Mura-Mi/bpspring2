@@ -17,4 +17,14 @@ module ApplicationHelper
 
     messages.join.html_safe
   end
+
+  def twitter_link(obj)
+    link_to(obj, user_omniauth_authorize_path(:twitter), style: 'display: inline-block;')
+  end
+
+  def twitter_button(button_name = nil)
+    button_to user_omniauth_authorize_path(:twitter), class: 'btn btn-twitter' do
+      content_tag(:i, '', class: 'fa fa-twitter') + ' ' + (button_name || "Sign in with Twitter")
+    end
+  end
 end

@@ -22,3 +22,12 @@
   color: #333;
   background: #fff;
 }
+
+.social-buttons {
+}
+
+.social-buttons::after {
+  content: 'OR';
+  display: block;
+  padding: 10px 0;
+}
