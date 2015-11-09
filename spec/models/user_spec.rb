@@ -10,6 +10,21 @@ RSpec.describe User, type: :model do
     end
   end
 
+  context "without password" do
+    it "is invalid without SNS profile" do
+      single_user = User.new(name: 'hoge', email: 'example@example.com')
+      expect(single_user.valid?).to be_falsey
+      expect(single_user.errors[:password]).to be_present
+    end
+
+    it "is valid with SNS profile" do |member|
+      twitter_user = User.new(name: 'hoge', email: 'example@example.com')
+      twitter_user.sns_profile.push(SnsProfile.new)
+      expect(twitter_user.valid?).to be_truthy
+      expect(twitter_user.errors).to be_empty
+    end
+  end
+
   context "duplicate email" do
     it 'is invalid' do
       user1 = User.new(name: 'Hoge', email: 'example1@example.com', password: 'hogehoge')

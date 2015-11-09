@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
   end
 
   def password_required?
-    empty_sns_profile? && super
+    empty_sns_profile? && password.blank? && super
   end
 
   def update_with_password(params, *options)
