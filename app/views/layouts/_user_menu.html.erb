@@ -1,0 +1,19 @@
+<% msg = user_signed_in? ? current_user.name : "クリックして始めよう！" %>
+<li class='dropdown'>
+  <a href='#' class='dropdown-toggle' data-toggle='dropdown' aria-haspopup-'true' aria-expanded='false'><%= msg %></a>
+  <ul class='dropdown-menu'>
+
+    <% unless user_signed_in? %>
+      <li class='dropdown-header'> <%= prefix_sign_up 'Sign Up with...' %> </li>
+      <li><%= link_to(prefix_email('Email'), new_user_registration_path)  %></li>
+      <li><%= twitter_link 'Twitter' %><li>
+
+      <li class='divider'></li>
+
+      <li><%= link_to(prefix_sign_in('Log in'), new_user_session_path) %><li>
+    <% else %>
+      <li><%= link_to('Logout', destroy_user_session_path) %><li>
+    <% end %>
+
+  </ul>
+</li>

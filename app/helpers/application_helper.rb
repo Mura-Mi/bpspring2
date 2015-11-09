@@ -18,13 +18,32 @@ module ApplicationHelper
     messages.join.html_safe
   end
 
+  def prefix_sign_up(obj)
+    content_tag(:i, '', class: 'fa fa-user-plus') + ' ' + obj
+  end
+
+  def prefix_sign_in(obj)
+    content_tag(:i, '', class: 'fa fa-sign-in') + ' ' + obj
+  end
+
+  def prefix_email(obj)
+    content_tag(:i, '', class: 'fa fa-envelope') + ' ' + obj
+  end
+
+  def prefix_twitter(obj)
+    content_tag(:i, '', class: 'fa fa-twitter') + ' ' + (obj || 'Sign up with Twitter')
+  end
+
   def twitter_link(obj)
-    link_to(obj, user_omniauth_authorize_path(:twitter), style: 'display: inline-block;')
+    link_to user_omniauth_authorize_path(:twitter) do
+      prefix_twitter obj
+    end
   end
 
   def twitter_button(button_name = nil)
     button_to user_omniauth_authorize_path(:twitter), class: 'btn btn-twitter' do
-      content_tag(:i, '', class: 'fa fa-twitter') + ' ' + (button_name || "Sign in with Twitter")
+      prefix_twitter button_name
     end
   end
+
 end
