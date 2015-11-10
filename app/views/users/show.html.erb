@@ -3,11 +3,18 @@
 
   <div class="container">
     <div class="row">
+
       <div class='col-md-5 col-md-offset-1 bgh-user-image-upload'>
         <div class="thumbnail">
           <%= image_tag nil_to_no_image(@user.user_image.url), class: 'user-image' %>
         </div>
+        <div class="sns-links">
+          <% @user.sns_profile.each do |p| %>
+            <%= render partial: 'sns_profiles/small_button', object: p %>
+          <% end %>
+        </div>
       </div>
+
       <div class='col-md-5 bgh-user-image-upload'>
         <table class='table table-striped detail-table'>
           <tr>
@@ -32,6 +39,7 @@
           </tr>
         </table>
       </div>
+
     </div>
   </div>
 </div>

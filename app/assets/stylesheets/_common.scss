@@ -101,3 +101,14 @@ form.button_to, .button_to div { display: inline; }
   color: white;
   background-color: $color-twitter;
 }
+
+a.link-twitter {
+  @extend .btn-twitter;
+  border-radius: 4px;
+  padding: 3px 6px;
+  transition: opacity 0.15s;
+}
+
+a.link-twitter:hover {
+  opacity: 0.8;
+}
