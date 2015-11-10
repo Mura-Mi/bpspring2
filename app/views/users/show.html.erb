@@ -10,7 +10,7 @@
         </div>
         <div class="sns-links">
           <% @user.sns_profile.each do |p| %>
-            <%= render partial: 'sns_profiles/small_button', object: p %>
+            <%= profile_link_button p %>
           <% end %>
         </div>
       </div>
