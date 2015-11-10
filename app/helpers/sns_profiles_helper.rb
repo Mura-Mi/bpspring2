@@ -1,19 +1,38 @@
 module SnsProfilesHelper
   def profile_link_button(sns_profile)
-    type = sns_profile.provider_type
-    divClass = "sns-link #{type.button_class}"
+    provider = sns_profile.provider_type
+    divClass = "sns-link #{provider.button_class}"
 
-    link_to type.profile_link(sns_profile), class: divClass, target: '_blank' do
+    link_to provider.profile_link(sns_profile), class: divClass, target: '_blank' do
       content_tag :div, caption(sns_profile)
     end
   end
 
-  def caption(sns_profile)
-    case sns_profile.provider_type
-    when Providers::TWITTER
-      prefix_twitter('Twitter')
+  def share_link_button(provider)
+    divClass = "sns-link #{provider.button_class}"
+
+    link_to provider.share_link_url, class: divClass, target: '_blank' do
+      content_tag :div, caption(sns_profile)
     end
   end
 
+  def link_to_url(provider, caption, url)
+    divClass = "sns-link #{provider.button_class}"
+
+    link_to provider.share_link(caption, url), class: divClass, target: '_blank' do
+      content_tag :div, prefix(provider, 'Share Article')
+    end
+  end
+
+  def caption(sns_profile)
+    prefix(sns_profile.provider_type)
+  end
+
+  def prefix(provider, text = nil)
+    case provider
+    when Providers::TWITTER
+      prefix_twitter(text || 'Twitter')
+    end
+  end
 
 end

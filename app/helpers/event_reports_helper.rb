@@ -6,4 +6,8 @@ module EventReportsHelper
         }.join.html_safe
     end
   end
+
+  def report_oneline_summary(report)
+    "#{report.summary} (#{report.event.name})"
+  end
 end
