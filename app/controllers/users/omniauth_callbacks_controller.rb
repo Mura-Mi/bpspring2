@@ -7,6 +7,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     auth_info = request.env['omniauth.auth']
     profile = SnsProfile.find_by(provider: auth_info['provider'], uid: auth_info['uid'])
 
+    sign_up = !user_signed_in?
+
     unless profile
       profile = SnsProfile.new(
         provider: auth_info['provider'],
@@ -23,7 +25,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     end
 
     sign_in(:user, user) unless current_user
-    redirect_to root_path
+    redirect_to sign_up ? '/users/edit' : root_path ;
   end
 
   # GET|POST /resource/auth/twitter
