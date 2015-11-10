@@ -1,5 +1,11 @@
+require 'provider'
+
 module Providers
-  TWITTER = 1
+
+  TWITTER = Provider.new('twitter',
+    'link-twitter',
+    ->(sns_profile) { "https://twitter.com/#{sns_profile.nickname}" }
+  )
 
   def value_of(provider)
     case provider

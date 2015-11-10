@@ -53,5 +53,4 @@ module ApplicationHelper
       prefix_twitter button_name
     end
   end
-
 end
