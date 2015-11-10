@@ -19,7 +19,7 @@ RSpec.describe User, type: :model do
 
     it "is valid with SNS profile" do |member|
       twitter_user = User.new(name: 'hoge', email: 'example@example.com')
-      twitter_user.sns_profile.push(SnsProfile.new)
+      twitter_user.sns_profile.push(create(:sns_profile))
       expect(twitter_user.valid?).to be_truthy
       expect(twitter_user.errors).to be_empty
     end
@@ -40,13 +40,13 @@ RSpec.describe User, type: :model do
 
     it 'allows empty email when signed up with OAuth' do
       user1 = User.new(name: 'Hoge', password: 'hogehoge')
-      user1.sns_profile.push(SnsProfile.new)
+      user1.sns_profile.push(create(:sns_profile))
       user1.valid?
       expect(user1.errors).to be_empty
       user1.save!
 
       user2 = User.new(name: 'Fuga', password: 'fugafuga')
-      user2.sns_profile.push(SnsProfile.new)
+      user2.sns_profile.push(create(:sns_profile))
       user2.valid?
       expect(user2.errors).to be_empty
     end
