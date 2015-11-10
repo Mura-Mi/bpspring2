@@ -7,12 +7,15 @@
       <li class='dropdown-header'> <%= prefix_sign_up 'Sign Up with...' %> </li>
       <li><%= link_to(prefix_email('Email'), new_user_registration_path)  %></li>
       <li><%= twitter_link 'Twitter' %><li>
-
       <li class='divider'></li>
-
       <li><%= link_to(prefix_sign_in('Log in'), new_user_session_path) %><li>
+
     <% else %>
-      <li><%= link_to('Logout', destroy_user_session_path) %><li>
+
+      <li><%= link_to(prefix_edit('Edit registration'), edit_user_registration_path) %></li>
+      <li class='divider'></li>
+      <li><%= link_to(prefix_sign_out('Logout'), destroy_user_session_path) %><li>
+
     <% end %>
 
   </ul>

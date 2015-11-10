@@ -26,6 +26,14 @@ module ApplicationHelper
     content_tag(:i, '', class: 'fa fa-sign-in') + ' ' + obj
   end
 
+  def prefix_sign_out(obj)
+    content_tag(:i, '', class: 'fa fa-sign-out') + ' ' + obj
+  end
+
+  def prefix_edit(obj)
+    content_tag(:i, '', class: 'fa fa-edit') + ' ' + obj
+  end
+
   def prefix_email(obj)
     content_tag(:i, '', class: 'fa fa-envelope') + ' ' + obj
   end
