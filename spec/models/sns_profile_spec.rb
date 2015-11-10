@@ -17,4 +17,11 @@ RSpec.describe SnsProfile, type: :model do
       expect(profile.provider_type).to eq Providers::TWITTER
     end
   end
+  
+  describe 'twitter profile' do
+    it "generates correct link" do
+      profile = SnsProfile.new(provider: 'twitter', nickname: 'mura_mi', uid: '334')
+      expect(profile.provider_type.profile_link(profile)).to eq "https://twitter.com/mura_mi"
+    end
+  end
 end
