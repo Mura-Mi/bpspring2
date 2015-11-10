@@ -4,7 +4,8 @@ module Providers
 
   TWITTER = Provider.new('twitter',
     'link-twitter',
-    ->(sns_profile) { "https://twitter.com/#{sns_profile.nickname}" }
+    ->(sns_profile) { 'https://twitter.com/#{sns_profile.nickname}' },
+    ->(caption = nil) { "#{content_tag(:i, '', class: 'fa fa-twitter')} #{caption || ''}" }
   )
 
   def value_of(provider)
