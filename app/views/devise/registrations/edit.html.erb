@@ -39,7 +39,7 @@
           <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
         <% end %>
 
-        <% if @user.password_required? %>
+        <% if f.object.confirmed_by_password? %>
           <div class="form-group">
             <%= f.label :password, class: 'control-label' %> <i>(leave blank if you don't want to change it)</i><br />
             <%= errors(@user, :password) %>

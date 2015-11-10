@@ -18,11 +18,15 @@ class User < ActiveRecord::Base
   end
 
   def password_required?
-    empty_sns_profile? && password.blank? && super
+    empty_sns_profile? && super
+  end
+
+  def confirmed_by_password?
+    empty_sns_profile? && encrypted_password.present?
   end
 
   def update_with_password(params, *options)
-    if password_required?
+    if confirmed_by_password?
       super
     else
       params.delete(:current_password)
