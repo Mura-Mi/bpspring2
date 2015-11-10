@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151103160940) do
+ActiveRecord::Schema.define(version: 20151110140604) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -112,6 +112,7 @@ ActiveRecord::Schema.define(version: 20151103160940) do
     t.datetime "updated_at",                          null: false
     t.string   "user_image"
     t.integer  "color_theme_id"
+    t.string   "url"
   end
 
   add_index "users", ["color_theme_id"], name: "index_users_on_color_theme_id"
