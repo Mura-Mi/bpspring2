@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   has_many :attendance_plan
   has_many :sns_profile
   has_many :events, through: :attendance_plan
+  has_many :event_reports
 
   devise :database_authenticatable
   devise :registerable
@@ -36,6 +37,10 @@ class User < ActiveRecord::Base
 
   def empty_sns_profile?
     sns_profile.empty?
+  end
+
+  def posted_report_count
+    event_reports.count
   end
 
   validates :name, presence: true

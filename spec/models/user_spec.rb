@@ -52,6 +52,24 @@ RSpec.describe User, type: :model do
     end
   end
 
+  describe "posted_report_count" do
+    let(:user) { create(:user) }
+    context "new user" do
+      it "returns 0" do
+        expect(user.posted_report_count).to eq 0
+      end
+    end
 
+    context "user with 3 event reports" do
+      it "returns 3" do
+        3.times do
+          create(:event_report, user: user)
+        end
+
+        expect(user.posted_report_count).to eq 3
+      end
+    end
+
+  end
 
 end
