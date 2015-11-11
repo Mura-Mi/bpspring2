@@ -12,6 +12,14 @@ class ApplicationController < ActionController::Base
     User.find_by_id(devise_current_user.id)
   end
 
+  def theme_name
+    if current_user && current_user.color_theme
+      current_user.color_theme.style_file_name
+    else
+      'application'
+    end
+  end
+
   def not_found
     render 'errors/not_found', status: :not_found
   end
@@ -19,4 +27,6 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     root_path
   end
+
+  helper_method :theme_name
 end
