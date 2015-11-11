@@ -35,7 +35,7 @@
           </tr>
           <tr>
             <td class='bgh-table-label'>URL</td>
-            <td><%= link_to @user.website_url %></td>
+            <td><%= link_to @user.website_url if @user.website_url %></td>
           </tr>
         </table>
       </div>
