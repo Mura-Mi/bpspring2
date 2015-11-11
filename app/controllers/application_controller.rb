@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 
   def current_user
     return unless devise_current_user
-    User.includes(:color_theme).find_by_id(devise_current_user.id)
+    User.find_by_id(devise_current_user.id)
   end
 
   def not_found
