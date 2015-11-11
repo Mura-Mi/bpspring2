@@ -50,7 +50,7 @@ before_filter :configure_account_update_params, only: [:update]
       << :user_image \
       << :user_image_cache \
       << :color_theme_id \
-      << :url
+      << :website_url
   end
 
   # The path used after sign up.
