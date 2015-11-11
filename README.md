@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/Mura-Mi/bpspring2.png?label=ready&title=Ready)](https://waffle.io/Mura-Mi/bpspring2)
 # Ball Game Hub
 
 [![Build Status](https://travis-ci.org/Mura-Mi/bpspring2.svg)](https://travis-ci.org/Mura-Mi/bpspring2)
