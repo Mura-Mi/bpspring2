@@ -1,6 +1,7 @@
-<div class='row contents'>
+<div class='row container'>
 
   <aside class="col-sm-2 hidden-xs">
+    
     <div class='user-info'>
       <div><%= image_tag current_user.user_image.mini.url, class:'img-thumbnail user-image center-block' %></div>
       <div class='text-center'><%= link_to current_user.name, user_path(current_user) %></div>

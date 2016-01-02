@@ -1,7 +1,3 @@
-.contents {
-  margin-top: 5px;
-}
-
 aside {
   margin-top: 40px;
 
@@ -17,15 +13,28 @@ aside {
 }
 
 div.home-main > h3 {
+  width: 100%;
   text-align: center;
   padding: 3px 5px;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
 
-div.grid-item.home-digest {
-  width: 200px;
+@media (max-width: 479px) {
+  div.home-main {
+    width: 100%;
+  }
+
+  div.grid-item.home-digest {
+    width: 100%; // 200px;
+  }
+
+  .bgh-event-report-preview:not(:first-child) {
+    margin-top: 10px; // sm 以上になると困るはず
+  }
 }
+
+
 
 div.grid-item.grid-item--2x.home-digest {
   width: 400px;
