@@ -5,6 +5,9 @@ gem 'rails', '4.2.4'
 # Serializers
 gem 'active_model_serializers', '~> 0.10.rc3'
 
+# Active Model
+gem 'audited-activerecord', '~> 4.0'
+
 # Authentication
 gem 'devise', '3.5.2'
 gem 'omniauth-twitter', '1.2.1'
