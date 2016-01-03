@@ -38,7 +38,7 @@ gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'mini_magick', '4.3.6'
 gem 'fog-aws'
 
-gem 'coveralls', '0.8.3', require: false
+gem 'coveralls', '0.8.10', require: false
 
 group :development, :test do
   gem 'sqlite3', '1.3.11'
