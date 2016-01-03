@@ -59,7 +59,7 @@ group :development, :test do
 end
 
 group :development do
-  gem 'web-console', '2.2.1'
+  gem 'web-console', '3.0.0'
   gem 'spring', '1.6.1'
 
   gem 'guard', '2.13.0', require: false
