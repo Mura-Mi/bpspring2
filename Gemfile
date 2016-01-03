@@ -51,7 +51,7 @@ group :development, :test do
   gem 'json_spec', '1.1.4'
 
   gem 'pry-rails', '0.3.4'
-  gem 'pry-byebug', '3.2.0'
+  gem 'pry-byebug', '3.3.0'
   gem 'hirb-unicode', '0.0.5'
   gem 'better_errors', '2.1.1'
   gem 'binding_of_caller', '0.7.2'
@@ -60,11 +60,11 @@ end
 
 group :development do
   gem 'web-console', '2.2.1'
-  gem 'spring', '1.4.0'
+  gem 'spring', '1.6.1'
 
   gem 'guard', '2.13.0', require: false
   gem 'guard-rspec', '4.6.4', require: false
-  gem 'guard-livereload', '2.4.0', require: false
+  gem 'guard-livereload', '2.5.1', require: false
   gem 'rack-livereload', '0.3.16'
 
   gem 'travis', '~> 1.6.0', require: false
