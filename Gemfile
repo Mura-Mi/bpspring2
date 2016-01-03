@@ -76,5 +76,5 @@ group :test do
 end
 
 group :production do
-  gem 'pg', '0.18.3', require: false
+  gem 'pg', '0.18.4', require: false
 end
