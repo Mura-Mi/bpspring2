@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/carrierwaveuploader/carrierwave.git
-  revision: 4362fbfa5d4a616a0c64dad8cdb2d773172aa65d
+  revision: c745a3663d5ee74f68fc52f401a3b0c492690f2f
   specs:
     carrierwave (0.10.0)
       activemodel (>= 4.0.0)
@@ -68,9 +68,9 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    bootstrap-sass (3.3.5.1)
-      autoprefixer-rails (>= 5.0.0.1)
-      sass (>= 3.3.0)
+    bootstrap-sass (3.3.6)
+      autoprefixer-rails (>= 5.2.1)
+      sass (>= 3.3.4)
     builder (3.2.2)
     byebug (5.0.0)
       columnize (= 0.9.0)
@@ -198,7 +198,7 @@ GEM
       rb-inotify (>= 0.9)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
-    lumberjack (1.0.9)
+    lumberjack (1.0.10)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
     method_source (0.8.2)
@@ -390,7 +390,7 @@ DEPENDENCIES
   bcrypt (= 3.1.10)
   better_errors (= 2.1.1)
   binding_of_caller (= 0.7.2)
-  bootstrap-sass (= 3.3.5.1)
+  bootstrap-sass (= 3.3.6)
   carrierwave!
   codeclimate-test-reporter
   coveralls (= 0.8.3)

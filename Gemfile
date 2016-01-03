@@ -14,7 +14,7 @@ gem 'omniauth-twitter', '1.2.1'
 
 # CSS
 gem 'sass-rails', '~> 5.0'
-gem 'bootstrap-sass', '3.3.5.1'
+gem 'bootstrap-sass', '3.3.6'
 
 # JavaScript
 gem 'uglifier', '>= 1.3.0'
