@@ -9,7 +9,7 @@ gem 'active_model_serializers', '~> 0.10.rc3'
 gem 'audited-activerecord', '~> 4.0'
 
 # Authentication
-gem 'devise', '3.5.2'
+gem 'devise', '3.5.3'
 gem 'omniauth-twitter', '1.2.1'
 
 # CSS
