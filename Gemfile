@@ -44,7 +44,7 @@ group :development, :test do
   gem 'sqlite3', '1.3.11'
   gem 'rake', '10.4.2'
 
-  gem 'rspec-rails', '3.3.3'
+  gem 'rspec-rails', '3.4.0'
   gem 'factory_girl_rails', '4.5.0'
   gem 'rspec-collection_matchers', '1.1.2'
   gem 'spring-commands-rspec', '1.0.4'
