@@ -1,14 +1,14 @@
-<div class='row container'>
+<div class='container'>
 
   <aside class="col-sm-2 hidden-xs">
-    
+
     <div class='user-info'>
       <div><%= image_tag current_user.user_image.mini.url, class:'img-thumbnail user-image center-block' %></div>
       <div class='text-center'><%= link_to current_user.name, user_path(current_user) %></div>
     </div>
   </aside>
 
-  <div class="home-main col-sm-8 col-xs-10">
+  <div class="home-main col-sm-8 col-xs-12">
     <h3 class='bgh-accent-bg'>New Arrival Event Reports</h3>
     <div class="arrival center-block">
       <%= reports_grid(EventReport.recent(10), true, 'home-digest') %>

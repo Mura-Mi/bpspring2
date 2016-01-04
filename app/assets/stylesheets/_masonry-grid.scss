@@ -1,11 +1,34 @@
-div.grid {
+@import "bootstrap/variables";
+
+@media (max-width: $screen-xs-max) {
+  .grid-item {
+    float: left;
+    width: 100%;
+    padding: 0 0 10px 0;
+  }
+
+  .grid-item--2x {
+    width: 100%;
+  }
 }
 
-.grid-item {
-  float: left;
-  width: 300px;
-}
+@media (min-width: $screen-xs-max + 1) {
+  @mixin grid-item-common {
+    padding: 3px;
+  }
 
-.grid-item--2x {
-  width: 400px;
+  .grid-item {
+    @include grid-item-common;
+    width: 20%;
+  }
+
+  .grid-item--2x {
+    @include grid-item-common;
+    width: 40%;
+  }
+
+  .grid-item--3x {
+    @include grid-item-common;
+    width: 60%;
+  }
 }
