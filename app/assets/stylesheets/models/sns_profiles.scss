@@ -1,3 +1,11 @@
-.sns-link {
-  display: inline-block;
+.sns-links {
+  padding: 10px auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .sns-link-button {
+    margin-top: 10px;
+  }
 }

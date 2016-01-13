@@ -17,11 +17,12 @@ module SnsProfilesHelper
   end
 
   def link_to_url(provider, caption, url)
-    divClass = "sns-link #{provider.button_class}"
-
-    link_to provider.share_link(caption, url), class: divClass, target: '_blank' do
-      content_tag :div, prefix(provider, 'Share Article')
+    content_tag :div, class: 'sns-link-button' do
+      link_to provider.share_link(caption, url), class: "#{provider.button_class}", target: '_blank' do
+        prefix(provider, 'Share Article')
+      end
     end
+
   end
 
   def caption(sns_profile)
