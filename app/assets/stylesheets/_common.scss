@@ -99,6 +99,9 @@ form.button_to, .button_to div { display: inline; }
 
 @mixin btn-social {
   @extend .center-block;
+}
+
+@mixin btn-signup {
   margin-bottom: 5px;
   width: 200px;
 }
@@ -110,10 +113,20 @@ form.button_to, .button_to div { display: inline; }
   background-color: $color-twitter;
 }
 
+.btn-twitter-signup {
+  @extend .btn-twitter;
+  @include btn-signup;
+}
+
 .btn-facebook {
   @include btn-social;
   color: white;
   background-color: $color-facebook;
+}
+
+.btn-facebook-signup {
+  @extend .btn-facebook;
+  @include btn-signup;
 }
 
 a.link-twitter {

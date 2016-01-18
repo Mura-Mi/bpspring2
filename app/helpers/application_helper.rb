@@ -54,13 +54,13 @@ module ApplicationHelper
   end
 
   def twitter_button(button_name = nil)
-    button_to user_omniauth_authorize_path(:twitter), class: 'btn btn-twitter' do
+    button_to user_omniauth_authorize_path(:twitter), class: 'btn btn-twitter-signup' do
       prefix_twitter button_name
     end
   end
 
   def facebook_button(button_name = nil)
-    button_to user_omniauth_authorize_path(:facebook), class: 'btn btn-facebook' do
+    button_to user_omniauth_authorize_path(:facebook), class: 'btn btn-facebook-signup' do
       prefix_facebook button_name
     end
   end
