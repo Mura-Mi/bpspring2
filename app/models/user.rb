@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   devise :recoverable
   devise :rememberable
   devise :trackable
-  devise :omniauthable, omniauth_providers: [:twitter]
+  devise :omniauthable, omniauth_providers: [:twitter, :facebook]
   devise :validatable
 
   def email_required?

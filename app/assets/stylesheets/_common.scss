@@ -96,10 +96,24 @@ form.button_to, .button_to div { display: inline; }
   color: $gray-lighter;
 }
 
+
+@mixin btn-social {
+  @extend .center-block;
+  margin-bottom: 5px;
+  width: 200px;
+}
+
 // Button Class
 .btn-twitter {
+  @include btn-social;
   color: white;
   background-color: $color-twitter;
+}
+
+.btn-facebook {
+  @include btn-social;
+  color: white;
+  background-color: $color-facebook;
 }
 
 a.link-twitter {

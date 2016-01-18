@@ -11,6 +11,7 @@ gem 'audited-activerecord', '~> 4.0'
 # Authentication
 gem 'devise', '3.5.3'
 gem 'omniauth-twitter', '1.2.1'
+gem 'omniauth-facebook', '3.0.0'
 
 # CSS
 gem 'sass-rails', '~> 5.0'

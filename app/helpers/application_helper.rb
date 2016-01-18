@@ -42,6 +42,11 @@ module ApplicationHelper
     content_tag(:i, '', class: 'fa fa-twitter') + ' ' + (obj || 'Sign up with Twitter')
   end
 
+  def prefix_facebook(obj)
+    content_tag(:i, '', class: 'fa fa-facebook') + ' ' + (obj || 'Sign up with Facebook')
+  end
+
+
   def twitter_link(obj)
     link_to user_omniauth_authorize_path(:twitter) do
       prefix_twitter obj
@@ -51,6 +56,12 @@ module ApplicationHelper
   def twitter_button(button_name = nil)
     button_to user_omniauth_authorize_path(:twitter), class: 'btn btn-twitter' do
       prefix_twitter button_name
+    end
+  end
+
+  def facebook_button(button_name = nil)
+    button_to user_omniauth_authorize_path(:facebook), class: 'btn btn-facebook' do
+      prefix_facebook button_name
     end
   end
 end
