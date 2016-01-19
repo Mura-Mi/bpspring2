@@ -136,6 +136,13 @@ a.link-twitter {
   transition: opacity 0.15s;
 }
 
+a.link-facebook {
+  @extend .btn-facebook;
+  border-radius: 4px;
+  padding: 3px 6px;
+  transition: opacity 0.15s;
+}
+
 a.link-twitter:hover {
   opacity: 0.8;
 }

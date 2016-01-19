@@ -33,6 +33,8 @@ module SnsProfilesHelper
     case provider
     when Providers::TWITTER
       prefix_twitter(text || 'Twitter')
+    when Providers::FACEBOOK
+      prefix_facebook(text || 'Facebook')
     end
   end
 
