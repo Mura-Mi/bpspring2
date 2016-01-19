@@ -65,6 +65,18 @@
           </div>
         <% end %>
 
+        <% if tw = @user.sns_profile_of(:twitter) %>
+          <%= profile_link_button(tw) %>
+        <% else %>
+          <%= twitter_button %>
+        <% end %>
+
+        <% if fb = @user.sns_profile_of(:facebook) %>
+          <%= profile_link_button(fb) %>
+        <% else %>
+          <%= facebook_button %>
+        <% end %>
+
         <div class="actions">
           <%= f.submit "Update", class: 'btn btn-primary' %>
         </div>

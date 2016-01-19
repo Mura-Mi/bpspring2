@@ -43,5 +43,9 @@ class User < ActiveRecord::Base
     event_reports.count
   end
 
+  def sns_profile_of(provider)
+    self.sns_profile.bsearch{ |x| x.provider == provider.to_s }
+  end
+
   validates :name, presence: true
 end
