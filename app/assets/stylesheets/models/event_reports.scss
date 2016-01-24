@@ -45,6 +45,7 @@ div.bgh-event-report-preview {
     border-radius: 0 0 6px 6px;
     width: 100%;
     div.comment, div.event-info {
+      width: 100%;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
@@ -59,12 +60,18 @@ div.bgh-event-report-preview {
   }
 }
 
-div.author-info img.user-image {
-  width: 100px;
+div.author-info {
+  display: block;
+  float: right;
+  margin-top: 20px;
+  img {
+    max-width: 100px;
+  }
 }
 
-div.author-info {
-  margin-top: 20px;
+div.comment {
+  padding-top: 15px;
+  float: left;
 }
 
 div.already-uploaded-photos {

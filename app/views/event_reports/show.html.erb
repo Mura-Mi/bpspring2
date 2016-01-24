@@ -13,15 +13,30 @@
     <%= date_format @event_report.event.event_date %> by <%= link_to user.name, user_path(user) %>
   </span>
 
-  <div class='comment'>
-    <div class='center-block text-center'><span class='comment-text'><%= simple_format(h(@event_report.comment)) %></span></div>
-  </div>
-
   <div class='grid'>
     <% for photo in photos %>
       <%= image_tag photo.photo.mini.url, class: 'grid-item img-rounded first-photo' %>
     <% end %>
   </div>
+
+  <div class="row">
+
+    <% if @event_report.comment.present? %>
+      <div class='comment col-xs-9'>
+        <span class='comment-text text-left'><%= simple_format(h(@event_report.comment)) %></span>
+      </div>
+      <% author_info_col = 'col-xs-3' %>
+    <% else %>
+      <% author_info_col = 'col-xs-12' %>
+    <% end %>
+
+     <%= content_tag :div, class: "author-info #{author_info_col}" do%>
+      <div class='text-center'><span>Reported By...</span></div>
+      <div><%= image_tag user.user_image.mini.url, class: 'img-rounded img-responsive user-image center-block' %></div>
+      <div class='text-center'><%= link_to user.name, user_path(user) %></div>
+    <%end%>
+  </div>
+
 </article>
 
 <div class="sns-links btn-group-vertical">
@@ -31,11 +46,6 @@
   -->
 </div>
 
-<div class='author-info center-block text-center'>
-  <div><span>Reported By...</span></div>
-  <%= image_tag user.user_image.mini.url, class: 'img-rounded user-image' %>
-  <div><%= link_to user.name, user_path(user) %></div>
-</div>
 
 <nav>
   <ul class='pager'>
