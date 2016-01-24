@@ -19,14 +19,16 @@
 
   <div class='grid'>
     <% for photo in photos %>
-      <%= image_tag photo.photo.mini.url, class: 'grid-item img-thumbnail first-photo' %>
+      <%= image_tag photo.photo.mini.url, class: 'grid-item img-rounded first-photo' %>
     <% end %>
   </div>
 </article>
 
 <div class="sns-links btn-group-vertical">
   <%= link_to_url(Providers::TWITTER, report_oneline_summary(@event_report), event_report_url(@event_report))%>
+  <!--
   <%= link_to_url(Providers::FACEBOOK, report_oneline_summary(@event_report), event_report_url(@event_report))%>
+  -->
 </div>
 
 <div class='author-info center-block text-center'>
