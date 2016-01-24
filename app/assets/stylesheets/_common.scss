@@ -26,7 +26,7 @@ td.bgh-table-label  {
   font-weight: bold;
 }
 
-body, h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6 {
     font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
 }
@@ -155,4 +155,8 @@ a.link-facebook {
 
 .btn-facebook:hover {
   opacity: 0.8;
+}
+
+.bgh-brand-font {
+  font-weight: 700;
 }
