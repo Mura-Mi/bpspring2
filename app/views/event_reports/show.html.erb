@@ -14,10 +14,16 @@
   </span>
 
   <div class='grid'>
+    <div class='grid-sizer'></div>
     <% for photo in photos %>
-      <%= image_tag photo.photo.mini.url, class: 'grid-item img-rounded first-photo' %>
+      <div class='grid-item'>
+        <%= image_tag photo.photo.mini.url, class: 'img-responsive img-rounded first-photo center-block' %>
+      </div>
     <% end %>
   </div>
+  <script>
+    $('.grid').imagesLoaded(bgh_masonry_exec);
+  </script>
 
   <div class="row">
 

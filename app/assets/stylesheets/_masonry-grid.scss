@@ -23,22 +23,20 @@
 
 // for Other view
 @media (min-width: $screen-xs-max + 1) {
-  @mixin grid-item-common {
-    padding: 3px;
+  .grid-sizer, .grid-item {
+    width: 19%;
+    float: left;
   }
 
   .grid-item {
-    @include grid-item-common;
-    width: 20%;
+    padding: 1%;
   }
 
   .grid-item--2x {
-    @include grid-item-common;
-    width: 40%;
+    width: 39%;
   }
 
   .grid-item--3x {
-    @include grid-item-common;
     width: 60%;
   }
 }

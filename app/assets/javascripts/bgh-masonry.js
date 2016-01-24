@@ -1,19 +1,9 @@
-$('.grid').masonry(
-  {
+bgh_masonry_exec = function() {
+  $('.grid').masonry({
     itemSelector:    '.grid-item',
-    columnWidth:     '.grid-item',
+    columnWidth:     '.grid-sizer',
     percentPosition: true
-  }
-)
+  }).masonry('layout');
+};
 
-
-
-/*
-$(function() {
-  var grid = $('.grid');
-  imagesLoaded(grid, function() {
-    $('.grid').masonry();
-  });
-});
-
-*/
+$().imagesLoaded(bgh_masonry_exec);
