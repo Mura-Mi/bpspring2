@@ -1,16 +1,27 @@
 @import "bootstrap/variables";
 
+// For mobile view
 @media (max-width: $screen-xs-max) {
   .grid-item {
     float: left;
     width: 100%;
+
+    &:not(:first-child) {
+      margin-top: 15px;
+    }
   }
 
   .grid-item--2x {
+    float: left;
     width: 100%;
+
+    &:not(:first-child) {
+      margin-top: 15px;
+    }
   }
 }
 
+// for Other view
 @media (min-width: $screen-xs-max + 1) {
   @mixin grid-item-common {
     padding: 3px;
