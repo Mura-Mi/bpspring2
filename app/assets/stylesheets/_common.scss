@@ -101,9 +101,13 @@ form.button_to, .button_to div { display: inline; }
   @extend .center-block;
 }
 
-@mixin btn-signup {
+@mixin btn-account {
   margin-bottom: 5px;
-  width: 200px;
+  min-width: 200px;
+}
+
+.btn-account {
+  @include btn-account;
 }
 
 // Button Class
@@ -111,22 +115,24 @@ form.button_to, .button_to div { display: inline; }
   @include btn-social;
   color: white;
   background-color: $color-twitter;
+  transition: opacity 0.15s;
 }
 
 .btn-twitter-signup {
   @extend .btn-twitter;
-  @include btn-signup;
+  @include btn-account;
 }
 
 .btn-facebook {
   @include btn-social;
   color: white;
   background-color: $color-facebook;
+  transition: opacity 0.15s;
 }
 
 .btn-facebook-signup {
   @extend .btn-facebook;
-  @include btn-signup;
+  @include btn-account;
 }
 
 a.link-twitter {
@@ -143,6 +149,10 @@ a.link-facebook {
   transition: opacity 0.15s;
 }
 
-a.link-twitter:hover {
+.btn-twitter:hover {
+  opacity: 0.8;
+}
+
+.btn-facebook:hover {
   opacity: 0.8;
 }

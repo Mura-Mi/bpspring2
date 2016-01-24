@@ -3,7 +3,7 @@ require 'provider'
 module Providers
 
   TWITTER = Provider.new('twitter',
-    'link-twitter',
+    'btn-twitter',
     ->(sns_profile) { "https://twitter.com/#{sns_profile.nickname}" },
     ->(caption = nil) { "#{content_tag(:i, '', class: 'fa fa-twitter')} #{caption || ''}" },
     ->(caption, url) {
@@ -12,7 +12,7 @@ module Providers
     }
   )
   FACEBOOK = Provider.new('facebook',
-    'link-facebook',
+    'btn-facebook',
     ->(sns_profile) { "https://twitter.com/#{sns_profile.nickname}" },
     ->(caption = nil) { "#{content_tag(:i, '', class: 'fa fa-facebook')} #{caption || ''}" },
     ->(caption, url) {
