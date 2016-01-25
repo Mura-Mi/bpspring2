@@ -1,8 +1,9 @@
-<% classAttr = 'grid-item--2x bgh-event-report-preview' %>
+<% classAttr = 'grid-item bgh-event-report-preview' %>
 <% classAttr << ' grid-item--3x' if event_report.comment.length > 40 %>
+<% classAttr << ' grid-item--2x' if event_report.comment.length <= 40 %>
 <% classAttr << " #{additional_class}" unless additional_class.empty? %>
 
-<%= div_for(event_report, class: classAttr) do%>
+<%= div_for(event_report, class: classAttr) do %>
 
   <div class='photo-and-title'>
     <% if event_report.event_photos.present? %>
