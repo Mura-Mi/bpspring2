@@ -33,4 +33,15 @@ $(function() {
       $('#bgh-event-report-event-id').val('')
     }
   });
+
+  $('#event_report_modal').on('show.bs.modal', function(e) {
+    var button = $(e.relatedTarget);
+    var recipient = button.data('url');
+    var modal = $(this)
+    modal.find('.modal-body').append("<img class='img-responsive' src='"+ recipient +"'/>")
+  });
+
+  $('#event_report_modal').on('hidden.bs.modal', function(e) {
+    $(this).find('.modal-body').empty();
+  });
 })
