@@ -13,6 +13,9 @@ gem 'devise', '3.5.3'
 gem 'omniauth-twitter', '1.2.1'
 gem 'omniauth-facebook', '3.0.0'
 
+# SNS buttons
+gem 'social-buttons', '~> 0.3'
+
 # CSS
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '3.3.6'
