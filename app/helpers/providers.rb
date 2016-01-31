@@ -4,7 +4,7 @@ module Providers
 
   TWITTER = Provider.new('twitter',
     'btn-twitter',
-    ->(sns_profile) { "https://twitter.com/#{sns_profile.nickname}" },
+    ->(sns_profile) { "https://www.twitter.com/#{sns_profile.nickname}" },
     ->(caption = nil) { "#{content_tag(:i, '', class: 'fa fa-twitter')} #{caption || ''}" },
     ->(caption, url) {
       text = "#{caption} #{url} via @BallGameHub"
@@ -13,7 +13,7 @@ module Providers
   )
   FACEBOOK = Provider.new('facebook',
     'btn-facebook',
-    ->(sns_profile) { "https://facebook.com/#{sns_profile.nickname}" },
+    ->(sns_profile) { "https://www.facebook.com/#{sns_profile.nickname}" },
     ->(caption = nil) { "#{content_tag(:i, '', class: 'fa fa-facebook')} #{caption || ''}" },
     ->(caption, url) {
       text = "#{caption} #{url} via @BallGameHub"
