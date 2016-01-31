@@ -5,5 +5,3 @@ bgh_masonry_exec = function() {
     percentPosition: true
   }).masonry('layout');
 };
-
-$().imagesLoaded(bgh_masonry_exec);

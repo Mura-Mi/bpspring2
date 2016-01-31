@@ -40,6 +40,11 @@
         </table>
       </div>
 
+      <div class='grid bgh-event-reports-grid'>
+        <div class='grid-sizer'></div>
+        <%= reports_grid(EventReport.for_user(@user.id), true, 'home-digest') %>
+      </div>
+
     </div>
   </div>
 </div>

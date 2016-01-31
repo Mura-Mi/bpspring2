@@ -5,6 +5,7 @@ class EventReport < ActiveRecord::Base
 
   scope :held_in, -> (place_id) { joins(:event).merge(Event.held_in(place_id)) }
   scope :recent, -> (count) { order(:created_at).reverse_order.limit(count) }
+  scope :for_user, -> (user_id) { where('user_id = ?', user_id) }
 
   validates :summary, presence: true
   validates :summary, length: {maximum: 30}
