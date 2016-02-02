@@ -34,11 +34,43 @@ $(function() {
     }
   });
 
+  // Modal
   $('#event_report_modal').on('show.bs.modal', function(e) {
     var button = $(e.relatedTarget);
     var recipient = button.data('url');
     var modal = $(this)
     modal.find('.modal-body').append("<img class='img-responsive' src='"+ recipient +"'/>")
+    var title = modal.find('#myModalLabel');
+    title.text(button.data('title') || "No Title")
+    if(button.data('author') === true) {
+      title.html(title.text() + "  <i class='fa fa-edit' id='bgh-modal-edit-button'/>");
+    }
+
+    $('#bgh-modal-edit-button').click(function(e) {
+      title.hide()
+      $('.title-edit').show()
+    });
+
+    $('.title-edit').keypress(function(e) {
+      if (e.which == 13) {
+        $.ajax({
+              url: "/event_photos/" + button.data('id'),
+              type: "PUT",
+              contentType: 'application/json',
+              data: JSON.stringify(
+                {event_photo: {
+                  title: $('.title-edit').val()
+                }}),
+              dataType: "json",
+              success: function(data) {
+                  alert("success");
+              },
+              error: function(data) {
+                  alert("errror");
+              }
+          });
+      }
+    })
   });
 
   $('#event_report_modal').on('hidden.bs.modal', function(e) {

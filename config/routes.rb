@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   root 'home#index'
   resources :top_page, only: [:index]
 
+  resources :event_photos, only: [:update]
+
   devise_for :users, controllers: {
     omniauth_callbacks: 'users/omniauth_callbacks',
     sessions: 'users/sessions',
