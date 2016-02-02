@@ -74,6 +74,8 @@
 
 <nav>
   <ul class='pager'>
-    <li><%= link_to "Edit", edit_event_report_path %></li>
+    <%if @event_report.user == current_user %>
+      <li><%= link_to "Edit", edit_event_report_path %></li>
+    <% end %>
   </ul>
 </nav>
