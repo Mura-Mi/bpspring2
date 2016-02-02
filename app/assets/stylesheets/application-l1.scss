@@ -3,6 +3,8 @@ $bgh-accent-color: #AC0107;
 $bgh-background: #f7f7f7;
 $bgh-accent-light: #efefef;
 
+$link-color: $bgh-main-tone-color;
+
 @import "bootstrap-sprockets";
 @import "variable-base";
 @import "bootstrap-custom";
