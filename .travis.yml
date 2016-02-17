@@ -6,5 +6,6 @@ secure: "jI6XNmJRwCCDS3mLVg/lKQcx+DFXBWoTHPBmFu3Ylrw0eEXjwVs9C/83AEOiJhs/1+CJRye
 cache: bundler
 bundler_args: --without production --deployment
 before_script:
+  - npm install
   - bundle exec rake db:create
   - bundle exec rake db:migrate
