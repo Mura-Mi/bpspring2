@@ -46,4 +46,9 @@ Rails.application.configure do
 
   config.use_aws = false
   config.aws_backet_name = 'bpspring-dev'
+
+  # react-rails
+  config.react.jsx_transorm_options = {
+    harmony: true
+  }
 end

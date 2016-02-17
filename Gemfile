@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.5'
 
 # Serializers
-gem 'active_model_serializers', '~> 0.10.rc3'
+gem 'active_model_serializers', '~> 0.8'
 
 # Active Model
 gem 'audited-activerecord', '~> 4.0'
@@ -25,6 +25,9 @@ gem 'uglifier', '>= 1.3.0'
 gem 'typescript-rails', '0.6.2'
 gem 'jquery-rails', '4.0.5'
 gem 'jquery-ui-rails', '5.0.5'
+
+gem 'react-rails', '1.6.0'
+gem 'browserify-rails', '2.2.1'
 
 gem 'nested_form_fields'
 

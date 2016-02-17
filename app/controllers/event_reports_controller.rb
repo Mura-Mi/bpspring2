@@ -3,7 +3,7 @@ class EventReportsController < ApplicationController
 
   # GET /event_reports
   def index
-    @event_reports = EventReport.all
+    render json: EventReport.all, each_serializer: EventReportSerializer
   end
 
   # GET /event_reports/1

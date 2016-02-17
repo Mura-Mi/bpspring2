@@ -1,0 +1,28 @@
+{
+  "name": "bpspring2",
+  "version": "0.1.0",
+  "description": "share preasure to watch baseball!",
+  "main": "index.js",
+  "dependencies": {
+    "browserify": "^13.0.0",
+    "browserify-incremental": "^3.0.1",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "react-masonry-component": "^4.0.0",
+    "reactify": "^1.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mura-Mi/bpspring2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mura-Mi/bpspring2/issues"
+  },
+  "homepage": "https://github.com/Mura-Mi/bpspring2#readme"
+}
