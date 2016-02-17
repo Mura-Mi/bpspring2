@@ -9,10 +9,8 @@
 <div class="home-main col-sm-8 col-xs-12">
   <h3 class='bgh-accent-bg'>New Arrival Event Reports</h3>
   <div class="arrival center-block">
-    <div class='grid bgh-event-reports-grid'>
-      <div class='grid-sizer'></div>
-      <%= reports_grid(EventReport.recent(10), true, 'home-digest') %>
-    </div>
+    <div class='grid-sizer'></div>
+    <%= react_component('reports', {name: 'Kajitani', url: '/event_reports.json'}, {prerender: true}) %>
   </div>
 </div>
 
