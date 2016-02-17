@@ -29,6 +29,10 @@ class Event < ActiveRecord::Base
     EventsHelper.oneline_summary self
   end
 
+  def summary
+    "%s (%s)" % [name, event_date.strftime('%d %B, %Y')]
+  end
+
   private
   def abbrevation_shorter_than_name
     msg = 'Abbreviation must be shorter than name'

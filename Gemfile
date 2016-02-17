@@ -27,6 +27,7 @@ gem 'jquery-rails', '4.0.5'
 gem 'jquery-ui-rails', '5.0.5'
 
 gem 'react-rails', '1.6.0'
+gem 'browserify-rails', '2.2.1'
 
 gem 'nested_form_fields'
 

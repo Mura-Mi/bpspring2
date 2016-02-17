@@ -25,9 +25,6 @@
 //= require nested_form_fields
 //= require typeahead.jquery.min
 //= require bloodhound
-//= require react
-//= require react_ujs
-//= require components
 //= require_tree .
 
 /// <reference path='typings/tsd.d.ts' />
