@@ -13,7 +13,7 @@
     <%= date_format @event_report.event.event_date %> by <%= link_to user.name, user_path(user) %>
   </span>
 
-  <div class='grid'>
+  <!-- <div class='grid'>
     <div class='grid-sizer'></div>
     <% for photo in photos %>
       <div class='grid-item'>
@@ -23,7 +23,8 @@
         <% end %>
       </div>
     <% end %>
-  </div>
+  </div> -->
+  <%= react_component 'Photos', {data: photos} %>
 
   <div class='modal fade' id='event_report_modal' tabindex='-1' role='dialog' aria-labelledby='myModalLabel'>
     <div class="modal-dialog" role='document'>
@@ -43,10 +44,6 @@
       </div>
     </div>
   </div>
-
-  <script>
-    $('.grid').imagesLoaded(bgh_masonry_exec);
-  </script>
 
   <div class="row">
 
