@@ -1,4 +1,7 @@
 class EventSerializer < ActiveModel::Serializer
-  attributes :id, :event_date
-  attribute :format, key: :name
+  attributes :id, :event_date, :name
+
+  def name
+    object.format
+  end
 end

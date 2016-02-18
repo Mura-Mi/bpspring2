@@ -16,7 +16,7 @@ RSpec.describe "Events", type: :request do
       e2 = create(:event)
       e3 = create(:event)
 
-      get '/events', format: 'json'
+      get '/events', search: nil, format: 'json'
 
       expect(response).to be_success
       expect(response.body).to have_json_size(3)

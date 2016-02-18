@@ -28,5 +28,9 @@ class ApplicationController < ActionController::Base
     root_path
   end
 
+  def default_serializer_options
+    {root: false}
+  end
+
   helper_method :theme_name
 end
