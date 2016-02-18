@@ -43,7 +43,7 @@ var Reports = React.createClass({
       url: this.props.url,
       dataType: 'json',
       success: function(result) {
-        result.event_reports.forEach((report)=>{
+        result.forEach((report)=>{
           setTimeout( ()=>{
             this.setState({data: this.state.data.concat([report])});
           }, 0);
