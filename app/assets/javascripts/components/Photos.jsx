@@ -25,7 +25,7 @@ var Photos = React.createClass({
       disableImagesLoaded={false}
     >
       <div className='grid-sizer'></div>
-      {this.props.data.map((photo)=>{
+      {this.props.data.map(function(photo) {
         return <Photo data={photo} key={photo.id} />
       })}
     </Masonry>;
