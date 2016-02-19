@@ -5,9 +5,9 @@ var Report = React.createClass({
   render: function() {
     var divClass = "bgh-event-report-preview grid-item";
 
-    if (this.props.article.comment.length > 40) {
+    if (!this.props.article.comment || this.props.article.comment.length < 10) {
+    } else if (this.props.article.comment.length > 40) {
       divClass += " grid-item--3x"
-    } else if (this.props.article.comment.length < 10) {
     } else {
       divClass += " grid-item--2x"
     }
@@ -43,11 +43,7 @@ var Reports = React.createClass({
       url: this.props.url,
       dataType: 'json',
       success: function(result) {
-        result.forEach(function(report) {
-          setTimeout(function() {
-            this.setState({data: this.state.data.concat([report])});
-          }, 0);
-        })
+        this.setState({data: result})
       }.bind(this),
       error: function(xhr, status, err) {
         console.error(this.props.url, status, err.toString());
