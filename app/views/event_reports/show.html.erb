@@ -13,37 +13,8 @@
     <%= date_format @event_report.event.event_date %> by <%= link_to user.name, user_path(user) %>
   </span>
 
-  <!-- <div class='grid'>
-    <div class='grid-sizer'></div>
-    <% for photo in photos %>
-      <div class='grid-item'>
-        <%= link_to '#', data: { toggle: 'modal', target: '#event_report_modal', id: photo.id,
-          url: photo.photo.url, title: photo.title, author: @event_report.user == current_user } do %>
-          <%= image_tag photo.photo.mini.url, class: 'img-responsive img-rounded first-photo center-block' %>
-        <% end %>
-      </div>
-    <% end %>
-  </div> -->
   <%= react_component 'Photos', {data: photos} %>
-
-  <div class='modal fade' id='event_report_modal' tabindex='-1' role='dialog' aria-labelledby='myModalLabel'>
-    <div class="modal-dialog" role='document'>
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
-            <span aria-hidden='true'>&times;</span>
-          </button>
-          <h4 class="modal-title" id="myModalLabel"></h4>
-          <input class='title-edit' style='display: none;'>
-        </div>
-        <div class="modal-body">
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
+  <div id='photo-modal'></div>
 
   <div class="row">
 
