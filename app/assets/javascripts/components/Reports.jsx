@@ -12,10 +12,12 @@ var Report = React.createClass({
       divClass += " grid-item--2x"
     }
 
+    var src = this.props.article.digest_photo
+
 
     return <div className={divClass}>
       <div className="photo-and-title">
-        <img src={this.props.article.event_photos[0].photo.mini.url} className="event_photo img-rounded" />
+        <img src={src} className="event_photo img-rounded" />
         <div className="bgh-accent-bg-trans leaf-title">
           <span className='title'><h3>
             <a href={this.props.article.url}>{this.props.article.summary}</a>

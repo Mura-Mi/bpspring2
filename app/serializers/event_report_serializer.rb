@@ -2,11 +2,20 @@ class EventReportSerializer < ActiveModel::Serializer
   attributes :id,
     :summary,
     :comment,
-    :event_photos,
+    :digest_photo,
     :url,
     :user,
     :author_url,
     :event_summary
+
+  def digest_photo
+    if object.event_photos.blank?
+      scope.image_url('no_image.png')
+    else
+      object.event_photos[0].photo.mini.url
+    end
+
+  end
 
   def event_summary
     object.event.summary
