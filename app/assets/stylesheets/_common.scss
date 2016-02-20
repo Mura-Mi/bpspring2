@@ -160,3 +160,11 @@ a.link-facebook {
 .bgh-brand-font {
   font-weight: 700;
 }
+
+.modal-container {
+  position: relative;
+}
+
+.modal-container .modal, .modal-container .modal-backdrop {
+  position: absolute;
+}
