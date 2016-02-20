@@ -11,13 +11,16 @@ var PhotoModal = React.createClass({
   onHide: function() {
     this.setState({open: false, title: 'No Title'});
   },
+  handleSelect: function(selectedIndex, selectedDirection) {
+    var value = this.props.photos[selectedIndex].title || "No Title";
+    this.setState({title: value})
+  },
   render: function() {
     var src = this.state.img_url;
-    var title = this.state.title || "No Title"
     return <Modal show={this.state.open} onHide={this.onHide}>
-      <div className="modal-header"><h4>{title}</h4></div>
+      <div className="modal-header"><h4>{this.state.title}</h4></div>
       <div className='modal-body'>
-        <Carousel defaultActiveIndex={this.state.index}>
+        <Carousel defaultActiveIndex={this.state.index} onSelect={this.handleSelect} interval={0}>
           {
             this.props.photos.map(function(p) {
               return <CarouselItem key={p.id}><img src={p.photo.url} className='img-responsive'/></CarouselItem>
