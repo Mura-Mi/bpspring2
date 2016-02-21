@@ -3,22 +3,52 @@ var bootstrap = require('react-bootstrap');
 var Modal = bootstrap.Modal;
 var Carousel = bootstrap.Carousel;
 var CarouselItem = bootstrap.CarouselItem;
+var EditInPlace = require('react-editinplace')
 
 var PhotoModal = React.createClass({
   getInitialState: function() {
-    return {open: false, title: 'No Title', index: 0};
+    return {open: false, title: 'No Title', index: 0, id:-1 };
   },
   onHide: function() {
-    this.setState({open: false, title: 'No Title'});
+    this.setState({open: false });
   },
   handleSelect: function(selectedIndex, selectedDirection) {
-    var value = this.props.photos[selectedIndex].title || "No Title";
-    this.setState({title: value})
+    var photo = this.props.photos[selectedIndex];
+    var value = photo.title || "No Title";
+    var photo_id = photo.id;
+    this.setState({title: value, id: photo_id});
+    this.refs.titleEditor.setState({text: value});
+  },
+  requestTitleChange: function(new_title) {
+    var id = this.state.id;
+    $.ajax(
+      { url: "/event_photos/" + id,
+         type: "PUT",
+         contentType: 'application/json',
+         data: JSON.stringify(
+           {event_photo: { title: new_title }}
+         ),
+         dataType: "json",
+         success: function(data) {
+         },
+         error: function(data) {}
+      }
+    );
   },
   render: function() {
     var src = this.state.img_url;
+    var title = this.state.title || "No Title"
     return <Modal show={this.state.open} onHide={this.onHide}>
-      <div className="modal-header"><h4>{this.state.title}</h4></div>
+      <div className="modal-header">
+        <h4>
+          <EditInPlace
+            ref="titleEditor"
+            text={title}
+            activeClassName='form-control-parent'
+            onChange={this.requestTitleChange}
+            />
+        </h4>
+      </div>
       <div className='modal-body'>
         <Carousel defaultActiveIndex={this.state.index} onSelect={this.handleSelect} interval={0}>
           {
@@ -35,7 +65,8 @@ var PhotoModal = React.createClass({
 
 var Photos = React.createClass({
   handleClick: function(photo, i) {
-    this.refs.modal.setState({open: true, title: photo.title, img_url: photo.photo.url, index: i});
+    var title = photo.title || "No title"
+    this.refs.modal.setState({open: true, title: title, img_url: photo.photo.url, index: i, id: photo.id});
   },
   render: function() {
     var op = {
