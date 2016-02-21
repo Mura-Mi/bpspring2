@@ -4,17 +4,17 @@
   <ul class='dropdown-menu'>
 
     <% unless user_signed_in? %>
-      <li class='dropdown-header'> <%= prefix_sign_up 'Sign Up with...' %> </li>
-      <li><%= link_to(prefix_email('Email'), new_user_registration_path)  %></li>
-      <li><%= twitter_link 'Twitter' %><li>
+      <li class='dropdown-header'> <%= prefix_sign_up t('bgh.header.sign_up_with') %> </li>
+      <li><%= link_to(prefix_email(t('bgh.header.sign_up_with_email')), new_user_registration_path)  %></li>
+      <li><%= twitter_link t('bgh.header.sign_up_with_twitter') %><li>
       <li class='divider'></li>
-      <li><%= link_to(prefix_sign_in('Log in'), new_user_session_path) %><li>
+      <li><%= link_to(prefix_sign_in(t('bgh.header.log_in')), new_user_session_path) %><li>
 
     <% else %>
 
-      <li><%= link_to(prefix_edit('Edit registration'), edit_user_registration_path) %></li>
+      <li><%= link_to(prefix_edit(t('bgh.header.edit_registration')), edit_user_registration_path) %></li>
       <li class='divider'></li>
-      <li><%= link_to(prefix_sign_out('Logout'), destroy_user_session_path) %><li>
+      <li><%= link_to(prefix_sign_out(t('bgh.header.log_out')), destroy_user_session_path) %><li>
 
     <% end %>
 
