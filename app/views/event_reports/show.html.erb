@@ -7,10 +7,17 @@
     <h1>
       <%= @event_report.summary %>
       <br>
-      <small>(<%= @event_report.event.name %>)</small>
+      <small>
+        <%= link_to @event_report.event do%>
+          (<%= @event_report.event.name %>)
+        <% end %>
+      </small>
       <br>
     </h1>
-    <%= date_format @event_report.event.event_date %> by <%= link_to user.name, user_path(user) %>
+    <%= l @event_report.event.event_date, format: :yymmdd %> by <%= link_to user.name, user_path(user) %>
+    <%if @event_report.user == current_user %>
+      <div><small><%= link_to t('bgh.event_report.edit_this_post'), edit_event_report_path %></small><div>
+    <% end %>
   </span>
 
   <%= react_component 'Photos', {data: photos} %>
@@ -40,12 +47,3 @@
   <%= tweet_button(url: event_report_url(@event_report), text: report_oneline_summary(@event_report), via: 'BallGameHub') %>
 
 </div>
-
-
-<nav>
-  <ul class='pager'>
-    <%if @event_report.user == current_user %>
-      <li><%= link_to "Edit", edit_event_report_path %></li>
-    <% end %>
-  </ul>
-</nav>

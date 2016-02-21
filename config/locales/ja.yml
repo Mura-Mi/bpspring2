@@ -1,4 +1,7 @@
 ja:
+  date:
+    formats:
+      yymmdd: '%Y年%m月%d日'
   bgh:
     title: 'やきゅれぽ'
     sub_title: 'あの日スタジアムで観た感動を残そう'
@@ -51,6 +54,7 @@ ja:
       comment_placeholder: あなたの感想をたっぷりと語ってください!!
       upload_photo: 写真をアップロード
       upload_more_photo: 写真を追加
+      edit_this_post: 記事を編集する
 
     misc:
       back: '戻る'
