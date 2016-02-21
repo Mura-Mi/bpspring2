@@ -7,8 +7,8 @@
       <div class="col-lg-12">
 
         <div class="intro-message">
-          <h1>Ball Game Hub</h1>
-          <h3>あの日スタジアムで観た感動を残そう</h3>
+          <h1><%= t('bgh.title') %></h1>
+          <h3><%= t('bgh.sub_title') %></h3>
 
           <% if !current_user %>
             <hr class="intro-divider">
@@ -21,32 +21,30 @@
             <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
               <div class="form-group bgh-top-singup-field center-block">
                 <%= f.text_field :name, autofocus: true, class: 'form-control',
-                  placeholder: 'Your Name' %>
+                  placeholder: t('bgh.sign_up.your_name') %>
               </div>
               <div class="form-group bgh-top-singup-field center-block">
                 <%= f.email_field :email, autofocus: true, class: 'form-control',
-                  placeholder: 'yourname@example.com' %>
+                  placeholder: t('bgh.sign_up.your_email') %>
               </div>
               <div class="form-group bgh-top-singup-field center-block">
                 <% if @minimum_password_length %>
                 <em>(<%= @minimum_password_length %> characters minimum)</em>
                 <% end %>
                 <%= f.password_field :password, autocomplete: "off",
-                  class: 'form-control', placeholder: 'Password' %>
+                  class: 'form-control', placeholder: t('bgh.sign_up.password') %>
               </div>
 
               <div class="form-group bgh-top-singup-field center-block">
                 <%= f.password_field :password_confirmation, autocomplete: "off",
-                  class: 'form-control', placeholder: 'Password Confirmation' %>
+                  class: 'form-control', placeholder: t('bgh.sign_up.password_confirmation') %>
               </div>
 
               <div class="actions">
-                <%= f.submit "Sign up", class: 'btn btn-primary' %>
+                <%= f.submit t('bgh.sign_up.sign_up'), class: 'btn btn-primary' %>
               </div>
             <% end %>
           <% end %>
-
-          <div class="form-group"></div>
         </div>
 
       </div>

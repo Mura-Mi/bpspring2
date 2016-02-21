@@ -39,11 +39,11 @@ module ApplicationHelper
   end
 
   def prefix_twitter(obj)
-    content_tag(:i, '', class: 'fa fa-twitter') + ' ' + (obj || 'Sign up with Twitter')
+    content_tag(:i, '', class: 'fa fa-twitter') + ' ' + (obj || t('bgh.social.sign_up_with_twitter'))
   end
 
   def prefix_facebook(obj)
-    content_tag(:i, '', class: 'fa fa-facebook') + ' ' + (obj || 'Sign up with Facebook')
+    content_tag(:i, '', class: 'fa fa-facebook') + ' ' + (obj || t('bgh.social.sign_up_with_facebook'))
   end
 
   def prefix_edit(obj)

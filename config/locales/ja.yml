@@ -1,0 +1,24 @@
+ja:
+  bgh:
+    title: 'やきゅれぽ'
+    sub_title: 'あの日スタジアムで観た感動を残そう'
+    home: 'ホーム'
+    about_us: 'About Us'
+    now_printing: '(Now Printing...)'
+
+    header:
+      post_new_report: '新しいレポートを投稿'
+      explore_events: 'イベントを探す'
+      places: '球場から探す'
+      post_new_event: 'イベント情報を登録'
+
+    sign_up:
+      your_name: あなたの名前は？
+      your_email: your_email_address@example.com
+      password: 8文字以上のパスワード
+      password_confirmation: パスワードをもう一度入力！
+      sign_up: 'アカウントを登録！'
+
+    social:
+      sign_up_with_twitter: 'Twitter 経由で登録'
+      sign_up_with_facebook: 'Facebook 経由で登録'

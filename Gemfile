@@ -10,6 +10,7 @@ gem 'audited-activerecord', '~> 4.0'
 
 # Authentication
 gem 'devise', '3.5.3'
+gem 'devise-i18n', '~> 0.12.1'
 gem 'omniauth-twitter', '1.2.1'
 gem 'omniauth-facebook', '3.0.0'
 

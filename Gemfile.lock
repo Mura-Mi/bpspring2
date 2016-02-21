@@ -105,6 +105,7 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    devise-i18n (0.12.1)
     diff-lcs (1.2.5)
     docile (1.1.5)
     domain_name (0.5.25)
@@ -423,6 +424,7 @@ DEPENDENCIES
   codeclimate-test-reporter
   coveralls (= 0.8.10)
   devise (= 3.5.3)
+  devise-i18n (~> 0.12.1)
   dotenv-rails
   factory_girl_rails (= 4.5.0)
   fog-aws
