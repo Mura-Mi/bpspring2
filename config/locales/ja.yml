@@ -48,7 +48,7 @@ ja:
       post: 'レポートを投稿！'
       search_event_placeholder: イベント名を入力して検索
       summary_placeholder: この日の感想を一言で言うと？
-      comment_placeholder: あなたの感想をたっぷりと語ってください
+      comment_placeholder: あなたの感想をたっぷりと語ってください!!
       upload_photo: 写真をアップロード
       upload_more_photo: 写真を追加
 
