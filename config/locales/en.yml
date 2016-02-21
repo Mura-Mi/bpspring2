@@ -1,3 +1,54 @@
 en:
   bgh:
     title: 'BallRepo'
+    sub_title: 'Share Your Landscape in Ballpark!'
+    home: 'Home'
+    about_us: 'About Us'
+    now_printing: '(Now Printing...)'
+
+    header:
+      post_new_report: Post new Report
+      explore_events: Explore Events
+      places: 'Browse Places'
+      post_new_event: 'Post new Event'
+      sign_up_with: 'Sign up with…'
+      sign_up_with_email: 'Email'
+      sign_up_with_twitter: 'Sign up with Twitter'
+      log_in: 'Log in'
+      edit_registration: 'Edit your registration'
+      log_out: 'Log Out'
+
+    sign_up:
+      your_name: Your Name
+      your_email: your_email_address@example.com
+      password: Password with more than 8 charactors
+      password_confirmation: Password Again
+      sign_up: 'Sign up!'
+
+    social:
+      sign_up_with_twitter: 'Sign up with Twitter'
+      sign_up_with_facebook: 'Sign up with Facebook'
+
+    home:
+      new_arrival: 'New Arrival Reports'
+
+    event_report:
+      post: 'Post Your Report!'
+      search_event_placeholder: "Search Event you've watched"
+      summary_placeholder: Summary for this event
+      comment_placeholder: Let's talk about this event!
+      upload_photo: Upload Photos
+      upload_more_photo: Upload More Photos
+
+    misc:
+      back: Back
+
+  activerecord:
+    models:
+      event: 'Event'
+      event_report: Report
+    attributes:
+      event_report:
+        event: Event
+        summary: Summary
+        comment: Your Comment
