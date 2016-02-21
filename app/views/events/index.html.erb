@@ -37,21 +37,21 @@
   <div class='bgh-events-button-footer center-block'>
     <div class='actions'>
       <div class='pull-left'>
-        <%= button_to "< Prev", events_path,
+        <%= button_to "< " + t('bgh.event.prev_month'), events_path,
           {params: {month: @yearMonth.previous.serialize }, method: :get, class: 'btn btn-default'} %>
       </div>
       <div class='pull-right'>
-        <%= button_to 'Next >', events_path,
+        <%= button_to t('bgh.event.next_month') + ' >', events_path,
           {params: {month: @yearMonth.next.serialize }, method: :get, class: 'btn btn-default'} %>
       </div>
-      <%= button_to "Create New Event", new_event_path, method: :get, class: 'btn btn-info center-block' %>
+      <%= button_to t('bgh.event.post_new'), new_event_path, method: :get, class: 'btn btn-info center-block' %>
     </div>
     <div class='actions'>
       <div class="form-group month-form form-inline">
         <%= form_tag('/events', method: 'get', class: 'form-inline') do %>
           <div class='from-group'>
             <%= month_field nil, 'month', value: @yearMonth.input_format, class: 'form-inline form-control' %>
-            <%= submit_tag 'Show', class: 'btn btn-default btn-sm' %>
+            <%= submit_tag t('bgh.event.show_month'), class: 'btn btn-default btn-sm' %>
           </div>
         <% end %>
       </div>

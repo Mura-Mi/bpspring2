@@ -32,6 +32,17 @@ en:
     home:
       new_arrival: 'New Arrival Reports'
 
+    event:
+      post_new: Post new Event info
+      show_month: Show
+      prev_month: Prev
+      next_month: Next
+      name_ph: Event Name
+      abbreviation_ph: Event Name Shortly
+      event_date_ph: Click to choose date
+      comment_ph: comment is not mandatory
+      place_ph: Enter place name to find
+
     event_report:
       post: 'Post Your Report!'
       search_event_placeholder: "Search Event you've watched"
@@ -52,3 +63,5 @@ en:
         event: Event
         summary: Summary
         comment: Your Comment
+      event:
+        name:

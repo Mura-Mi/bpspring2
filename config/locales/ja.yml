@@ -32,6 +32,18 @@ ja:
     home:
       new_arrival: '新着記事'
 
+    event:
+      post_new: 新しいイベントを登録する
+      show_month: 指定した月に移動
+      prev_month: 前月
+      next_month: 翌月
+      name_ph: イベント名
+      abbreviation_ph: イベント名を短めに
+      event_date_ph: クリックして選択してください
+      comment_ph: コメントは任意です
+      place_ph: イベントの場所名を入力して検索
+      submit: 登録する
+
     event_report:
       post: 'レポートを投稿！'
       search_event_placeholder: イベント名を入力して検索
@@ -52,3 +64,9 @@ ja:
         event: イベント
         summary: タイトル
         comment: コメント
+      event:
+        name: イベント名
+        abbreviation: イベント略称
+        event_date: 日付
+        comment: コメント
+        place_id: 場所

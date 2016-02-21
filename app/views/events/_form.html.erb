@@ -3,37 +3,37 @@
       <div class='form-group'>
         <%= e.label :name, class: 'control-label' %>
         <%= errors(@event, :name)%>
-        <%= e.text_field :name, class: 'form-control', placeholder: 'Event Name' %>
+        <%= e.text_field :name, class: 'form-control', placeholder: t('bgh.event.name_ph') %>
       </div>
 
       <div class='form-group'>
         <%= e.label :abbreviation, class: 'control-label' %>
         <%= errors(@event, :abbreviation)%>
-        <%= e.text_field :abbreviation, class: 'form-control', placeholder: 'Abbreviation' %>
+        <%= e.text_field :abbreviation, class: 'form-control', placeholder: t('bgh.event.abbreviation_ph') %>
       </div>
 
       <div class='form-group'>
         <%= e.label :event_date, class: 'control-label' %>
         <%= errors(@event, :event_date)%>
-        <%= e.text_field :event_date, type: 'date', class: 'datepicker form-control', placeholder: 'Event Date' %>
+        <%= e.text_field :event_date, type: 'date', class: 'datepicker form-control', placeholder: t('bgh.event.event_date_ph') %>
       </div>
 
       <div class='form-group'>
         <%= e.label :comment, class: 'control-label' %>
         <%= errors(@event, :comment)%>
-        <%= e.text_area :comment, class: 'form-control', placeholder: 'Comment' %>
+        <%= e.text_area :comment, class: 'form-control', placeholder: t('bgh.event.comment_ph') %>
       </div>
 
       <div class='form-group'>
         <%= e.label :place_id, class: 'control-label' %>
         <div>
-          <input type='text' id='ta-event-place' class='form-control' placeholder="Search Event you've watched">
+          <input type='text' id='ta-event-place' class='form-control' placeholder=<%=t('bgh.event.place_ph') %>>
         </div>
         <%= e.hidden_field :place_id, id: 'bgh-event-place-id' %>
       </div>
 
       <div class='action'>
-        <%= e.submit "Submit", class: 'btn btn-default btn-primary' %>
+        <%= e.submit t('bgh.event.submit'), class: 'btn btn-default btn-primary' %>
       </div>
   <% end %>
 </div>
