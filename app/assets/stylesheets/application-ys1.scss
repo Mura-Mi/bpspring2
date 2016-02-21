@@ -2,6 +2,7 @@ $bgh-main-tone-color: #05294D;
 $bgh-accent-color: #A8D176;
 $bgh-background: #ffffff;
 $bgh-accent-light: lighten($bgh-accent-color, 30%);
+$brand-primary: darken($bgh-accent-color, 10%);
 
 @import "bootstrap-sprockets";
 @import "variable-base";
