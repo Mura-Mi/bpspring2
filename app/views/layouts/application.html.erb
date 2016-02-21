@@ -40,13 +40,13 @@
 
       <div class='collapse navbar-collapse', id='bs-example-navbar-collapse-1'>
         <ul class="nav navbar-nav">
-          <li><%= link_to 'Events', events_path %></li>
-          <li><%= link_to 'Places', places_path %></li>
+          <li><%= link_to prefix_edit('Post new Report'), new_event_report_path %></li>
+          <li><%= link_to prefix_calendar('Explore Events'), events_path %></li>
           <li class='dropdown'>
             <a href='#' class='dropdown-toggle' data-toggle='dropdown' aria-haspopup-'true' aria-expanded='false'><i class='fa fa-plus'></i></a>
             <ul class="dropdown-menu">
+              <li><%= link_to 'Browse Places', places_path %></li>
               <li><%= link_to 'Post Event', new_event_path %></li>
-              <li><%= link_to 'Post Report', new_event_report_path %></li>
             </ul>
           </li>
         </ul>
@@ -78,7 +78,7 @@
             <dt>Ball Game Hub</dt>
             <dd><%= link_to "Home", root_path %></dd>
             <dd><%= link_to "Explore Events", events_path %></dd>
-            <!-- <dd>Read Reports</dd> -->
+            <!-- <dd>Browse Reports</dd> -->
             <dd><%= link_to "Places", places_path %></dd>
             <!-- <dd>Help</dd> -->
           </dl>

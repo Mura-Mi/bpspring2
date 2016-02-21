@@ -46,6 +46,13 @@ module ApplicationHelper
     content_tag(:i, '', class: 'fa fa-facebook') + ' ' + (obj || 'Sign up with Facebook')
   end
 
+  def prefix_edit(obj)
+    content_tag(:i, '', class: 'fa fa-file-text') + ' ' + obj
+  end
+
+  def prefix_calendar(obj)
+    content_tag(:i, '', class: 'fa fa-calendar') + ' ' + obj
+  end
 
   def twitter_link(obj)
     link_to user_omniauth_authorize_path(:twitter) do
