@@ -57,7 +57,7 @@
     </div>
   </nav>
 
-  <div class="main col-md-12 bgh-contents-area">
+  <div class="main bgh-contents-area">
     <% if notice %>
       <div class="alert alert-success alert-dismissible" role="alert"><%= notice %></div>
     <% end %>
@@ -68,5 +68,36 @@
       <%= yield %>
     </div>
   </div>
+
+  <footer class='footer'>
+    <hr class='vertical-lines'/>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <dl class='list-unstyled'>
+            <dt>Ball Game Hub</dt>
+            <dd><%= link_to "Home", root_path %></dd>
+            <dd><%= link_to "Explore Events", events_path %></dd>
+            <!-- <dd>Read Reports</dd> -->
+            <dd><%= link_to "Places", places_path %></dd>
+            <!-- <dd>Help</dd> -->
+          </dl>
+        </div>
+        <div class="col-md-3">
+          <dl>
+            <dt>About Us</dt>
+            <dd>(Now Printing...)</dd>
+            <!-- <dd>About Ball Game Hub</dd>
+            <dd>About Developer</dd>
+            <dd><%= "Give your request & bug reports" %></dd> -->
+          </dl>
+        </div>
+      </div>
+
+      <div class='copyright'>
+        <span class='copyright'>Copyright © 2016 Takuya "Mura-Mi" Murakami All Rights Reserved.</span>
+      </div>
+    </div>
+  </footer>
 
 </html>

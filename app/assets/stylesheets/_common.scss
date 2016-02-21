@@ -168,3 +168,35 @@ a.link-facebook {
 .modal-container .modal, .modal-container .modal-backdrop {
   position: absolute;
 }
+
+.footer {
+  color: $bgh-main-tone-color;
+  padding: 10px 0 10px 0;
+  min-height: 140px;
+
+  .copyright {
+    text-align: right;
+    color: $gray-light;
+  }
+
+  .vertical-lines {
+    height: 10px;
+    color: $gray-lighter;
+    background-image: linear-gradient(
+      90deg,
+      hsla(0, 0%, 80%, 1),
+      hsla(0, 0%, 80%, 1) 33.33%,
+      hsla(0, 0%, 80%, 0) 33.33%,
+      hsla(0, 0%, 80%, 0) 100%);
+    background-size: 3px 100%;
+    width: 80%;
+  }
+
+  dt {
+    text-decoration: underline;
+  }
+
+  a {
+    color: $bgh-main-tone-color;
+  }
+}
