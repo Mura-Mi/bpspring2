@@ -430,6 +430,7 @@ DEPENDENCIES
   guard-livereload (= 2.5.1)
   guard-rspec (= 4.6.4)
   hirb-unicode (= 0.0.5)
+  i18n (~> 0.7.0)
   jquery-rails (= 4.0.5)
   jquery-ui-rails (= 5.0.5)
   json_spec (= 1.1.4)

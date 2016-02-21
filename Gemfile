@@ -29,6 +29,8 @@ gem 'jquery-ui-rails', '5.0.5'
 gem 'react-rails', '1.6.0'
 gem 'browserify-rails', '2.2.1'
 
+gem 'i18n', '~> 0.7.0'
+
 gem 'nested_form_fields'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
