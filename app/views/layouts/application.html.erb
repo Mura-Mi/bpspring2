@@ -3,8 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= t 'bgh.title'%></title>
-
+  <title>
+    <% if yield(:header_title).present? %>
+      <%= (yield(:header_title)) %>
+    <% elsif yield(:header_prefix).present? %>
+      <%= (yield(:header_prefix)) + " - " + t('bgh.title') %>
+    <% else %>
+      <%= t 'bgh.title' %>
+    <% end %>
+  </title>
   <%= stylesheet_link_tag 'base', media: 'all', 'data-turbolinks-track' => true %>
 
   <% if current_user && current_user.color_theme %>
@@ -87,9 +94,13 @@
           <dl>
             <dt><%= t('bgh.about_us')%></dt>
             <dd><%= t('bgh.now_printing')%></dd>
-            <!-- <dd>About Ball Game Hub</dd>
+            <!--
+            <dd>About Ball Game Hub</dd>
             <dd>About Developer</dd>
-            <dd><%= "Give your request & bug reports" %></dd> -->
+            <dd><%= "Give your request & bug reports" %></dd>
+            <dd>Deevloper's Blog</dd>
+            -->
+
           </dl>
         </div>
       </div>

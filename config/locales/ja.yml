@@ -3,8 +3,9 @@ ja:
     formats:
       yymmdd: '%Y年%m月%d日'
   bgh:
-    title: 'やきゅれぽ'
-    sub_title: 'あの日スタジアムで観た感動を残そう'
+    welcome: やきゅれぽ！ あの日スタジアムで観た感動を残そう
+    title: やきゅれぽ！
+    sub_title: あの日スタジアムで観た感動を残そう
     about_us: 'About Us'
     now_printing: '(Now Printing...)'
 
