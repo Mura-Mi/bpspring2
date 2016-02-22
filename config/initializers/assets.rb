@@ -9,8 +9,7 @@ Rails.application.config.assets.version = '1.0'
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 
-Rails.application.config.assets.precompile += ['base.css'];
-Rails.application.config.assets.precompile += ['node_modules'];
+Rails.application.config.assets.precompile += %w(base.css node_modules landing-page.scss)
 
 Dir[Rails.root.join('app/assets/stylesheets/application-*.scss')].each do |f|
   Rails.application.config.assets.precompile += [File.basename(f).gsub(/scss$/, 'css')]

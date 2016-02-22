@@ -1,18 +1,95 @@
 !!! html
 %html{lang: "en"}
-  = render 'layouts/header'
+  - content_for :header_title do
+    = t 'bgh.welcome'
+  %head
+    = render 'layouts/header'
+    = stylesheet_link_tag 'landing-page', media: 'all', 'data-turbolinks-track' => true
   %body
 
-    %nav.navbar.navbar-inverse.navbar-fixed-top.topnav{role: 'navigation'}
-      = render 'layouts/nav_content'
+    .intro-header
+      %nav.navbar.navbar-inverse.topnav.navbar-transparent{role: 'navigation'}
+        = render 'layouts/nav_content'
 
-  .main.bgh-contents-area
-    - if notice
-      .alert.alert-success.alert-dismissible{role: "alert"}
-        = notice
-    - if alert
-      .alert.alert-info.alert-dismissible{role: "alert"}
-        = alert
-    = yield
+      .main.bgh-contents-area
+        - if notice
+          .alert.alert-success.alert-dismissible{role: "alert"}
+            = notice
+        - if alert
+          .alert.alert-info.alert-dismissible{role: "alert"}
+            = alert
 
-  = render 'layouts/footer'
+      %row
+        .col-lg-12
+          .intro-message
+            %h1
+              = t('bgh.title')
+            %h3
+              = t('bgh.sub_title')
+
+            - if !current_user
+              %hr.intro-divider
+              .social-buttons
+                = twitter_button
+                = facebook_button
+
+              = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+                .form-group.bgh-top-singup-field.center-block
+                  = f.text_field :name, autofocus: true, class: 'form-control', placeholder: t('bgh.sign_up.your_name')
+                .form-group.bgh-top-singup-field.center-block
+                  = f.email_field :email, autofocus: true, class: 'form-control', placeholder: t('bgh.sign_up.your_email')
+                .form-group.bgh-top-singup-field.center-block
+                  - if @minimum_password_length
+                    %em= "#{@minimum_password_length} characters minimum"
+                  = f.password_field :password, autocomplete: "off",
+                    class: 'form-control', placeholder: t('bgh.sign_up.password')
+
+                .form-group.bgh-top-singup-field.center-block
+                  = f.password_field :password_confirmation, autocomplete: "off",
+                    class: 'form-control', placeholder: t('bgh.sign_up.password_confirmation')
+
+                .actions
+                  = f.submit t('bgh.sign_up.sign_up'), class: 'btn btn-primary'
+
+    .container
+      .content-section-a
+        .container
+          .row
+            .col-lg-6.col-sm-6
+              %hr.section-heading-spacer
+              .clearfix
+              %h2.section-heading
+                その眼で観たスーパープレーも美味かった球場飯もシェアしよう
+              %p.lead
+                球場での自分だけの感動を，自分の思うターニングポイントを，みんなで語りあおう．
+                メディアは Ball Game Hub にアップロードすることも，各メディアから連携することもできます．
+            .col-lg-5.col-lg-offset-1.col-sm-6
+              = image_tag "mikan.jpg"
+
+      .content-section-b
+        .container
+          .row
+            .col-lg-5.col-lg-offset-1.col-sm-push-6.col-sm-6
+              %hr.section-heading-spacer
+              .clearfix
+              %h2.section-heading
+                = "12 だけじゃもったいない！"
+              %p.lead
+                = "ゆくゆくは MLB を含めた国際対応も予定!!"
+            .col-lg-5.col-sm-pull-6.col-sm-6
+              = image_tag 'att.jpg', class: "img-responsive"
+
+      .content-section-a
+        .container
+          .row
+            .col-lg-5.col-sm-6
+              %hr.section-heading-spacer
+              .clearfix
+              %h2.section-heading
+                = "連携できるサービスは無限大!!"
+              %p.lead
+                = "Twitter, Facebook, Google+ によるサインイン，Twitter, Flickr, Instagram, Youtube, Photozou からのメディア連携に対応予定!!"
+            .col-lg-5.col-lg-offset-2.col-sm-6
+              = image_tag 'shotaro26.png', class: 'img-responsive'
+
+    = render 'layouts/footer'

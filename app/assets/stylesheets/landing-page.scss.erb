@@ -4,6 +4,8 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
+@import "bootstrap/variables";
+
 body,
 html {
     width: 100%;
@@ -19,14 +21,27 @@ html {
     font-weight: 400;
 }
 
+.navbar.navbar-transparent {
+  background: 0 0;
+  border: 0;
+  .navbar-toggle {
+    color: $gray-lighter;
+  }
+  a {
+    color: $gray-lighter;
+  }
+  a:hover {
+    background: 0 0;
+  }
+}
+
 .intro-header {
-    padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
-    padding-bottom: 50px;
     text-align: center;
     color: #f0f0f0;
     background: url(<%= asset_path 'intro-bg.jpg' %>) no-repeat center center;
     background-size: cover;
     height: 100%;
+    min-height: 900px;
 }
 
 .intro-message {
@@ -147,8 +162,4 @@ html {
     ul.banner-social-buttons > li:last-child {
         margin-bottom: 0;
     }
-}
-
-footer {
-    width: 100%;
 }
