@@ -26,7 +26,6 @@ gem 'bootstrap-sass', '3.3.6'
 
 # JavaScript
 gem 'uglifier', '>= 1.3.0'
-gem 'typescript-rails', '0.6.2'
 gem 'jquery-rails', '4.0.5'
 gem 'jquery-ui-rails', '5.0.5'
 

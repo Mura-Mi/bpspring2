@@ -1,11 +1,9 @@
-/// <reference path='typings/tsd.d.ts' />
-
-$(() => {
-  $('#bgh-place-filter').change(() => {
-    var name:string = $('#bgh-place-filter').val();
+$(function() {
+  $('#bgh-place-filter').change(function() {
+    var name = $('#bgh-place-filter').val();
     if(name != null && name != '') {
-      var pat:RegExp = new RegExp(name, 'i');
-      $('.place-grid').each((i, e) => {
+      var pat = new RegExp(name, 'i');
+      $('.place-grid').each(function(i, e) {
         if (!pat.test($(e).attr('name'))) {
           $(e).css('display', 'none')
         } else {

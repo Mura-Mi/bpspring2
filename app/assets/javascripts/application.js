@@ -19,7 +19,6 @@
 //= require fileinput.min
 //= require masonry.pkgd.min
 //= require imagesloaded.pkgd.min
-//= require bgh-masonry
 //= require exif
 //= require ios-megafile-megapixel
 //= require nested_form_fields
@@ -27,11 +26,9 @@
 //= require bloodhound
 //= require_tree .
 
-/// <reference path='typings/tsd.d.ts' />
-
-$(() => {
+$(function() {
   $(".datepicker").pickadate();
-  $('.js-replace-no-image').error(() => {
+  $('.js-replace-no-image').error(function() {
     $(this).attr({
       src: 'images/no_image.png',
       alt: 'no image'
