@@ -30,7 +30,7 @@ gem 'jquery-rails', '4.0.5'
 gem 'jquery-ui-rails', '5.0.5'
 
 gem 'react-rails', '1.6.0'
-gem 'browserify-rails', '2.2.1'
+gem 'browserify-rails', '~> 3.0.0'
 
 gem 'i18n', '~> 0.7.0'
 
