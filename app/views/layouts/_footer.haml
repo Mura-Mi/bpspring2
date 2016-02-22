@@ -1,0 +1,22 @@
+%footer.footer
+  %hr.vertical-lines
+  .container
+    .row
+      .col-md-3
+        %dl.list-unstyled
+          %dt= t('bgh.title')
+          %dd= link_to t("bgh.header.home"), root_path
+          %dd= link_to t("bgh.header.explore_events"), events_path
+          -# %dd= Browse Reports
+          %dd= link_to t('bgh.header.places'), places_path
+          -# %dd= Help
+      .col-md-3
+        %dl
+          %dt= t('bgh.about_us')
+          %dd= t('bgh.now_printing')
+          -# %dd= About Ball Game Hub
+          -# %dd= About Developer
+          -# %dd= Give your request & bug reports
+          -# %dd= Deevloper's Blog
+    .copyright
+      %span.copyright= t('bgh.copyright')

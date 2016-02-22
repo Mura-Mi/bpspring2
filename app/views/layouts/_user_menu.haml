@@ -1,0 +1,23 @@
+%li.dropdown
+  %a.dropdown-toggle{href: '#', data: {toggle: 'dropdown'}, aria: {haspopup: 'true', expanded: 'false'}}
+    - if user_signed_in?
+      = current_user.name
+    - else
+      = "クリックして始めよう！"
+  %ul.dropdown-menu
+    - unless user_signed_in?
+      %li.dropdown-header
+        = prefix_sign_up t('bgh.header.sign_up_with')
+      %li
+        = link_to prefix_email(t('bgh.header.sign_up_with_email')), new_user_registration_path
+      %li
+        = twitter_link t('bgh.header.sign_up_with_twitter')
+      %li.divider
+      %li
+        = link_to prefix_sign_in(t('bgh.header.log_in')), new_user_session_path
+
+    - else
+      %li
+        = link_to prefix_edit(t('bgh.header.edit_registration')), edit_user_registration_path
+      %li.divider
+      %li= link_to prefix_sign_out(t('bgh.header.log_out')), destroy_user_session_path

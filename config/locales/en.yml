@@ -5,6 +5,7 @@ en:
     home: 'Home'
     about_us: 'About Us'
     now_printing: '(Now Printing...)'
+    copyright: Copyright © 2016 Takuya "Mura-Mi" Murakami All Rights Reserved.
 
     header:
       post_new_report: Post new Report

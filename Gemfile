@@ -17,6 +17,9 @@ gem 'omniauth-facebook', '3.0.0'
 # SNS buttons
 gem 'social-buttons', '~> 0.3'
 
+# HTML Template
+gem 'hamlit', '2.2.2'
+
 # CSS
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '3.3.6'
