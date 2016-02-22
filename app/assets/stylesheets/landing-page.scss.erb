@@ -35,10 +35,20 @@ html {
   }
 }
 
+// Move to app scope if necessary
+@mixin ln($direction, $color-stops...) {
+  background: nth(nth($color-stops, 1), 1),
+    url(<%= asset_path 'intro-bg.jpg' %>) no-repeat center center;;
+  background: -webkit-linear-gradient(legacy-direction($direction), $color-stops),
+    url(<%= asset_path 'intro-bg.jpg' %>) no-repeat center center;
+  background: linear-gradient($direction, $color-stops),
+    url(<%= asset_path 'intro-bg.jpg' %>) no-repeat center center;
+}
+
 .intro-header {
     text-align: center;
     color: #f0f0f0;
-    background: url(<%= asset_path 'intro-bg.jpg' %>) no-repeat center center;
+    @include ln( rgba(0,0,0, 0.5), rgba(0,0,0, 0.5) );
     background-size: cover;
     height: 100%;
     min-height: 900px;
