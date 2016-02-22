@@ -44,43 +44,40 @@
 
     .container
       .content-section-a
-        .container
-          .row
-            .col-lg-6.col-sm-6
-              %hr.section-heading-spacer
-              .clearfix
-              %h2.section-heading
-                その眼で観たスーパープレーも美味かった球場飯もシェアしよう
-              %p.lead
-                球場での自分だけの感動を，自分の思うターニングポイントを，みんなで語りあおう．
-                メディアは Ball Game Hub にアップロードすることも，各メディアから連携することもできます．
-            .col-lg-5.col-lg-offset-1.col-sm-6
-              = image_tag "mikan.jpg"
+        .row
+          .col-lg-6.col-sm-6
+            %hr.section-heading-spacer
+            .clearfix
+            %h2.section-heading
+              その眼で観たスーパープレーも美味かった球場飯もシェアしよう
+            %p.lead
+              球場での自分だけの感動を，自分の思うターニングポイントを，みんなで語りあおう．
+              メディアは Ball Game Hub にアップロードすることも，各メディアから連携することもできます．
+          .col-lg-5.col-lg-offset-1.col-sm-6
+            = image_tag "mikan.jpg"
 
       .content-section-b
-        .container
-          .row
-            .col-lg-5.col-lg-offset-1.col-sm-push-6.col-sm-6
-              %hr.section-heading-spacer
-              .clearfix
-              %h2.section-heading
-                = "12 だけじゃもったいない！"
-              %p.lead
-                = "ゆくゆくは MLB を含めた国際対応も予定!!"
-            .col-lg-5.col-sm-pull-6.col-sm-6
-              = image_tag 'att.jpg', class: "img-responsive"
+        .row
+          .col-lg-5.col-lg-offset-1.col-sm-push-6.col-sm-6
+            %hr.section-heading-spacer
+            .clearfix
+            %h2.section-heading
+              = "12 だけじゃもったいない！"
+            %p.lead
+              = "ゆくゆくは MLB を含めた国際対応も予定!!"
+          .col-lg-5.col-sm-pull-6.col-sm-6
+            = image_tag 'att.jpg', class: "img-responsive"
 
       .content-section-a
-        .container
-          .row
-            .col-lg-5.col-sm-6
-              %hr.section-heading-spacer
-              .clearfix
-              %h2.section-heading
-                = "連携できるサービスは無限大!!"
-              %p.lead
-                = "Twitter, Facebook, Google+ によるサインイン，Twitter, Flickr, Instagram, Youtube, Photozou からのメディア連携に対応予定!!"
-            .col-lg-5.col-lg-offset-2.col-sm-6
-              = image_tag 'shotaro26.png', class: 'img-responsive'
+        .row
+          .col-lg-5.col-sm-6
+            %hr.section-heading-spacer
+            .clearfix
+            %h2.section-heading
+              = "連携できるサービスは無限大!!"
+            %p.lead
+              = "Twitter, Facebook, Google+ によるサインイン，Twitter, Flickr, Instagram, Youtube, Photozou からのメディア連携に対応予定!!"
+          .col-lg-5.col-lg-offset-2.col-sm-6
+            = image_tag 'shotaro26.png', class: 'img-responsive'
 
     = render 'layouts/footer'
