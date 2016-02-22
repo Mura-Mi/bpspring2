@@ -1,0 +1,18 @@
+!!! html
+%html{lang: "en"}
+  = render 'layouts/header'
+  %body
+
+    %nav.navbar.navbar-inverse.navbar-fixed-top.topnav{role: 'navigation'}
+      = render 'layouts/nav_content'
+
+  .main.bgh-contents-area
+    - if notice
+      .alert.alert-success.alert-dismissible{role: "alert"}
+        = notice
+    - if alert
+      .alert.alert-info.alert-dismissible{role: "alert"}
+        = alert
+    = yield
+
+  = render 'layouts/footer'
