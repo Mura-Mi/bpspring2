@@ -38,6 +38,8 @@ var PhotoModal = React.createClass({
   render: function() {
     var src = this.state.img_url;
     var title = this.state.title || "No Title"
+    var next = <i className='fa fa-angle-right'></i>
+    var prev = <i className='fa fa-angle-left'></i>
     return <Modal show={this.state.open} onHide={this.onHide}>
       <div className="modal-header">
         <h4>
@@ -50,7 +52,13 @@ var PhotoModal = React.createClass({
         </h4>
       </div>
       <div className='modal-body'>
-        <Carousel defaultActiveIndex={this.state.index} onSelect={this.handleSelect} interval={0}>
+        <Carousel
+          defaultActiveIndex={this.state.index}
+          onSelect={this.handleSelect}
+          interval={0}
+          nextIcon={next}
+          prevIcon={prev}
+        >
           {
             this.props.photos.map(function(p) {
               return <CarouselItem key={p.id}><img src={p.photo.url} className='img-responsive'/></CarouselItem>
