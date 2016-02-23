@@ -57,7 +57,8 @@ ja:
       comment_placeholder: あなたの感想をたっぷりと語ってください!!
       upload_photo: 写真をアップロード
       upload_more_photo: 写真を追加
-      edit_this_post: 記事を編集する
+      edit_this_post: 編集する
+      delete_this_post: 削除する
 
     misc:
       back: '戻る'

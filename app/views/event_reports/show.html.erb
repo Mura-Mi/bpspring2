@@ -16,7 +16,10 @@
     </h1>
     <%= l @event_report.event.event_date, format: :yymmdd %> by <%= link_to user.name, user_path(user) %>
     <%if @event_report.user == current_user %>
-      <div><small><%= link_to t('bgh.event_report.edit_this_post'), edit_event_report_path %></small><div>
+      <ul class='list-inline'>
+        <li><small><%= link_to t('bgh.event_report.edit_this_post'), edit_event_report_path %></small><li>
+        <li><small><%= link_to t('bgh.event_report.delete_this_post'), event_report_path, method: :delete %></small></li>
+      </ul>
     <% end %>
   </span>
 
