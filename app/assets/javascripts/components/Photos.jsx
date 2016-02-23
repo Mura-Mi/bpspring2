@@ -61,7 +61,11 @@ var PhotoModal = React.createClass({
         >
           {
             this.props.photos.map(function(p) {
-              return <CarouselItem key={p.id}><img src={p.photo.url} className='img-responsive'/></CarouselItem>
+              return <CarouselItem key={p.id}>
+                <div>
+                  <img src={p.photo.url} className='img-responsive bgh-event-photo-carousel center-block'/>
+                </div>
+              </CarouselItem>
             })
           }
         </Carousel>
