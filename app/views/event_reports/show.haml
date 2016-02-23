@@ -1,0 +1,44 @@
+- user = @event_report.user
+- photos = @event_report.event_photos
+
+%article.center-block
+  %span.center-block.text-center.page-header
+    %h1
+      = @event_report.summary
+      %small
+        = link_to @event_report.event do
+          = @event_report.event.name
+    = "#{l(@event_report.event.event_date, format: :yymmdd)} by #{link_to(user.name, user_path(user))}"
+    - if @event_report.user == current_user
+      %ul.list-inline
+        %li
+          %small
+            = link_to t('bgh.event_report.edit_this_post'), edit_event_report_path
+        %li
+          %small
+            = link_to t('bgh.event_report.delete_this_post'), event_report_path, method: :delete
+
+  = react_component 'Photos', {data: photos}
+
+  #photo-modal
+
+  .row
+    - if @event_report.comment.present?
+      .comment.col-xs-9
+        %span.comment-text.text-left
+          = simple_format(h(@event_report.comment))
+      - author_info_col = 'col-xs-3'
+    - else
+      - author_info_col = 'col-xs-12'
+
+    = content_tag :div, class: "author-info #{author_info_col}" do
+      .text-center
+        %span
+          Reported By...
+      %div
+        = image_tag user.user_image.mini.url, class: 'img-rounded img-responsive user-image center-block'
+      .text-center
+        = link_to user.name, user_path(user)
+
+.sns-links.btn-group-vertical
+  = tweet_button(url: event_report_url(@event_report), text: report_oneline_summary(@event_report), via: 'BallGameHub')
