@@ -18,7 +18,7 @@
           %small
             = link_to t('bgh.event_report.delete_this_post'), event_report_path, method: :delete
 
-  = react_component 'Photos', {data: photos}
+  = react_component 'Photos', {data: photos, editable: @event_report.user == current_user}
 
   #photo-modal
 

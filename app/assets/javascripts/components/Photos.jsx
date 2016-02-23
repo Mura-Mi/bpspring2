@@ -40,15 +40,23 @@ var PhotoModal = React.createClass({
     var title = this.state.title || "No Title"
     var next = <i className='fa fa-angle-right'></i>
     var prev = <i className='fa fa-angle-left'></i>
-    return <Modal show={this.state.open} onHide={this.onHide}>
-      <div className="modal-header">
-        <h4>
-          <EditInPlace
+
+    var label;
+    if(this.props.editable){
+      label = <EditInPlace
             ref="titleEditor"
             text={title}
             activeClassName='form-control-parent'
             onChange={this.requestTitleChange}
-            />
+            />;
+    } else {
+      label = <div>{title}</div>
+    }
+
+    return <Modal show={this.state.open} onHide={this.onHide}>
+      <div className="modal-header">
+        <h4>
+          {label}
         </h4>
       </div>
       <div className='modal-body'>
@@ -101,7 +109,7 @@ var Photos = React.createClass({
           </div>
         }, this)}
       </Masonry>
-      <PhotoModal ref='modal' photos={this.props.data}></PhotoModal>
+      <PhotoModal ref='modal' photos={this.props.data} editable={this.props.editable}></PhotoModal>
     </div>
   }
 });
