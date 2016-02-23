@@ -3,7 +3,7 @@
     - if user_signed_in?
       = current_user.name
     - else
-      = "クリックして始めよう！"
+      = t('bgh.header.start')
   %ul.dropdown-menu
     - unless user_signed_in?
       %li.dropdown-header

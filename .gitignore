@@ -27,8 +27,6 @@ config/initializers/secret_token.rb
 .rvmrc
 
 /vendor/assets/bower_components
-*.bowerrc
-bower.json
 
 .powenv
 
@@ -71,3 +69,4 @@ node_modules
 # Optional REPL history
 .node_repl_history
 
+bower_components
