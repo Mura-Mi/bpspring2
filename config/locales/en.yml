@@ -18,6 +18,7 @@ en:
       log_in: 'Log in'
       edit_registration: 'Edit your registration'
       log_out: 'Log Out'
+      start: 'Sing up/in'
 
     sign_up:
       your_name: Your Name

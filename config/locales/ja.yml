@@ -12,7 +12,7 @@ ja:
 
     header:
       home: 'ホーム'
-      post_new_report: '新しいレポートを投稿'
+      post_new_report: 'レポートを投稿'
       explore_events: 'イベントを探す'
       places: '球場から探す'
       post_new_event: 'イベント情報を登録'
@@ -22,6 +22,7 @@ ja:
       log_in: 'ログイン'
       edit_registration: '登録情報を編集'
       log_out: 'ログアウト'
+      start: '登録/ログイン'
 
     sign_up:
       your_name: あなたの名前は？

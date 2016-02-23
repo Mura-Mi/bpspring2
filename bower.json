@@ -1,0 +1,19 @@
+{
+  "name": "bpspring2",
+  "version": "0.1.0",
+  "homepage": "https://github.com/Mura-Mi/bpspring2",
+  "authors": [
+    "Takuya \"Mura-Mi\" Murakami <mura.mi.nantoka@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "honoka": "~3.3.6"
+  }
+}
