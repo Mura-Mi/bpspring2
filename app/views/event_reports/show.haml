@@ -18,27 +18,10 @@
           %small
             = link_to t('bgh.event_report.delete_this_post'), event_report_path, method: :delete
 
+  = react_component 'ReadMore', { text: h(@event_report.comment) }
+
   = react_component 'Photos', {data: photos, editable: @event_report.user == current_user}
 
   #photo-modal
-
-  .row
-    - if @event_report.comment.present?
-      .comment.col-xs-9
-        %span.comment-text.text-left
-          = simple_format(h(@event_report.comment))
-      - author_info_col = 'col-xs-3'
-    - else
-      - author_info_col = 'col-xs-12'
-
-    = content_tag :div, class: "author-info #{author_info_col}" do
-      .text-center
-        %span
-          Reported By...
-      %div
-        = image_tag user.user_image.mini.url, class: 'img-rounded img-responsive user-image center-block'
-      .text-center
-        = link_to user.name, user_path(user)
-
 .sns-links.btn-group-vertical
   = tweet_button(url: event_report_url(@event_report), text: report_oneline_summary(@event_report), via: 'BallGameHub')
