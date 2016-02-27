@@ -73,6 +73,7 @@ var PhotoModal = React.createClass({
                 <div>
                   <img src={p.photo.url} className='img-responsive bgh-event-photo-carousel center-block'/>
                 </div>
+                <BatterBox className="text-center"/>
               </CarouselItem>
             })
           }

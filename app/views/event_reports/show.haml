@@ -23,5 +23,8 @@
   = react_component 'Photos', {data: photos, editable: @event_report.user == current_user}
 
   #photo-modal
+
 .sns-links.btn-group-vertical
   = tweet_button(url: event_report_url(@event_report), text: report_oneline_summary(@event_report), via: 'BallGameHub')
+
+= react_component 'BatterBox'
