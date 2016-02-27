@@ -27,4 +27,4 @@
 .sns-links.btn-group-vertical
   = tweet_button(url: event_report_url(@event_report), text: report_oneline_summary(@event_report), via: 'BallGameHub')
 
-= react_component 'BatterBox'
+= react_component 'BatterBox', hasHit: false, hasHomerun: false, to_id: @event_report.id, to_type: 'EventReport'
