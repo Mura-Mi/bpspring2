@@ -6,11 +6,6 @@
 
 @import "honoka/scss/honoka/variables";
 
-.lead {
-    font-size: 18px;
-    font-weight: 400;
-}
-
 .navbar.navbar-transparent {
   background: 0 0;
   border: 0;
@@ -28,20 +23,21 @@
   }
 }
 
-// Move to app scope if necessary
-@mixin ln($direction, $color-stops...) {
-  background: nth(nth($color-stops, 1), 1),
-    url(<%= asset_path 'intro-bg.jpg' %>) no-repeat center center;
-  background: -webkit-linear-gradient(legacy-direction($direction), $color-stops),
-    url(<%= asset_path 'intro-bg.jpg' %>) no-repeat center center;
-  background: linear-gradient($direction, $color-stops),
-    url(<%= asset_path 'intro-bg.jpg' %>) no-repeat center center;
+.intro-background {
+    z-index                 : -1;
+    background: linear-gradient(rgba(0,0,0, 0.5), rgba(0,0,0, 0.5)), url(<%= asset_path 'intro-bg.jpg' %>) no-repeat center center;
+    height: 100%;
+    background-size         : cover;
+    position                : fixed;
+    top                     : 0;
+    left                    : 0;
+    right                   : 0;
+    bottom                  : 0;
 }
 
 .intro-header {
     text-align: center;
     color: #f0f0f0;
-    @include ln( rgba(0,0,0, 0.5), rgba(0,0,0, 0.5) );
     background-size: cover;
     height: 100%;
     min-height: 900px;
@@ -63,6 +59,10 @@
     width: 400px;
     border-top: 1px solid #f8f8f8;
     border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+.bgh-separator-or {
+  padding: 10px 0;
 }
 
 .intro-message > h3 {
@@ -93,76 +93,17 @@
     }
 }
 
-.network-name {
-    text-transform: uppercase;
-    font-size: 14px;
-    font-weight: 400;
-    letter-spacing: 2px;
+.contents {
+  background: white;
+}
+
+.descriptions {
+  background: $gray-lighter;
+}
+
+.cap {
+  height: 5em;
 }
 
 .content-section-a {
-    padding: 50px 0;
-}
-
-.content-section-b {
-    padding: 50px 0;
-    border-top: 1px solid #e7e7e7;
-    border-bottom: 1px solid #e7e7e7;
-}
-
-.section-heading {
-    margin-bottom: 30px;
-}
-
-.section-heading-spacer {
-    float: left;
-    width: 200px;
-    border-top: 3px solid #e7e7e7;
-}
-
-.banner {
-    padding: 100px 0;
-    color: #f8f8f8;
-    background: url(<%= asset_path 'banner-bg.jpg' %>) no-repeat center center;
-    background-size: cover;
-}
-
-.banner h2 {
-    margin: 0;
-    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
-    font-size: 3em;
-}
-
-.banner ul {
-    margin-bottom: 0;
-}
-
-.banner-social-buttons {
-    float: right;
-    margin-top: 0;
-}
-
-@media(max-width:1199px) {
-    ul.banner-social-buttons {
-        float: left;
-        margin-top: 15px;
-    }
-}
-
-@media(max-width:767px) {
-    .banner h2 {
-        margin: 0;
-        text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
-        font-size: 3em;
-    }
-
-    ul.banner-social-buttons > li {
-        display: block;
-        margin-bottom: 20px;
-        padding: 0;
-    }
-
-    ul.banner-social-buttons > li:last-child {
-        margin-bottom: 0;
-    }
 }

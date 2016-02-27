@@ -7,6 +7,7 @@
     = stylesheet_link_tag 'landing-page', media: 'all', 'data-turbolinks-track' => true
   %body
 
+    .intro-background
     .intro-header
       %nav.navbar.navbar-inverse.topnav.navbar-transparent{role: 'navigation'}
         = render 'layouts/nav_content'
@@ -22,26 +23,62 @@
             = twitter_button
             = facebook_button
 
-          = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-            .form-group.bgh-top-singup-field.center-block
-              = f.text_field :name, autofocus: true, class: 'form-control', placeholder: t('bgh.sign_up.your_name')
-            .form-group.bgh-top-singup-field.center-block
-              = f.email_field :email, autofocus: true, class: 'form-control', placeholder: t('bgh.sign_up.your_email')
-            .form-group.bgh-top-singup-field.center-block
-              - if @minimum_password_length
-                %em= "#{@minimum_password_length} characters minimum"
-              = f.password_field :password, autocomplete: "off",
-                class: 'form-control', placeholder: t('bgh.sign_up.password')
+          .hidden-xs
+            .bgh-separator-or
+              = 'OR'
+            = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+              .form-group.bgh-top-singup-field.center-block
+                = f.text_field :name, autofocus: true, class: 'form-control', placeholder: t('bgh.sign_up.your_name')
+              .form-group.bgh-top-singup-field.center-block
+                = f.email_field :email, autofocus: true, class: 'form-control', placeholder: t('bgh.sign_up.your_email')
+              .form-group.bgh-top-singup-field.center-block
+                - if @minimum_password_length
+                  %em= "#{@minimum_password_length} characters minimum"
+                = f.password_field :password, autocomplete: "off",
+                  class: 'form-control', placeholder: t('bgh.sign_up.password')
 
-            .form-group.bgh-top-singup-field.center-block
-              = f.password_field :password_confirmation, autocomplete: "off",
-                class: 'form-control', placeholder: t('bgh.sign_up.password_confirmation')
+              .form-group.bgh-top-singup-field.center-block
+                = f.password_field :password_confirmation, autocomplete: "off",
+                  class: 'form-control', placeholder: t('bgh.sign_up.password_confirmation')
 
-            .actions
-              = f.submit t('bgh.sign_up.sign_up'), class: 'btn btn-primary'
+              .actions
+                = f.submit t('bgh.sign_up.sign_up'), class: 'btn btn-primary'
 
-    .container
-      .content-section-a
+    .contents
+      .descriptions
+        .container
+          .row
+
+            .content-section-a.col-lg-12.text-center
+              -# %hr.section-heading-spacer
+              -# .clearfix
+              %h2.section-heading
+                野球 + レポート = やきゅれぽ！
+            .col-sm-4
+              %h3.text-center
+                Report the Game
+              %p.cap
+                あなたの野球観戦記をシェアできます．
+                その日観た忘れられないプレーを書き，
+                お気に入りの写真をアップロードしましょう！
+            .col-sm-4
+              %h3.text-center
+                Color scheme
+              %p.cap
+                あなたのパーソナルページの配色は
+                さまざまなテーマから選択可能です．
+                お気に入りのチームの色に染めましょう!!
+            .col-sm-4
+              %h3.text-center
+                Developping to be continue...
+              %p.cap
+                やきゅれぽ！はまだまだ開発の途中です．
+                これからもたくさんの機能追加を予定しています!!
+
+
+      = render 'layouts/footer'
+
+
     -#
           .row
             .col-lg-6.col-sm-6
@@ -53,7 +90,6 @@
                 球場での自分だけの感動を，自分の思うターニングポイントを，みんなで語りあおう．
                 メディアは Ball Game Hub にアップロードすることも，各メディアから連携することもできます．
             .col-lg-5.col-lg-offset-1.col-sm-6
-              = image_tag "mikan.jpg"
 
         .content-section-b
           .row
@@ -78,5 +114,3 @@
                 = "Twitter, Facebook, Google+ によるサインイン，Twitter, Flickr, Instagram, Youtube, Photozou からのメディア連携に対応予定!!"
             .col-lg-5.col-lg-offset-2.col-sm-6
               = image_tag 'shotaro26.png', class: 'img-responsive'
-
-    = render 'layouts/footer'
