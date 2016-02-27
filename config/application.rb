@@ -24,5 +24,7 @@ module Bpspring
     config.active_record.raise_in_transactional_callbacks = true
 
     config.browserify_rails.commandline_options = "--transform reactify"
+
+    config.autoload_paths << "#{config.root}/app/services"
   end
 end

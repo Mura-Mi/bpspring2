@@ -7,6 +7,7 @@ gem 'active_model_serializers', '~> 0.8'
 
 # Active Model
 gem 'audited-activerecord', '~> 4.0'
+gem 'enum_help'
 
 # Authentication
 gem 'devise', '3.5.3'

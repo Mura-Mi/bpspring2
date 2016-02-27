@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   has_many :sns_profile
   has_many :events, through: :attendance_plan
   has_many :event_reports
+  has_many :interests, foreign_key: :from
 
   devise :database_authenticatable
   devise :registerable

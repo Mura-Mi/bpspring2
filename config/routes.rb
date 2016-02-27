@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :interests
   post 'attendance_plan/create'
   post 'attendance_plan/delete'
 
