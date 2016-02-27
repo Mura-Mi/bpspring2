@@ -1,4 +1,5 @@
 class EventPhoto < ActiveRecord::Base
+  include InterestSubject
   validates :title, length: {maximum: 50}
   validates :comment, length: {maximum: 600}
   validates :photo, presence: true
