@@ -2,9 +2,10 @@
 
 // For mobile view
 @media (max-width: $screen-xs-max) {
-  .grid-item {
+  .grid-item, .grid-sizer {
     float: left;
-    width: 100%;
+    width: 32%;
+    padding: 0.5%;
 
     &:not(:first-child) {
       margin-top: 15px;
@@ -13,7 +14,7 @@
 
   .grid-item--2x {
     float: left;
-    width: 100%;
+    width: 64%;
 
     &:not(:first-child) {
       margin-top: 15px;
