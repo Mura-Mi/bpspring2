@@ -22,7 +22,11 @@ module InterestSubject
 # @param [String or Symbol] interest_type to inspect
 # @return [bool] true if user is interested in this object for given type
   def interested?(user, type)
-    self.interested_people[type.to_s] && self.interested_people[type.to_s].include?(user.name)
+    if self.interested_people[type.to_s] && self.interested_people[type.to_s].include?(user.name)
+      true
+    else
+      false
+    end
   end
 
 end
