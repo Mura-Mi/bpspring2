@@ -86,7 +86,7 @@ var PhotoModal = React.createClass({
 
 var Photos = React.createClass({
   handleClick: function(photo, i) {
-    var title = photo.title || "No title"
+    var title = photo.title || "No title";
     this.refs.modal.setState({open: true, title: title, img_url: photo.photo.url, index: i, id: photo.id});
   },
   render: function() {
@@ -110,7 +110,7 @@ var Photos = React.createClass({
           </div>
         }, this)}
       </Masonry>
-      <PhotoModal ref='modal' photos={this.props.data} editable={this.props.editable}></PhotoModal>
+      <PhotoModal ref='modal' photos={this.props.data} editable={this.props.editable}/>
     </div>
   }
 });
