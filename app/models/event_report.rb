@@ -1,4 +1,5 @@
 class EventReport < ActiveRecord::Base
+  include InterestSubject
   belongs_to :user
   belongs_to :event
   has_many :event_photos
