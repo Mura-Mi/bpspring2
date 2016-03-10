@@ -10,6 +10,7 @@ Rails.application.config.assets.version = '1.0'
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 
 Rails.application.config.assets.precompile += %w(base.css node_modules landing-page.scss bower_components)
+Rails.application.config.assets.precompile += %w(.svg .eot .woff .ttf)
 Rails.application.config.assets.paths << Rails.root.join("bower_components")
 
 Dir[Rails.root.join('app/assets/stylesheets/application-*.scss')].each do |f|
