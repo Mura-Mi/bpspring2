@@ -1,18 +1,14 @@
 aside {
-  margin-top: 40px;
-
   div.user-info {
-    border: 1px solid #ddd;
+    // border: 1px solid #ddd;
     padding: 10px 7px;
     img.user-image {
-      width: 80px;
-      margin-left: auto;
-      margin-right: auto;
+      width: 100%;
     }
   }
 }
 
-div.home-main > h3 {
+h3 {
   width: 100%;
   text-align: center;
   padding: 3px 5px;
@@ -20,11 +16,3 @@ div.home-main > h3 {
   border-radius: 4px;
 }
 
-// .bgh-event-report-preview {
-//   width: 100%;
-// }
-
-//
-// div.grid-item.grid-item--2x.home-digest {
-//   width: 400px;
-// }

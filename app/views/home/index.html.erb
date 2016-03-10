@@ -1,17 +1,24 @@
-<aside class="col-sm-2 hidden-xs">
-
+<aside class='col-sm-3 hidden-xs'>
+  <h3 class='bgh-accent-bg'><%= t('bgh.misc.you') %></h3>
   <div class='user-info'>
-    <div><%= image_tag current_user.user_image.mini.url, class:'img-thumbnail user-image center-block' %></div>
-    <div class='text-center'><%= link_to current_user.name, user_path(current_user) %></div>
+    <div><%= image_tag current_user.user_image.mini.url, class:'img-rounded user-image center-block' %></div>
+    <div class='text-center'>
+      <%= link_to current_user.name, user_path(current_user) %>
+    </div>
+    <div class='text-center'>
+      <%= link_to edit_user_registration_path do%>
+        <small><i class='fa fa-edit'></i>Edit</small>
+      <% end %>
+    </div>
   </div>
+
+  <h3 class='bgh-accent-bg'><%= t('bgh.misc.notifications') %></h3>
 </aside>
 
-<div class="home-main col-sm-8 col-xs-12">
+<div class='home-main col-sm-9 col-xs-12'>
   <h3 class='bgh-accent-bg'><%= t('bgh.home.new_arrival') %></h3>
-  <div class="arrival center-block">
+  <div class='arrival center-block'>
     <div class='grid-sizer'></div>
     <%= react_component('Reports', {url: '/event_reports.json'}) %>
   </div>
 </div>
-
-<div class="col-sm-2 hidden-xs">right</div>
