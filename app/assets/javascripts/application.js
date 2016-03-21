@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require s3_file_field
 //= require picker
 //= require picker.date
 //= require picker.time
@@ -35,3 +36,4 @@ $(function() {
     });
   });
 });
+
