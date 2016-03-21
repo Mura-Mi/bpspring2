@@ -78,7 +78,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.use_aws = true
-  config.aws_backet_name = 'bpspring'
+  config.aws_backet_name = ENV['AWS_BUCKET']
 
   # react-rails
   config.react.jsx_transorm_options = {

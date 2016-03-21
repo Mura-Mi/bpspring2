@@ -60,7 +60,10 @@
             <%= t('bgh.event_report.upload_more_photo') %>
           <% end %>
         <% end %>
-        <%= f.file_field :event_photos, multiple: true, class: 'bgh-fileinput' %>
+        <%= f.s3_file_field :event_photos, multiple: true, class: 'bgh-fileinput js-s3_file_field' %>
+        <div class="progress">
+          <div class="meter" style="width: 0%;"></div>
+        </div>
       </div>
     </div>
 

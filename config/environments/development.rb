@@ -44,7 +44,7 @@ Rails.application.configure do
 
   config.middleware.insert_after(ActionDispatch::Static, Rack::LiveReload)
 
-  config.use_aws = false
+  config.use_aws = ENV['USE_AWS']
   config.aws_backet_name = 'bpspring-dev'
 
   # react-rails

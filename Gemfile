@@ -29,6 +29,7 @@ gem 'bootstrap-sass', '3.3.6'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails', '4.0.5'
 gem 'jquery-ui-rails', '5.0.5'
+gem 's3_file_field', '1.3.0'
 
 gem 'react-rails', '1.6.0'
 gem 'browserify-rails', '~> 3.0.0'
